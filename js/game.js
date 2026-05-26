@@ -3,6 +3,7 @@
  * ══════════════════════════════════════════════════════════
  * Handles: screen navigation, question loading, answering,
  * scoring, progress bar, results screen, and QUESTION IMAGES.
+ * Also supports CUSTOM IMAGE ICONS for culture cards on home page.
  * ══════════════════════════════════════════════════════════
  */
 
@@ -59,7 +60,7 @@ function showScreen(name) {
 }
 
 /* ══════════════════════════════════════
-   HOME SCREEN — BUILD CULTURE GRID
+   HOME SCREEN — BUILD CULTURE GRID (with image icon support)
 ══════════════════════════════════════ */
 function buildCultureGrid() {
   el.cultureGrid.innerHTML = '';
@@ -72,8 +73,34 @@ function buildCultureGrid() {
       ? '<span class="culture-badge badge-soon">Coming soon</span>'
       : '<span class="culture-badge badge-ready">▶ Play</span>';
 
+    // Check if icon is an image path (contains .png, .jpg, .jpeg, .gif, .svg, .webp)
+    const isImagePath = culture.icon && (
+      culture.icon.includes('.png') || 
+      culture.icon.includes('.jpg') || 
+      culture.icon.includes('.jpeg') || 
+      culture.icon.includes('.gif') || 
+      culture.icon.includes('.svg') ||
+      culture.icon.includes('.webp')
+    );
+    
+    let iconHtml = '';
+    if (isImagePath) {
+      // Use image with fallback to emoji if load fails
+      const fallbackEmoji = culture.iconFallback || '📚';
+      iconHtml = `
+        <div class="culture-icon-wrapper">
+          <img class="culture-icon-img" src="${culture.icon}" alt="${culture.name}" 
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';">
+          <span class="culture-icon-fallback" style="display:none; font-size:36px;">${fallbackEmoji}</span>
+        </div>
+      `;
+    } else {
+      // Use emoji/icon as text
+      iconHtml = `<div class="culture-icon-wrapper"><span class="culture-icon">${culture.icon || '📚'}</span></div>`;
+    }
+
     card.innerHTML = `
-      <span class="culture-icon">${culture.icon}</span>
+      ${iconHtml}
       <span class="culture-name">${culture.name}</span>
       <span class="culture-lang">${culture.lang}</span>
       ${badgeHtml}
@@ -105,7 +132,23 @@ function startQuiz(cultureKey) {
   answered     = false;
   answerLog    = [];
 
-  el.quizCultureLabel.textContent = culture.icon + ' ' + culture.name;
+  // Get display icon (either image path or emoji)
+  let displayIcon = culture.icon;
+  const isImagePath = displayIcon && (
+    displayIcon.includes('.png') || 
+    displayIcon.includes('.jpg') || 
+    displayIcon.includes('.jpeg') || 
+    displayIcon.includes('.gif') || 
+    displayIcon.includes('.svg') ||
+    displayIcon.includes('.webp')
+  );
+  
+  // For image icons, show a placeholder emoji in the header
+  if (isImagePath) {
+    displayIcon = culture.iconFallback || '📚';
+  }
+  
+  el.quizCultureLabel.textContent = displayIcon + ' ' + culture.name;
   el.liveScore.textContent        = '0 pts';
 
   showScreen('quiz');

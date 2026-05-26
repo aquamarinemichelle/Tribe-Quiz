@@ -6,7 +6,7 @@
 const ZULU_QUESTIONS = {
   name:   "Zulu",
   lang:   "IsiZulu",
-  icon:   "🥁",
+  icon:   "public/homepage/zulu.png",
   locked: false,
   questions: [
     /* LANGUAGE */

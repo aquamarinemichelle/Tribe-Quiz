@@ -6,7 +6,7 @@
 const XHOSA_QUESTIONS = {
   name:   "Xhosa",
   lang:   "IsiXhosa",
-  icon:   "🌊",
+  icon:   "public/homepage/xhosa.png",
   locked: false,
   questions: [
     /* LANGUAGE */
