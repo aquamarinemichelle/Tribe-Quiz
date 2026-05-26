@@ -1,393 +1,64 @@
 /**
- * UBUNTU QUIZ — QUESTIONS DATABASE
+ * UBUNTU QUIZ — MASTER QUESTIONS DATABASE
  * ═══════════════════════════════════════════════════════════
- * HOW TO ADD A NEW CULTURE:
- *
- *   1. Add a new key to the CULTURES object (e.g. "sepedi")
- *   2. Fill in: name, lang, icon, locked (set to false when ready)
- *   3. Add at least 10 questions to the questions array
- *
- * QUESTION FORMAT:
- *   {
- *     cat:  "Category name",          // shown above the question
- *     q:    "The question text?",     // the question
- *     opts: ["A", "B", "C", "D"],     // exactly 4 options
- *     ans:  0,                        // index of correct answer (0-3)
- *     img:  "public/image-name.png"   // optional: path to question image
- *   }
+ * This file combines all culture-specific question files
+ * into the master CULTURES object.
+ * 
+ * TO UNLOCK A CULTURE:
+ *   1. Go to the culture's file (e.g., xhosa-questions.js)
+ *   2. Change 'locked: true' to 'locked: false'
+ *   3. Make sure there are at least 10 questions
+ * 
+ * TEAM MEMBERS: Edit ONLY your culture's file!
  * ═══════════════════════════════════════════════════════════
  */
 
+// Helper function to safely get culture data
+function safeCulture(cultureVar, defaultName, defaultLang, defaultIcon) {
+  if (cultureVar && cultureVar.questions) {
+    return cultureVar;
+  }
+  // Return a default locked culture if file doesn't exist yet
+  return {
+    name: defaultName,
+    lang: defaultLang,
+    icon: defaultIcon,
+    locked: true,
+    questions: []
+  };
+}
+
+// Combine all culture modules into master CULTURES object
+// This safely handles missing files
 const CULTURES = {
-
-  /* ──────────────────────────────────────
-     ZULU — IsiZulu (FULLY UNLOCKED WITH IMAGES)
-  ────────────────────────────────────── */
-  zulu: {
-    name:   "Zulu",
-    lang:   "IsiZulu",
-    icon:   "🥁",
-    locked: false,
-    questions: [
-
-      /* LANGUAGE */
-      {
-        cat:  "Language",
-        q:    "What does 'Sawubona' mean in IsiZulu?",
-        opts: ["Goodbye", "I see you / Hello", "Thank you", "Good night"],
-        ans:  1,
-        img:  "public/sawubona.png"
-      },
-      {
-        cat:  "Language",
-        q:    "How do you say 'Thank you' in IsiZulu?",
-        opts: ["Yebo", "Sawubona", "Ngiyabonga", "Hamba kahle"],
-        ans:  2,
-        img:  null
-      },
-      {
-        cat:  "Language",
-        q:    "What does 'Yebo' mean in IsiZulu?",
-        opts: ["No", "Yes", "Please", "Hurry"],
-        ans:  1,
-        img:  null
-      },
-      {
-        cat:  "Language",
-        q:    "IsiZulu is one of South Africa's official languages. How many official languages does SA have in total?",
-        opts: ["9", "10", "11", "12"],
-        ans:  2,
-        img:  null
-      },
-
-      /* HISTORY */
-      {
-        cat:  "History",
-        q:    "Who was the famous Zulu king that built a powerful military empire in the early 1800s?",
-        opts: ["Dingane", "Cetshwayo", "Shaka Zulu", "Mpande"],
-        ans:  2,
-        img:  "public/shaka-zulu.png"
-      },
-      {
-        cat:  "History",
-        q:    "The Battle of Isandlwana in 1879 was a major Zulu victory against which colonial power?",
-        opts: ["Portuguese", "Dutch (Boers)", "British", "German"],
-        ans:  2,
-        img:  null
-      },
-      {
-        cat:  "History",
-        q:    "King Cetshwayo was the last independent king of the Zulu. He was exiled after which war?",
-        opts: ["The Anglo-Boer War", "The Anglo-Zulu War", "The Frontier Wars", "The Mfecane"],
-        ans:  1,
-        img:  null
-      },
-      {
-        cat:  "History",
-        q:    "The Mfecane was a period of widespread chaos and warfare among Nguni tribes mainly caused by?",
-        opts: ["Drought", "Shaka's military expansion", "British invasion", "A plague"],
-        ans:  1,
-        img:  null
-      },
-
-      /* TRADITION */
-      {
-        cat:  "Tradition",
-        q:    "The Zulu Reed Dance ceremony is called?",
-        opts: ["Umhlanga", "Ukweshwama", "Umemulo", "Ukubuyisa"],
-        ans:  0,
-        img:  "public/umhlanga.png"
-      },
-      {
-        cat:  "Tradition",
-        q:    "Lobola is an important Zulu tradition. What is it?",
-        opts: [
-          "A war dance performed by warriors",
-          "Bride wealth paid by the groom's family",
-          "A harvest celebration",
-          "A rain-calling ceremony"
-        ],
-        ans:  1,
-        img:  null
-      },
-      {
-        cat:  "Tradition",
-        q:    "The Zulu male first-fruits ceremony where the king tastes the new harvest is called?",
-        opts: ["Umhlanga", "Ukweshwama", "Lobola", "Umemulo"],
-        ans:  1,
-        img:  null
-      },
-      {
-        cat:  "Tradition",
-        q:    "An 'Umemulo' ceremony in Zulu culture celebrates?",
-        opts: [
-          "A boy becoming a warrior",
-          "A girl's coming of age (around 21)",
-          "A wedding anniversary",
-          "The death of an elder"
-        ],
-        ans:  1,
-        img:  null
-      },
-
-      /* CULTURE */
-      {
-        cat:  "Culture",
-        q:    "What does the Zulu/Nguni philosophy 'Ubuntu' mean?",
-        opts: [
-          "I am the greatest",
-          "I am because we are",
-          "Work hard, eat well",
-          "Respect your elders"
-        ],
-        ans:  1,
-        img:  null
-      },
-      {
-        cat:  "Culture",
-        q:    "Zulu women are internationally famous for making intricate colorful?",
-        opts: ["Clay pottery", "Beadwork jewelry", "Wood carvings", "Woven baskets"],
-        ans:  1,
-        img:  "public/beadwork.png"
-      },
-      {
-        cat:  "Culture",
-        q:    "In Zulu culture, what colour beads traditionally symbolise love?",
-        opts: ["Blue", "White", "Red", "Pink"],
-        ans:  2,
-        img:  null
-      },
-      {
-        cat:  "Culture",
-        q:    "What is the traditional Zulu dwelling called?",
-        opts: ["Rondavel", "Indlu (beehive hut)", "Kraal", "Imizi"],
-        ans:  1,
-        img:  "public/zulu-dwelling.png"
-      },
-
-      /* MUSIC & ARTS */
-      {
-        cat:  "Music",
-        q:    "Which a cappella vocal style originated with Zulu migrant workers and became world-famous?",
-        opts: ["Kwaito", "Amapiano", "Isicathamiya", "Mbaqanga"],
-        ans:  2,
-        img:  "public/isicathamiya.png"
-      },
-      {
-        cat:  "Music",
-        q:    "Ladysmith Black Mambazo made Isicathamiya world-famous. Which famous musician featured them on a 1986 album?",
-        opts: ["Michael Jackson", "Paul Simon", "Elton John", "Bob Marley"],
-        ans:  1,
-        img:  null
-      },
-      {
-        cat:  "Music",
-        q:    "The energetic dance performed by Zulu warriors, also used during ceremonial occasions, is called?",
-        opts: ["Gumboot dance", "Indlamu", "Pantsula", "Toyi-toyi"],
-        ans:  1,
-        img:  null
-      },
-      {
-        cat:  "Music",
-        q:    "Amapiano, a popular modern South African music genre with Zulu influences, originated in which decade?",
-        opts: ["1990s", "2000s", "2010s", "1980s"],
-        ans:  2,
-        img:  null
-      },
-
-      /* GEOGRAPHY */
-      {
-        cat:  "Geography",
-        q:    "The heartland of Zulu culture is which South African province?",
-        opts: ["Limpopo", "Gauteng", "KwaZulu-Natal", "Eastern Cape"],
-        ans:  2,
-        img:  null
-      },
-      {
-        cat:  "Geography",
-        q:    "The uKhahlamba-Drakensberg Park, a UNESCO World Heritage Site in KwaZulu-Natal, is known for?",
-        opts: [
-          "Gold mining history",
-          "Ancient San rock art and mountains",
-          "Zulu battlefield sites only",
-          "Coastal wetlands"
-        ],
-        ans:  1,
-        img:  null
-      },
-      {
-        cat:  "Geography",
-        q:    "The Zulu Royal Palace is located in which area of KwaZulu-Natal?",
-        opts: ["Durban", "Richards Bay", "Nongoma", "Pietermaritzburg"],
-        ans:  2,
-        img:  null
-      },
-
-      /* FOOD */
-      {
-        cat:  "Food",
-        q:    "What is 'Uphuthu', a staple in Zulu cuisine?",
-        opts: [
-          "A spicy meat stew",
-          "Dry crumbly maize meal (pap)",
-          "A fermented milk drink",
-          "Grilled chicken dish"
-        ],
-        ans:  1,
-        img:  null
-      },
-      {
-        cat:  "Food",
-        q:    "What is 'Amasi' in Zulu culture?",
-        opts: [
-          "A type of bread",
-          "Fermented/soured milk, similar to yoghurt",
-          "A beer made from sorghum",
-          "A type of porridge made from millet"
-        ],
-        ans:  1,
-        img:  null
-      },
-      {
-        cat:  "Food",
-        q:    "Umqombothi is a traditional Zulu beverage. What is it made from?",
-        opts: ["Grapes", "Sorghum and maize", "Sugarcane", "Fermented honey"],
-        ans:  1,
-        img:  "public/umqombothi.png"
-      },
-
-      /* PEOPLE & NOTABLE */
-      {
-        cat:  "Notable People",
-        q:    "Which anti-apartheid activist, a Zulu leader, won the Nobel Peace Prize in 1993 alongside Nelson Mandela?",
-        opts: ["Mangosuthu Buthelezi", "Walter Sisulu", "F.W. de Klerk", "Oliver Tambo"],
-        ans:  2,
-        img:  null
-      },
-      {
-        cat:  "Notable People",
-        q:    "Prince Mangosuthu Buthelezi founded which major Zulu political organization in 1975?",
-        opts: ["ANC", "PAC", "Inkatha Freedom Party", "DA"],
-        ans:  2,
-        img:  null
-      },
-      {
-        cat:  "Notable People",
-        q:    "The current (as of 2024) Zulu King is?",
-        opts: ["Goodwill Zwelithini", "Misuzulu kaZwelithini", "Cetshwayo II", "Dingane II"],
-        ans:  1,
-        img:  null
-      },
-    ]
-  },
-
-  /* ──────────────────────────────────────
-     XHOSA — IsiXhosa  (coming soon)
-  ────────────────────────────────────── */
-  xhosa: {
-    name:   "Xhosa",
-    lang:   "IsiXhosa",
-    icon:   "🌊",
-    locked: true,
-    questions: []
-  },
-
-  /* ──────────────────────────────────────
-     SESOTHO — Sesotho  (coming soon)
-  ────────────────────────────────────── */
-  sotho: {
-    name:   "Sesotho",
-    lang:   "Sesotho",
-    icon:   "🏔️",
-    locked: true,
-    questions: []
-  },
-
-  /* ──────────────────────────────────────
-     SEPEDI — Sepedi  (coming soon)
-  ────────────────────────────────────── */
-  sepedi: {
-    name:   "Sepedi",
-    lang:   "Sepedi",
-    icon:   "🌿",
-    locked: true,
-    questions: []
-  },
-
-  /* ──────────────────────────────────────
-     SETSWANA — Setswana  (coming soon)
-  ────────────────────────────────────── */
-  tswana: {
-    name:   "Tswana",
-    lang:   "Setswana",
-    icon:   "🌾",
-    locked: true,
-    questions: []
-  },
-
-  /* ──────────────────────────────────────
-     TSONGA — Xitsonga  (coming soon)
-  ────────────────────────────────────── */
-  tsonga: {
-    name:   "Tsonga",
-    lang:   "Xitsonga",
-    icon:   "🦁",
-    locked: true,
-    questions: []
-  },
-
-  /* ──────────────────────────────────────
-     VENDA — Tshivenda  (coming soon)
-  ────────────────────────────────────── */
-  venda: {
-    name:   "Venda",
-    lang:   "Tshivenda",
-    icon:   "🎵",
-    locked: true,
-    questions: []
-  },
-
-  /* ──────────────────────────────────────
-     SWATI — siSwati  (coming soon)
-  ────────────────────────────────────── */
-  swati: {
-    name:   "Swati",
-    lang:   "siSwati",
-    icon:   "🛡️",
-    locked: true,
-    questions: []
-  },
-
-  /* ──────────────────────────────────────
-     NDEBELE — isiNdebele  (coming soon)
-  ────────────────────────────────────── */
-  ndebele: {
-    name:   "Ndebele",
-    lang:   "isiNdebele",
-    icon:   "🎨",
-    locked: true,
-    questions: []
-  },
-
-  /* ──────────────────────────────────────
-     AFRIKAANS  (coming soon)
-  ────────────────────────────────────── */
-  afrikaans: {
-    name:   "Afrikaans",
-    lang:   "Afrikaans",
-    icon:   "🌻",
-    locked: true,
-    questions: []
-  },
-
-  /* ──────────────────────────────────────
-     ENGLISH / GENERAL SA  (coming soon)
-  ────────────────────────────────────── */
-  english: {
-    name:   "General SA",
-    lang:   "English",
-    icon:   "🇿🇦",
-    locked: true,
-    questions: []
-  },
+  zulu:      typeof ZULU_QUESTIONS !== 'undefined' ? ZULU_QUESTIONS : safeCulture(null, "Zulu", "IsiZulu", "🥁"),
+  xhosa:     typeof XHOSA_QUESTIONS !== 'undefined' ? XHOSA_QUESTIONS : safeCulture(null, "Xhosa", "IsiXhosa", "🌊"),
+  sotho:     typeof SOTHO_QUESTIONS !== 'undefined' ? SOTHO_QUESTIONS : safeCulture(null, "Sesotho", "Sesotho", "🏔️"),
+  sepedi:    typeof SEPEDI_QUESTIONS !== 'undefined' ? SEPEDI_QUESTIONS : safeCulture(null, "Sepedi", "Sepedi", "🌿"),
+  tswana:    typeof TSWANA_QUESTIONS !== 'undefined' ? TSWANA_QUESTIONS : safeCulture(null, "Tswana", "Setswana", "🌾"),
+  tsonga:    typeof TSONGA_QUESTIONS !== 'undefined' ? TSONGA_QUESTIONS : safeCulture(null, "Tsonga", "Xitsonga", "🦁"),
+  venda:     typeof VENDA_QUESTIONS !== 'undefined' ? VENDA_QUESTIONS : safeCulture(null, "Venda", "Tshivenda", "🎵"),
+  swati:     typeof SWATI_QUESTIONS !== 'undefined' ? SWATI_QUESTIONS : safeCulture(null, "Swati", "siSwati", "🛡️"),
+  ndebele:   typeof NDEBELE_QUESTIONS !== 'undefined' ? NDEBELE_QUESTIONS : safeCulture(null, "Ndebele", "isiNdebele", "🎨"),
+  afrikaans: typeof AFRIKAANS_QUESTIONS !== 'undefined' ? AFRIKAANS_QUESTIONS : safeCulture(null, "Afrikaans", "Afrikaans", "🌻"),
+  english:   typeof ENGLISH_QUESTIONS !== 'undefined' ? ENGLISH_QUESTIONS : safeCulture(null, "General SA", "English", "🇿🇦"),
 };
+
+// Validation helper - shows warning in console if unlocked cultures have <10 questions
+(function validateQuestions() {
+  console.log("🎯 Ubuntu Quiz - Loading cultures...");
+  let activeCultures = 0;
+  for (const [key, culture] of Object.entries(CULTURES)) {
+    if (!culture.locked && culture.questions.length > 0) {
+      activeCultures++;
+      if (culture.questions.length < 10) {
+        console.warn(`⚠️ "${culture.name}" has only ${culture.questions.length} questions. Recommended: at least 10.`);
+      } else {
+        console.log(`✅ "${culture.name}" is READY with ${culture.questions.length} questions!`);
+      }
+    } else if (!culture.locked) {
+      console.log(`🔒 "${culture.name}" is locked (coming soon)`);
+    }
+  }
+  console.log(`📊 Total active cultures: ${activeCultures}`);
+})();
