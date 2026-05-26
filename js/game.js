@@ -2,7 +2,7 @@
  * UBUNTU QUIZ — GAME LOGIC
  * ══════════════════════════════════════════════════════════
  * Handles: screen navigation, question loading, answering,
- * scoring, progress bar, and results screen.
+ * scoring, progress bar, results screen, and QUESTION IMAGES.
  * ══════════════════════════════════════════════════════════
  */
 
@@ -34,6 +34,7 @@ const el = {
   qCategory:        document.getElementById('q-category'),
   qCounter:         document.getElementById('q-counter'),
   qText:            document.getElementById('q-text'),
+  questionImg:      document.getElementById('question-img'),
   optionsGrid:      document.getElementById('options-grid'),
   feedbackBar:      document.getElementById('feedback-bar'),
   nextBtn:          document.getElementById('next-btn'),
@@ -100,6 +101,7 @@ function startQuiz(cultureKey) {
 
   currentIndex = 0;
   score        = 0;
+  totalPoints  = 0;
   answered     = false;
   answerLog    = [];
 
@@ -111,7 +113,7 @@ function startQuiz(cultureKey) {
 }
 
 /* ══════════════════════════════════════
-   LOAD QUESTION
+   LOAD QUESTION (with image support)
 ══════════════════════════════════════ */
 function loadQuestion() {
   const q     = questions[currentIndex];
@@ -135,7 +137,20 @@ function loadQuestion() {
     ? 'See my results 🏆'
     : 'Next question →';
 
-  // Build shuffled answer buttons
+  // ⭐ HANDLE QUESTION IMAGE ⭐
+  if (q.img && q.img.trim() !== '') {
+    el.questionImg.src = q.img;
+    el.questionImg.style.display = 'block';
+    // If image fails to load, hide it gracefully
+    el.questionImg.onerror = () => {
+      el.questionImg.style.display = 'none';
+    };
+  } else {
+    el.questionImg.style.display = 'none';
+    el.questionImg.src = '';
+  }
+
+  // Build answer buttons
   renderOptions(q);
 }
 

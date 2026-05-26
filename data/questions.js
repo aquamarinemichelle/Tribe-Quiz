@@ -12,7 +12,8 @@
  *     cat:  "Category name",          // shown above the question
  *     q:    "The question text?",     // the question
  *     opts: ["A", "B", "C", "D"],     // exactly 4 options
- *     ans:  0                         // index of correct answer (0-3)
+ *     ans:  0,                        // index of correct answer (0-3)
+ *     img:  "public/image-name.png"   // optional: path to question image
  *   }
  * ═══════════════════════════════════════════════════════════
  */
@@ -20,7 +21,7 @@
 const CULTURES = {
 
   /* ──────────────────────────────────────
-     ZULU — IsiZulu
+     ZULU — IsiZulu (FULLY UNLOCKED WITH IMAGES)
   ────────────────────────────────────── */
   zulu: {
     name:   "Zulu",
@@ -34,25 +35,29 @@ const CULTURES = {
         cat:  "Language",
         q:    "What does 'Sawubona' mean in IsiZulu?",
         opts: ["Goodbye", "I see you / Hello", "Thank you", "Good night"],
-        ans:  1
+        ans:  1,
+        img:  "public/sawubona.png"
       },
       {
         cat:  "Language",
         q:    "How do you say 'Thank you' in IsiZulu?",
         opts: ["Yebo", "Sawubona", "Ngiyabonga", "Hamba kahle"],
-        ans:  2
+        ans:  2,
+        img:  null
       },
       {
         cat:  "Language",
         q:    "What does 'Yebo' mean in IsiZulu?",
         opts: ["No", "Yes", "Please", "Hurry"],
-        ans:  1
+        ans:  1,
+        img:  null
       },
       {
         cat:  "Language",
         q:    "IsiZulu is one of South Africa's official languages. How many official languages does SA have in total?",
         opts: ["9", "10", "11", "12"],
-        ans:  2
+        ans:  2,
+        img:  null
       },
 
       /* HISTORY */
@@ -60,25 +65,29 @@ const CULTURES = {
         cat:  "History",
         q:    "Who was the famous Zulu king that built a powerful military empire in the early 1800s?",
         opts: ["Dingane", "Cetshwayo", "Shaka Zulu", "Mpande"],
-        ans:  2
+        ans:  2,
+        img:  "public/shaka-zulu.png"
       },
       {
         cat:  "History",
         q:    "The Battle of Isandlwana in 1879 was a major Zulu victory against which colonial power?",
         opts: ["Portuguese", "Dutch (Boers)", "British", "German"],
-        ans:  2
+        ans:  2,
+        img:  null
       },
       {
         cat:  "History",
         q:    "King Cetshwayo was the last independent king of the Zulu. He was exiled after which war?",
         opts: ["The Anglo-Boer War", "The Anglo-Zulu War", "The Frontier Wars", "The Mfecane"],
-        ans:  1
+        ans:  1,
+        img:  null
       },
       {
         cat:  "History",
         q:    "The Mfecane was a period of widespread chaos and warfare among Nguni tribes mainly caused by?",
         opts: ["Drought", "Shaka's military expansion", "British invasion", "A plague"],
-        ans:  1
+        ans:  1,
+        img:  null
       },
 
       /* TRADITION */
@@ -86,7 +95,8 @@ const CULTURES = {
         cat:  "Tradition",
         q:    "The Zulu Reed Dance ceremony is called?",
         opts: ["Umhlanga", "Ukweshwama", "Umemulo", "Ukubuyisa"],
-        ans:  0
+        ans:  0,
+        img:  "public/umhlanga.png"
       },
       {
         cat:  "Tradition",
@@ -97,13 +107,15 @@ const CULTURES = {
           "A harvest celebration",
           "A rain-calling ceremony"
         ],
-        ans:  1
+        ans:  1,
+        img:  null
       },
       {
         cat:  "Tradition",
         q:    "The Zulu male first-fruits ceremony where the king tastes the new harvest is called?",
         opts: ["Umhlanga", "Ukweshwama", "Lobola", "Umemulo"],
-        ans:  1
+        ans:  1,
+        img:  null
       },
       {
         cat:  "Tradition",
@@ -114,7 +126,8 @@ const CULTURES = {
           "A wedding anniversary",
           "The death of an elder"
         ],
-        ans:  1
+        ans:  1,
+        img:  null
       },
 
       /* CULTURE */
@@ -127,25 +140,29 @@ const CULTURES = {
           "Work hard, eat well",
           "Respect your elders"
         ],
-        ans:  1
+        ans:  1,
+        img:  null
       },
       {
         cat:  "Culture",
         q:    "Zulu women are internationally famous for making intricate colorful?",
         opts: ["Clay pottery", "Beadwork jewelry", "Wood carvings", "Woven baskets"],
-        ans:  1
+        ans:  1,
+        img:  "public/beadwork.png"
       },
       {
         cat:  "Culture",
         q:    "In Zulu culture, what colour beads traditionally symbolise love?",
         opts: ["Blue", "White", "Red", "Pink"],
-        ans:  2
+        ans:  2,
+        img:  null
       },
       {
         cat:  "Culture",
         q:    "What is the traditional Zulu dwelling called?",
         opts: ["Rondavel", "Indlu (beehive hut)", "Kraal", "Imizi"],
-        ans:  1
+        ans:  1,
+        img:  "public/zulu-dwelling.png"
       },
 
       /* MUSIC & ARTS */
@@ -153,25 +170,29 @@ const CULTURES = {
         cat:  "Music",
         q:    "Which a cappella vocal style originated with Zulu migrant workers and became world-famous?",
         opts: ["Kwaito", "Amapiano", "Isicathamiya", "Mbaqanga"],
-        ans:  2
+        ans:  2,
+        img:  "public/isicathamiya.png"
       },
       {
         cat:  "Music",
         q:    "Ladysmith Black Mambazo made Isicathamiya world-famous. Which famous musician featured them on a 1986 album?",
         opts: ["Michael Jackson", "Paul Simon", "Elton John", "Bob Marley"],
-        ans:  1
+        ans:  1,
+        img:  null
       },
       {
         cat:  "Music",
         q:    "The energetic dance performed by Zulu warriors, also used during ceremonial occasions, is called?",
         opts: ["Gumboot dance", "Indlamu", "Pantsula", "Toyi-toyi"],
-        ans:  1
+        ans:  1,
+        img:  null
       },
       {
         cat:  "Music",
         q:    "Amapiano, a popular modern South African music genre with Zulu influences, originated in which decade?",
         opts: ["1990s", "2000s", "2010s", "1980s"],
-        ans:  2
+        ans:  2,
+        img:  null
       },
 
       /* GEOGRAPHY */
@@ -179,7 +200,8 @@ const CULTURES = {
         cat:  "Geography",
         q:    "The heartland of Zulu culture is which South African province?",
         opts: ["Limpopo", "Gauteng", "KwaZulu-Natal", "Eastern Cape"],
-        ans:  2
+        ans:  2,
+        img:  null
       },
       {
         cat:  "Geography",
@@ -190,13 +212,15 @@ const CULTURES = {
           "Zulu battlefield sites only",
           "Coastal wetlands"
         ],
-        ans:  1
+        ans:  1,
+        img:  null
       },
       {
         cat:  "Geography",
         q:    "The Zulu Royal Palace is located in which area of KwaZulu-Natal?",
         opts: ["Durban", "Richards Bay", "Nongoma", "Pietermaritzburg"],
-        ans:  2
+        ans:  2,
+        img:  null
       },
 
       /* FOOD */
@@ -209,7 +233,8 @@ const CULTURES = {
           "A fermented milk drink",
           "Grilled chicken dish"
         ],
-        ans:  1
+        ans:  1,
+        img:  null
       },
       {
         cat:  "Food",
@@ -220,13 +245,15 @@ const CULTURES = {
           "A beer made from sorghum",
           "A type of porridge made from millet"
         ],
-        ans:  1
+        ans:  1,
+        img:  null
       },
       {
         cat:  "Food",
         q:    "Umqombothi is a traditional Zulu beverage. What is it made from?",
         opts: ["Grapes", "Sorghum and maize", "Sugarcane", "Fermented honey"],
-        ans:  1
+        ans:  1,
+        img:  "public/umqombothi.png"
       },
 
       /* PEOPLE & NOTABLE */
@@ -234,26 +261,28 @@ const CULTURES = {
         cat:  "Notable People",
         q:    "Which anti-apartheid activist, a Zulu leader, won the Nobel Peace Prize in 1993 alongside Nelson Mandela?",
         opts: ["Mangosuthu Buthelezi", "Walter Sisulu", "F.W. de Klerk", "Oliver Tambo"],
-        ans:  2
+        ans:  2,
+        img:  null
       },
       {
         cat:  "Notable People",
         q:    "Prince Mangosuthu Buthelezi founded which major Zulu political organization in 1975?",
         opts: ["ANC", "PAC", "Inkatha Freedom Party", "DA"],
-        ans:  2
+        ans:  2,
+        img:  null
       },
       {
         cat:  "Notable People",
         q:    "The current (as of 2024) Zulu King is?",
         opts: ["Goodwill Zwelithini", "Misuzulu kaZwelithini", "Cetshwayo II", "Dingane II"],
-        ans:  1
+        ans:  1,
+        img:  null
       },
     ]
   },
 
   /* ──────────────────────────────────────
      XHOSA — IsiXhosa  (coming soon)
-     Set locked: false and add questions when ready
   ────────────────────────────────────── */
   xhosa: {
     name:   "Xhosa",
