@@ -6,7 +6,7 @@
 const ZULU_QUESTIONS = {
   name:   "Zulu",
   lang:   "IsiZulu",
-  icon:   "🥁",
+  icon:   "public/homepage/zulu.png",
   locked: false,
   questions: [
     /* LANGUAGE */
@@ -15,7 +15,7 @@ const ZULU_QUESTIONS = {
       q:    "What does 'Sawubona' mean in IsiZulu?",
       opts: ["Goodbye", "I see you / Hello", "Thank you", "Good night"],
       ans:  1,
-      img:  "public/sawubona.png"
+      img:  null
     },
     {
       cat:  "Language",
@@ -45,7 +45,7 @@ const ZULU_QUESTIONS = {
       q:    "Who was the famous Zulu king that built a powerful military empire in the early 1800s?",
       opts: ["Dingane", "Cetshwayo", "Shaka Zulu", "Mpande"],
       ans:  2,
-      img:  "public/shaka-zulu.png"
+      img:  "public/zulu-photos/shaka-zulu.jpg"
     },
     {
       cat:  "History",
@@ -127,7 +127,7 @@ const ZULU_QUESTIONS = {
       q:    "Zulu women are internationally famous for making intricate colorful?",
       opts: ["Clay pottery", "Beadwork jewelry", "Wood carvings", "Woven baskets"],
       ans:  1,
-      img:  "public/beadwork.png"
+      img:  "public/zulu-photos/beadwork.png"
     },
     {
       cat:  "Culture",
@@ -141,7 +141,7 @@ const ZULU_QUESTIONS = {
       q:    "What is the traditional Zulu dwelling called?",
       opts: ["Rondavel", "Indlu (beehive hut)", "Kraal", "Imizi"],
       ans:  1,
-      img:  "public/zulu-dwelling.png"
+      img:  "public/zulu-photos/zulu-dwelling.png"
     },
 
     /* MUSIC & ARTS */

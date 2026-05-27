@@ -1,25 +1,23 @@
 /**
  * UBUNTU QUIZ — GAME LOGIC
- * ══════════════════════════════════════════════════════════
- * Handles: screen navigation, question loading, answering,
- * scoring, progress bar, results screen, and QUESTION IMAGES.
- * ══════════════════════════════════════════════════════════
+ * Handles: screen navigation, culture card building,
+ * question loading, answering, scoring, and results.
  */
 
-/* ── STATE ───────────────────────────── */
-let currentCultureKey = null;   // e.g. "zulu"
-let questions          = [];    // shuffled question list for this session
-let currentIndex       = 0;    // which question we're on
-let score              = 0;    // correct answers this session
-let totalPoints        = 0;    // cumulative points across sessions
-let answered           = false; // has the user answered the current question?
-let answerLog          = [];    // [{q, yourAnswer, correctAnswer, correct: bool}]
+/* ── STATE ── */
+let currentCultureKey = null;
+let questions          = [];
+let currentIndex       = 0;
+let score              = 0;
+let totalPoints        = 0;
+let answered           = false;
+let answerLog          = [];
 
-/* ── CONSTANTS ───────────────────────── */
+/* ── CONSTANTS ── */
 const POINTS_PER_CORRECT = 10;
-const MAX_QUESTIONS       = 10; // how many questions to pick per round
+const MAX_QUESTIONS       = 10;
 
-/* ── DOM REFERENCES ──────────────────── */
+/* ── DOM REFERENCES ── */
 const screens = {
   home:    document.getElementById('screen-home'),
   quiz:    document.getElementById('screen-quiz'),
@@ -59,26 +57,68 @@ function showScreen(name) {
 }
 
 /* ══════════════════════════════════════
-   HOME SCREEN — BUILD CULTURE GRID
+   BUILD CULTURE CARDS ON HOME SCREEN
+   Cards now have: image/icon on top, name,
+   language, and a PLAY NOW button — just
+   like the screenshot you shared.
 ══════════════════════════════════════ */
 function buildCultureGrid() {
   el.cultureGrid.innerHTML = '';
 
   Object.entries(CULTURES).forEach(([key, culture]) => {
+
+    /* Outer card */
     const card = document.createElement('div');
     card.className = 'culture-card' + (culture.locked ? ' locked' : '');
 
-    const badgeHtml = culture.locked
-      ? '<span class="culture-badge badge-soon">Coming soon</span>'
-      : '<span class="culture-badge badge-ready">▶ Play</span>';
+    /* ── Top image / icon area ── */
+    const isImagePath = culture.icon && (
+      culture.icon.endsWith('.png')  ||
+      culture.icon.endsWith('.jpg')  ||
+      culture.icon.endsWith('.jpeg') ||
+      culture.icon.endsWith('.gif')  ||
+      culture.icon.endsWith('.svg')  ||
+      culture.icon.endsWith('.webp')
+    );
 
+    let topHtml = '';
+    if (isImagePath) {
+      /* Use the image file, fall back to emoji if it fails to load */
+      const fallback = culture.iconFallback || '📚';
+      topHtml = `
+        <div class="culture-icon-wrapper">
+          <img
+            class="culture-icon-img"
+            src="${culture.icon}"
+            alt="${culture.name}"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+          />
+          <span class="culture-icon" style="display:none;">${fallback}</span>
+        </div>`;
+    } else {
+      /* Just an emoji */
+      topHtml = `
+        <div class="culture-icon-wrapper">
+          <span class="culture-icon">${culture.icon || '📚'}</span>
+        </div>`;
+    }
+
+    /* ── Play / locked button ── */
+    const btnHtml = culture.locked
+      ? `<button class="culture-play-btn play-btn-locked" disabled>Coming Soon</button>`
+      : `<button class="culture-play-btn play-btn-active">PLAY NOW</button>`;
+
+    /* ── Assemble card ── */
     card.innerHTML = `
-      <span class="culture-icon">${culture.icon}</span>
-      <span class="culture-name">${culture.name}</span>
-      <span class="culture-lang">${culture.lang}</span>
-      ${badgeHtml}
+      ${topHtml}
+      <div class="culture-card-body">
+        <span class="culture-name">${culture.name}</span>
+        <span class="culture-lang">${culture.lang}</span>
+        ${btnHtml}
+      </div>
     `;
 
+    /* Click anywhere on unlocked card starts quiz */
     if (!culture.locked) {
       card.addEventListener('click', () => startQuiz(key));
     }
@@ -95,41 +135,39 @@ function startQuiz(cultureKey) {
   if (!culture || culture.locked || culture.questions.length === 0) return;
 
   currentCultureKey = cultureKey;
-
-  // Shuffle questions and take up to MAX_QUESTIONS
-  questions = shuffle([...culture.questions]).slice(0, MAX_QUESTIONS);
-
+  questions  = shuffle([...culture.questions]).slice(0, MAX_QUESTIONS);
   currentIndex = 0;
   score        = 0;
   totalPoints  = 0;
   answered     = false;
   answerLog    = [];
 
-  el.quizCultureLabel.textContent = culture.icon + ' ' + culture.name;
-  el.liveScore.textContent        = '0 pts';
+  /* Show emoji in quiz header (not image path) */
+  const isImagePath = culture.icon && culture.icon.includes('.');
+  const displayIcon = isImagePath ? (culture.iconFallback || '🌍') : (culture.icon || '🌍');
+  el.quizCultureLabel.textContent = displayIcon + ' ' + culture.name;
+  el.liveScore.textContent = '0 pts';
 
   showScreen('quiz');
   loadQuestion();
 }
 
 /* ══════════════════════════════════════
-   LOAD QUESTION (with image support)
+   LOAD QUESTION
 ══════════════════════════════════════ */
 function loadQuestion() {
   const q     = questions[currentIndex];
   const total = questions.length;
   answered    = false;
 
-  // Update meta info
   el.qCategory.textContent = q.cat;
   el.qCounter.textContent  = (currentIndex + 1) + ' / ' + total;
   el.qText.textContent     = q.q;
 
-  // Progress bar (shows progress into current question)
-  const pct = (currentIndex / total) * 100;
-  el.progressBar.style.width = pct + '%';
+  /* Progress bar */
+  el.progressBar.style.width = ((currentIndex / total) * 100) + '%';
 
-  // Reset feedback + next button
+  /* Reset feedback + next btn */
   el.feedbackBar.className   = 'feedback-bar';
   el.feedbackBar.textContent = '';
   el.nextBtn.style.display   = 'none';
@@ -137,11 +175,10 @@ function loadQuestion() {
     ? 'See my results 🏆'
     : 'Next question →';
 
-  // ⭐ HANDLE QUESTION IMAGE ⭐
-  if (q.img && q.img.trim() !== '') {
+  /* Question image */
+  if (q.img && q.img.trim() !== '' && q.img !== null) {
     el.questionImg.src = q.img;
     el.questionImg.style.display = 'block';
-    // If image fails to load, hide it gracefully
     el.questionImg.onerror = () => {
       el.questionImg.style.display = 'none';
     };
@@ -150,15 +187,15 @@ function loadQuestion() {
     el.questionImg.src = '';
   }
 
-  // Build answer buttons
   renderOptions(q);
 }
 
-/* ── RENDER OPTION BUTTONS ───────────── */
+/* ══════════════════════════════════════
+   RENDER ANSWER BUTTONS
+══════════════════════════════════════ */
 function renderOptions(q) {
   el.optionsGrid.innerHTML = '';
 
-  // Attach the original index to each option so we can check correctness
   const options = q.opts.map((text, origIndex) => ({ text, origIndex }));
   const shuffled = shuffle(options);
 
@@ -166,11 +203,9 @@ function renderOptions(q) {
     const btn = document.createElement('button');
     btn.className   = 'opt-btn';
     btn.textContent = opt.text;
-
     btn.addEventListener('click', () => {
       handleAnswer(btn, opt.origIndex, q.ans, q.q, q.opts[q.ans], shuffled);
     });
-
     el.optionsGrid.appendChild(btn);
   });
 }
@@ -194,20 +229,15 @@ function handleAnswer(clickedBtn, chosenIndex, correctIndex, questionText, corre
     showFeedback(true, '✓ Correct! Well done!');
   } else {
     clickedBtn.classList.add('wrong');
-    // Highlight the correct button
     allBtns.forEach(b => {
       const match = shuffled.find(s => s.text === b.textContent);
-      if (match && match.origIndex === correctIndex) {
-        b.classList.add('correct');
-      }
+      if (match && match.origIndex === correctIndex) b.classList.add('correct');
     });
-    showFeedback(false, '✗ Incorrect. The correct answer was: ' + correctText);
+    showFeedback(false, '✗ Incorrect. Correct answer: ' + correctText);
   }
 
-  // Update live score
   el.liveScore.textContent = totalPoints + ' pts';
 
-  // Log this answer
   answerLog.push({
     question:      questionText,
     yourAnswer:    clickedBtn.textContent,
@@ -215,11 +245,9 @@ function handleAnswer(clickedBtn, chosenIndex, correctIndex, questionText, corre
     correct:       isCorrect,
   });
 
-  // Show next button
   el.nextBtn.style.display = 'block';
 }
 
-/* ── FEEDBACK BAR ────────────────────── */
 function showFeedback(isCorrect, message) {
   el.feedbackBar.textContent = message;
   el.feedbackBar.className   = 'feedback-bar show ' + (isCorrect ? 'correct' : 'wrong');
@@ -245,16 +273,15 @@ function showResults() {
   const pct     = Math.round((score / total) * 100);
   const culture = CULTURES[currentCultureKey];
 
-  // Medal & message based on score
   let medal, title, msg;
   if (pct >= 90) {
-    medal = '🏆'; title = 'Inkosi! (Chief!)';       msg = 'Incredible knowledge of ' + culture.name + ' culture!';
+    medal = '🏆'; title = 'Inkosi! (Chief!)';  msg = 'Incredible knowledge of ' + culture.name + ' culture!';
   } else if (pct >= 70) {
-    medal = '🌍'; title = 'Excellent!';              msg = 'Outstanding knowledge of ' + culture.name + ' culture!';
+    medal = '🌍'; title = 'Excellent!';         msg = 'Outstanding knowledge of ' + culture.name + ' culture!';
   } else if (pct >= 50) {
-    medal = '📚'; title = 'Good effort!';            msg = 'Decent knowledge — keep exploring ' + culture.name + ' culture.';
+    medal = '📚'; title = 'Good effort!';       msg = 'Decent knowledge — keep exploring ' + culture.name + ' culture.';
   } else {
-    medal = '🌱'; title = 'Keep learning!';          msg = 'There\'s lots more to discover about ' + culture.name + ' culture!';
+    medal = '🌱'; title = 'Keep learning!';     msg = 'There\'s lots more to discover about ' + culture.name + ' culture!';
   }
 
   el.resultsMedal.textContent    = medal;
@@ -262,13 +289,9 @@ function showResults() {
   el.resultsScoreBig.textContent = score + ' / ' + total;
   el.resultsMsg.textContent      = msg;
 
-  // Animate percentage bar (small delay so CSS transition fires)
   el.resultsPctBar.style.width = '0%';
-  setTimeout(() => {
-    el.resultsPctBar.style.width = pct + '%';
-  }, 100);
+  setTimeout(() => { el.resultsPctBar.style.width = pct + '%'; }, 100);
 
-  // Fill in breakdown
   el.breakdownList.innerHTML = answerLog.map(entry => `
     <div class="breakdown-row ${entry.correct ? 'ok' : 'bad'}">
       <span class="bd-q">
@@ -281,23 +304,15 @@ function showResults() {
     </div>
   `).join('');
 
-  // Full progress bar on results
   el.progressBar.style.width = '100%';
-
   showScreen('results');
 }
 
 /* ══════════════════════════════════════
    BUTTON LISTENERS
 ══════════════════════════════════════ */
-el.playAgainBtn.addEventListener('click', () => {
-  startQuiz(currentCultureKey);
-});
-
-el.changeCultureBtn.addEventListener('click', () => {
-  showScreen('home');
-});
-
+el.playAgainBtn.addEventListener('click',     () => startQuiz(currentCultureKey));
+el.changeCultureBtn.addEventListener('click', () => showScreen('home'));
 el.backBtn.addEventListener('click', () => {
   if (confirm('Go back to the home screen? Your progress will be lost.')) {
     showScreen('home');
@@ -307,8 +322,6 @@ el.backBtn.addEventListener('click', () => {
 /* ══════════════════════════════════════
    UTILITIES
 ══════════════════════════════════════ */
-
-/** Fisher-Yates shuffle — returns a new shuffled array */
 function shuffle(array) {
   const arr = [...array];
   for (let i = arr.length - 1; i > 0; i--) {
@@ -318,7 +331,6 @@ function shuffle(array) {
   return arr;
 }
 
-/** Truncate a string to maxLen chars, adding ellipsis if needed */
 function truncate(str, maxLen) {
   return str.length > maxLen ? str.slice(0, maxLen) + '…' : str;
 }

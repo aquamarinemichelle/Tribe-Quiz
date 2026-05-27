@@ -3,72 +3,169 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kwa khanya Quiz – Zulu Culture</title>
+  <title>Ubuntu Quiz – South African Cultures</title>
   <link rel="stylesheet" href="css/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
 </head>
 <body>
 
-  <!-- ════════════════════════════════
-       SCREEN 1 — HOME / CULTURE SELECT
-  ════════════════════════════════ -->
+  <!-- ══════════════════════════════════
+       SCREEN 1 — HOME
+  ══════════════════════════════════ -->
   <div class="screen active" id="screen-home">
-    <div class="home-bg-pattern"></div>
-    <div class="home-content">
-      <div class="home-logo">🌍</div>
-      <h1 class="home-title">Ubuntu Quiz</h1>
-      <p class="home-sub">Explore the rich cultures of South Africa</p>
 
-      <div class="culture-section-label">Choose a culture to begin</div>
+    <!-- Full background image (background.jpeg from your homepage folder) -->
+    <div class="home-bg-image"></div>
+    <!-- Dark gradient overlay so text stays readable -->
+    <div class="home-bg-overlay"></div>
 
-      <div class="culture-grid" id="culture-grid">
-        <!-- Injected by JS -->
+    <!-- ── NAVBAR ── -->
+    <nav class="navbar">
+      <div class="navbar-brand">
+        <!--
+        <span class="navbar-globe">🌍</span>
+        <span class="navbar-title">Ubuntu Quiz</span>
       </div>
+      
+      <ul class="navbar-links">
+        <li><a href="#" class="nav-link active">Home</a></li>
+        <li><a href="#" class="nav-link" onclick="showHowToPlay(); return false;">How to Play</a></li>
+        <li><a href="#" class="nav-link">Leaderboard</a></li>
+        <li><a href="#" class="nav-link">About</a></li>
+      </ul>
+    
+      <button class="nav-profile-btn">👤 Profile</button> -->
+      <!-- Mobile hamburger button -->
+      <button class="nav-hamburger" id="nav-hamburger">☰</button>
+    
+    </nav>
 
-      <p class="footer-note">More cultures coming soon — Sepedi, Tswana, Venda &amp; more</p>
+    <!-- Mobile dropdown menu -->
+    <div class="mobile-nav" id="mobile-nav">
+      <a href="#" class="mobile-link">Home</a>
+      <a href="#" class="mobile-link" onclick="showHowToPlay(); return false;">How to Play</a>
+      <a href="#" class="mobile-link">Leaderboard</a>
+      <a href="#" class="mobile-link">About</a>
+    </div>
+
+    <!-- ── HERO ── -->
+    <section class="hero">
+      <h1 class="hero-title">Ubuntu Quiz</h1>
+      <div class="hero-divider">
+        <span class="divider-line"></span>
+        <span class="divider-icon">◆</span>
+        <span class="divider-line"></span>
+      </div>
+      <p class="hero-sub">Explore the rich cultures of South Africa</p>
+      <p class="hero-desc">
+        Test your knowledge, discover amazing traditions,<br>
+        and celebrate our beautiful diversity!
+      </p>
+      <div class="hero-buttons">
+        <button class="btn-start" onclick="scrollToCultures()">START QUIZ &nbsp;›</button>
+        <button class="btn-howto" onclick="showHowToPlay()">▶ &nbsp;HOW TO PLAY</button>
+      </div>
+    </section>
+
+    <!-- ── CHOOSE A CULTURE ── -->
+    <section class="culture-section" id="culture-section">
+      <div class="culture-heading">
+        <span class="culture-heading-deco">◆</span>
+        <span class="culture-heading-text">CHOOSE A CULTURE</span>
+        <span class="culture-heading-deco">◆</span>
+      </div>
+      <div class="culture-grid" id="culture-grid">
+        <!-- Cards filled by game.js -->
+      </div>
+    </section>
+
+    <!-- ── FEATURES STRIP ── -->
+    <section class="features-strip">
+      <div class="feature-item">
+        <span class="feature-icon">🏆</span>
+        <div class="feature-text">
+          <div class="feature-title">Fun &amp; Educational</div>
+          <div class="feature-sub">Learn while you play</div>
+        </div>
+      </div>
+      <div class="feature-item">
+        <span class="feature-icon">🧭</span>
+        <div class="feature-text">
+          <div class="feature-title">Discover Cultures</div>
+          <div class="feature-sub">Explore traditions &amp; history</div>
+        </div>
+      </div>
+      <div class="feature-item">
+        <span class="feature-icon">🤝</span>
+        <div class="feature-text">
+          <div class="feature-title">Celebrate Diversity</div>
+          <div class="feature-sub">United in our differences</div>
+        </div>
+      </div>
+      <div class="feature-item">
+        <span class="feature-icon">🎖️</span>
+        <div class="feature-text">
+          <div class="feature-title">Earn Badges</div>
+          <div class="feature-sub">Track your achievements</div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+  <!-- END SCREEN HOME -->
+
+
+  <!-- ══════════════════════════════════
+       HOW TO PLAY MODAL
+  ══════════════════════════════════ -->
+  <div class="modal-overlay" id="howto-modal">
+    <div class="modal-box">
+      <button class="modal-close" onclick="hideHowToPlay()">✕</button>
+      <h2 class="modal-title">How to Play</h2>
+      <ol class="howto-steps">
+        <li>Choose a South African culture from the home screen</li>
+        <li>Answer 10 questions about that culture</li>
+        <li>Pick the correct answer from 4 options</li>
+        <li>Each correct answer earns you 10 points</li>
+        <li>See your results and beat your high score!</li>
+      </ol>
+      <button class="btn-start modal-got-it" onclick="hideHowToPlay()">Got it! Let's Play</button>
     </div>
   </div>
 
-  <!-- ════════════════════════════════
+
+  <!-- ══════════════════════════════════
        SCREEN 2 — QUIZ
-  ════════════════════════════════ -->
+  ══════════════════════════════════ -->
   <div class="screen" id="screen-quiz">
     <header class="quiz-header">
-      <button class="back-btn" id="back-btn" aria-label="Back to home">&#8592; Home</button>
+      <button class="back-btn" id="back-btn">&#8592; Home</button>
       <span class="culture-pill" id="quiz-culture-label">Zulu</span>
       <span class="score-display" id="live-score">0 pts</span>
     </header>
-
     <div class="progress-wrap">
       <div class="progress-bar" id="progress-bar"></div>
     </div>
-
     <main class="quiz-main">
       <div class="q-meta">
         <span class="q-category" id="q-category">Category</span>
         <span class="q-counter" id="q-counter">1 / 10</span>
       </div>
-
       <div class="question-card">
-        <!-- Question image appears here -->
-        <img class="question-image" id="question-img" src="" alt="Cultural illustration" style="display: none;" />
+        <img class="question-image" id="question-img" src="" alt="Cultural illustration" style="display:none;" />
         <p class="q-text" id="q-text">Loading question...</p>
       </div>
-
-      <div class="options-grid" id="options-grid">
-        <!-- Injected by JS -->
-      </div>
-
+      <div class="options-grid" id="options-grid"></div>
       <div class="feedback-bar" id="feedback-bar"></div>
-
-      <button class="next-btn" id="next-btn" style="display:none;">Next question &rarr;</button>
+      <button class="next-btn" id="next-btn" style="display:none;">Next question →</button>
     </main>
   </div>
 
-  <!-- ════════════════════════════════
+
+  <!-- ══════════════════════════════════
        SCREEN 3 — RESULTS
-  ════════════════════════════════ -->
+  ══════════════════════════════════ -->
   <div class="screen" id="screen-results">
     <div class="results-wrap">
       <div class="results-medal" id="results-medal">🏆</div>
@@ -77,13 +174,11 @@
       <div class="results-pct-bar-wrap">
         <div class="results-pct-bar" id="results-pct-bar"></div>
       </div>
-      <p class="results-msg" id="results-msg">Outstanding knowledge of Zulu culture!</p>
-
+      <p class="results-msg" id="results-msg">Outstanding knowledge!</p>
       <div class="breakdown-card">
         <div class="breakdown-title">Question Breakdown</div>
         <div id="breakdown-list"></div>
       </div>
-
       <div class="results-actions">
         <button class="btn-outline" id="play-again-btn">Play again</button>
         <button class="btn-solid" id="change-culture-btn">Change culture</button>
@@ -91,7 +186,47 @@
     </div>
   </div>
 
+
+  <!-- LOAD ALL CULTURE FILES -->
+  <script src="data/zulu-questions.js"></script>
+  <script src="data/xhosa-questions.js"></script>
+  <script src="data/sotho-questions.js"></script>
+  <script src="data/sepedi-questions.js"></script>
+  <script src="data/tswana-questions.js"></script>
+  <script src="data/tsonga-questions.js"></script>
+  <script src="data/venda-questions.js"></script>
+  <script src="data/swati-questions.js"></script>
+  <script src="data/ndebele-questions.js"></script>
+  <script src="data/afrikaans-questions.js"></script>
+  
+  <!-- MASTER QUESTIONS (combines all cultures) -->
   <script src="data/questions.js"></script>
+  <!-- GAME LOGIC -->
   <script src="js/game.js"></script>
+
+  <script>
+    /* ── Modal helpers ── */
+    function showHowToPlay() {
+      document.getElementById('howto-modal').style.display = 'flex';
+    }
+    function hideHowToPlay() {
+      document.getElementById('howto-modal').style.display = 'none';
+    }
+
+    /* ── Scroll to culture cards ── */
+    function scrollToCultures() {
+      document.getElementById('culture-section').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    /* ── Mobile hamburger ── */
+    document.getElementById('nav-hamburger').addEventListener('click', function () {
+      document.getElementById('mobile-nav').classList.toggle('open');
+    });
+
+    /* ── Close modal clicking outside ── */
+    document.getElementById('howto-modal').addEventListener('click', function (e) {
+      if (e.target === this) hideHowToPlay();
+    });
+  </script>
 </body>
 </html>
