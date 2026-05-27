@@ -52,7 +52,7 @@ const ZULU_QUESTIONS = {
       q:    "The Battle of Isandlwana in 1879 was a major Zulu victory against which colonial power?",
       opts: ["Portuguese", "Dutch (Boers)", "British", "German"],
       ans:  2,
-      img:  null
+      img:  "public/zulu-photos/isandlwana.png"
     },
     {
       cat:  "History",
@@ -66,7 +66,7 @@ const ZULU_QUESTIONS = {
       q:    "The Mfecane was a period of widespread chaos and warfare among Nguni tribes mainly caused by?",
       opts: ["Drought", "Shaka's military expansion", "British invasion", "A plague"],
       ans:  1,
-      img:  null
+      img:  "public/zulu-photos/mfecane.jpg"
     },
 
     /* TRADITION */
@@ -75,7 +75,7 @@ const ZULU_QUESTIONS = {
       q:    "The Zulu Reed Dance ceremony is called?",
       opts: ["Umhlanga", "Ukweshwama", "Umemulo", "Ukubuyisa"],
       ans:  0,
-      img:  "public/umhlanga.png"
+      img:  "public/zulu-photos/umhlanga.png"
     },
     {
       cat:  "Tradition",
@@ -87,7 +87,7 @@ const ZULU_QUESTIONS = {
         "A rain-calling ceremony"
       ],
       ans:  1,
-      img:  null
+      img:  "zulu-photos/lobola.png"
     },
     {
       cat:  "Tradition",
@@ -106,7 +106,7 @@ const ZULU_QUESTIONS = {
         "The death of an elder"
       ],
       ans:  1,
-      img:  null
+      img:  "zulu-photos/umemulo.jpg"
     },
 
     /* CULTURE */
@@ -120,7 +120,7 @@ const ZULU_QUESTIONS = {
         "Respect your elders"
       ],
       ans:  1,
-      img:  null
+      img:  "public/zulu-photos/ubuntu.png"
     },
     {
       cat:  "Culture",
@@ -150,7 +150,7 @@ const ZULU_QUESTIONS = {
       q:    "Which a cappella vocal style originated with Zulu migrant workers and became world-famous?",
       opts: ["Kwaito", "Amapiano", "Isicathamiya", "Mbaqanga"],
       ans:  2,
-      img:  "public/isicathamiya.png"
+      img:  null
     },
     {
       cat:  "Music",
@@ -164,7 +164,7 @@ const ZULU_QUESTIONS = {
       q:    "The energetic dance performed by Zulu warriors, also used during ceremonial occasions, is called?",
       opts: ["Gumboot dance", "Indlamu", "Pantsula", "Toyi-toyi"],
       ans:  1,
-      img:  null
+      img:  "public/zulu-photos/indlamu.jpg"
     },
     {
       cat:  "Music",
@@ -180,7 +180,7 @@ const ZULU_QUESTIONS = {
       q:    "The heartland of Zulu culture is which South African province?",
       opts: ["Limpopo", "Gauteng", "KwaZulu-Natal", "Eastern Cape"],
       ans:  2,
-      img:  null
+      img:  "public/zulu-photos/kzn.jpg"
     },
     {
       cat:  "Geography",
