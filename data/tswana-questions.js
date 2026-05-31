@@ -6,7 +6,7 @@
 const TSWANA_QUESTIONS = {
   name:   "Tswana",
   lang:   "Setswana",
-  icon:   "🌾",
+  icon:   "public/homepage/tswana.png",
   locked: false,
   questions: [
     /* LANGUAGE */
@@ -117,7 +117,7 @@ const TSWANA_QUESTIONS = {
       q:    "Tswana people are known for their intricate?",
       opts: ["Beadwork", "Pottery", "Wood carving", "Basket weaving"],
       ans:  0,
-      img:  "public/tswana-photos/tswana-beadwork.jpg"
+      img:  "public/tswana-photos/beadwork.jpg"
     },
     {
       cat:  "Culture",
