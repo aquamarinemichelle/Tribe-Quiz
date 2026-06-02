@@ -1,6 +1,6 @@
 /**
  * ZULU (IsiZulu) QUESTIONS
- * Team Member: [Your Name]
+ * Team Member: Michelle Mazibuko
  */
 
 const ZULU_QUESTIONS = {

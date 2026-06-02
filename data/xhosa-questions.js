@@ -1,6 +1,6 @@
 /**
  * XHOSA (IsiXhosa) QUESTIONS
- * Team Member: [Your Name]
+ * Team Member: Kwanele
  */
 
 const XHOSA_QUESTIONS = {

@@ -1,6 +1,6 @@
 /**
  * TSWANA (Setswana) QUESTIONS
- * Team Member: [Your Name]
+ * Team Member: Kwanele
  */
 
 const TSWANA_QUESTIONS = {
