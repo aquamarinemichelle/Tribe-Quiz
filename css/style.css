@@ -1,7 +1,6 @@
 /* ══════════════════════════════════════════════════════════
-   UBUNTU QUIZ — FULL CSS
-   Two files changed: index.html + this file (style.css)
-   Everything else (js/game.js, data/*.js) stays the same.
+   UBUNTU QUIZ — FULL CSS (UPDATED)
+   Fixed: Images now show fully without zooming/cropping
 ══════════════════════════════════════════════════════════ */
 
 *, *::before, *::after {
@@ -420,7 +419,6 @@ html, body {
   width: 100%;
   height: 110px;
   overflow: hidden;
-  /* Dark warm background — makes transparent PNGs like the Zulu shield visible */
   background: radial-gradient(circle at center, rgba(60,30,5,0.85) 0%, rgba(10,5,0,0.95) 100%);
   display: flex;
   align-items: center;
@@ -431,10 +429,8 @@ html, body {
 .culture-icon-img {
   width: 100%;
   height: 100%;
-  /* "contain" shows the full image without cropping — fixes tall images like the Zulu shield */
   object-fit: contain;
   display: block;
-  /* Slight brightness boost so dark images stand out */
   filter: brightness(1.15) drop-shadow(0 2px 8px rgba(212,160,23,0.25));
   transition: filter 0.2s, transform 0.2s;
 }
@@ -548,7 +544,7 @@ html, body {
   inset: 0;
   background: rgba(0, 0, 0, 0.80);
   z-index: 200;
-  display: none;                /* hidden by default */
+  display: none;
   align-items: center;
   justify-content: center;
   padding: 1rem;
@@ -728,14 +724,33 @@ html, body {
   flex-direction: column;
   gap: 0.75rem;
 }
+
+/* =============================================
+   FIXED: IMAGES NOW SHOW FULLY WITHOUT ZOOMING
+   ============================================= */
 .question-image {
   width: 100%;
-  max-height: 200px;
-  object-fit: cover;
+  max-height: 280px;
+  min-height: 120px;
+  object-fit: contain;  /* KEY FIX: shows entire image instead of cropping */
+  object-position: center;
   border-radius: var(--radius-md);
   background: rgba(0, 0, 0, 0.3);
   border: 1px solid rgba(212, 160, 23, 0.35);
+  padding: 8px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  display: block;
 }
+
+/* Additional fix for any image that might still be zoomed */
+#question-img {
+  object-fit: contain !important;
+  max-height: 280px !important;
+  width: auto !important;
+  max-width: 100% !important;
+}
+
 .q-text {
   font-size: clamp(16px, 4vw, 20px);
   font-weight: 700;
