@@ -7,7 +7,7 @@
 const SWATI_QUESTIONS = {
   name:   "Swati",
   lang:   "siSwati",
-  icon:   "public/homepage/swati.jpg",
+  icon:   "public/homepage/swati.png",
   locked: false, 
   questions: [
     /* LANGUAGE */
