@@ -88,7 +88,7 @@ const ZULU_QUESTIONS = {
         "A rain-calling ceremony"
       ],
       ans:  1,
-      img:  "zulu-photos/lobola.png"
+      img:  "public/zulu-photos/lobola.png"
     },
     {
       cat:  "Tradition",
@@ -107,7 +107,7 @@ const ZULU_QUESTIONS = {
         "The death of an elder"
       ],
       ans:  1,
-      img:  "zulu-photos/umemulo.jpg"
+      img:  "public/zulu-photos/umemulo.jpg"
     },
 
     /* CULTURE */
@@ -233,7 +233,7 @@ const ZULU_QUESTIONS = {
       q:    "Umqombothi is a traditional Zulu beverage. What is it made from?",
       opts: ["Grapes", "Sorghum and maize", "Sugarcane", "Fermented honey"],
       ans:  1,
-      img:  "public/umqombothi.png"
+      img:  "public/zulu-photos/umqombothi.png"
     },
 
     /* PEOPLE & NOTABLE */
