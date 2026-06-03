@@ -9,6 +9,7 @@ const ZULU_QUESTIONS = {
   icon:   "public/homepage/zulu.png",
   locked: false,
   questions: [
+
     /* LANGUAGE */
     {
       cat:  "Language",
@@ -36,7 +37,7 @@ const ZULU_QUESTIONS = {
       q:    "IsiZulu is one of South Africa's official languages. How many official languages does SA have in total?",
       opts: ["9", "10", "11", "12"],
       ans:  2,
-      img:  null
+      img:  "public/zulu-photos/sa-languages.jpg"
     },
 
     /* HISTORY */
@@ -59,7 +60,7 @@ const ZULU_QUESTIONS = {
       q:    "King Cetshwayo was the last independent king of the Zulu. He was exiled after which war?",
       opts: ["The Anglo-Boer War", "The Anglo-Zulu War", "The Frontier Wars", "The Mfecane"],
       ans:  1,
-      img:  null
+      img:  "public/zulu-photos/anglo-zulu-war.png"
     },
     {
       cat:  "History",
@@ -94,7 +95,7 @@ const ZULU_QUESTIONS = {
       q:    "The Zulu male first-fruits ceremony where the king tastes the new harvest is called?",
       opts: ["Umhlanga", "Ukweshwama", "Lobola", "Umemulo"],
       ans:  1,
-      img:  null
+      img:  "public/zulu-photos/ukweshwama.png"
     },
     {
       cat:  "Tradition",
@@ -150,7 +151,7 @@ const ZULU_QUESTIONS = {
       q:    "Which a cappella vocal style originated with Zulu migrant workers and became world-famous?",
       opts: ["Kwaito", "Amapiano", "Isicathamiya", "Mbaqanga"],
       ans:  2,
-      img:  null
+      img:  "public/zulu-photos/isicathamiya.png"
     },
     {
       cat:  "Music",
