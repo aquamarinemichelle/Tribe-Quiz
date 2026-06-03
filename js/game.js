@@ -266,32 +266,54 @@ el.nextBtn.addEventListener('click', () => {
 });
 
 /* ══════════════════════════════════════
-   RESULTS SCREEN
+   RESULTS SCREEN (with SVG icons instead of emojis)
 ══════════════════════════════════════ */
 function showResults() {
   const total   = questions.length;
   const pct     = Math.round((score / total) * 100);
   const culture = CULTURES[currentCultureKey];
 
-  let medal, title, msg;
+  // Set medal level and title icon based on score
+  let medalLevel, titleIconClass, titleText, msg;
+  
   if (pct >= 90) {
-    medal = '🏆'; title = 'Inkosi! (Chief!)';  msg = 'Incredible knowledge of ' + culture.name + ' culture!';
+    medalLevel = 'gold';
+    titleIconClass = 'chief';
+    titleText = 'Inkosi! (Chief!)';
+    msg = 'Incredible knowledge of ' + culture.name + ' culture!';
   } else if (pct >= 70) {
-    medal = '🌍'; title = 'Excellent!';         msg = 'Outstanding knowledge of ' + culture.name + ' culture!';
+    medalLevel = 'silver';
+    titleIconClass = 'excellent';
+    titleText = 'Excellent!';
+    msg = 'Outstanding knowledge of ' + culture.name + ' culture!';
   } else if (pct >= 50) {
-    medal = '📚'; title = 'Good effort!';       msg = 'Decent knowledge — keep exploring ' + culture.name + ' culture.';
+    medalLevel = 'bronze';
+    titleIconClass = 'good';
+    titleText = 'Good effort!';
+    msg = 'Decent knowledge — keep exploring ' + culture.name + ' culture.';
   } else {
-    medal = '🌱'; title = 'Keep learning!';     msg = 'There\'s lots more to discover about ' + culture.name + ' culture!';
+    medalLevel = 'leaf';
+    titleIconClass = 'learning';
+    titleText = 'Keep learning!';
+    msg = 'There\'s lots more to discover about ' + culture.name + ' culture!';
   }
 
-  el.resultsMedal.textContent    = medal;
-  el.resultsTitle.textContent    = title;
+  // Set medal with data attribute (CSS will show SVG)
+  el.resultsMedal.setAttribute('data-level', medalLevel);
+  el.resultsMedal.textContent = '';  // Clear emoji text
+  
+  // Set title with icon + text
+  el.resultsTitle.innerHTML = `<span class="results-title-icon ${titleIconClass}"></span> ${titleText}`;
   el.resultsScoreBig.textContent = score + ' / ' + total;
-  el.resultsMsg.textContent      = msg;
+  el.resultsMsg.textContent = msg;
 
+  // Animate percentage bar
   el.resultsPctBar.style.width = '0%';
-  setTimeout(() => { el.resultsPctBar.style.width = pct + '%'; }, 100);
+  setTimeout(() => {
+    el.resultsPctBar.style.width = pct + '%';
+  }, 100);
 
+  // Fill in breakdown
   el.breakdownList.innerHTML = answerLog.map(entry => `
     <div class="breakdown-row ${entry.correct ? 'ok' : 'bad'}">
       <span class="bd-q">
