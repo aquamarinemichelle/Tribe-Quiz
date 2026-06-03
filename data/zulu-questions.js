@@ -158,7 +158,7 @@ const ZULU_QUESTIONS = {
       q:    "Ladysmith Black Mambazo made Isicathamiya world-famous. Which famous musician featured them on a 1986 album?",
       opts: ["Michael Jackson", "Paul Simon", "Elton John", "Bob Marley"],
       ans:  1,
-      img:  null
+      img:  "public/zulu-photos/LBM.png"
     },
     {
       cat:  "Music",
