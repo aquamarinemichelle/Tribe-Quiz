@@ -169,10 +169,10 @@ const ZULU_QUESTIONS = {
     },
     {
       cat:  "Music",
-      q:    "Amapiano, a popular modern South African music genre with Zulu influences, originated in which decade?",
-      opts: ["1990s", "2000s", "2010s", "1980s"],
+      q:    "What is the name of the traditional Zulu musical bow, played by plucking a string and using the mouth as a resonator?",
+      opts: ["Uhadi", "Ugubhu", "Umakhweyana", "Isigqi"],
       ans:  2,
-      img:  null
+      img:  "public/zulu-photos/umakhweyana.png"
     },
 
     /* GEOGRAPHY */
