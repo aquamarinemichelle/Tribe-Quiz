@@ -142,7 +142,7 @@ const ZULU_QUESTIONS = {
       q:    "What is the traditional Zulu dwelling called?",
       opts: ["Rondavel", "Indlu (beehive hut)", "Kraal", "Imizi"],
       ans:  1,
-      img:  "public/zulu-photos/zulu-dwelling.png"
+      img:  "public/zulu-photos/zulu-dwelling.jpg"
     },
 
     /* MUSIC & ARTS */
