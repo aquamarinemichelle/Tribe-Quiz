@@ -193,14 +193,14 @@ const ZULU_QUESTIONS = {
         "Coastal wetlands"
       ],
       ans:  1,
-      img:  null
+      img:  "public/zulu-photos/drakensberg.jpg"
     },
     {
       cat:  "Geography",
       q:    "The Zulu Royal Palace is located in which area of KwaZulu-Natal?",
       opts: ["Durban", "Richards Bay", "Nongoma", "Pietermaritzburg"],
       ans:  2,
-      img:  null
+      img:  "public/zulu-photos/zulu-royal-palace.jpg"
     },
 
     /* FOOD */
@@ -214,7 +214,7 @@ const ZULU_QUESTIONS = {
         "Grilled chicken dish"
       ],
       ans:  1,
-      img:  null
+      img:  "public/zulu-photos/uphuthu.png"
     },
     {
       cat:  "Food",
@@ -226,7 +226,7 @@ const ZULU_QUESTIONS = {
         "A type of porridge made from millet"
       ],
       ans:  1,
-      img:  null
+      img:  "public/zulu-photos/amasi.jpg"
     },
     {
       cat:  "Food",
@@ -239,24 +239,24 @@ const ZULU_QUESTIONS = {
     /* PEOPLE & NOTABLE */
     {
       cat:  "Notable People",
-      q:    "Which anti-apartheid activist, a Zulu leader, won the Nobel Peace Prize in 1993 alongside Nelson Mandela?",
-      opts: ["Mangosuthu Buthelezi", "Walter Sisulu", "F.W. de Klerk", "Oliver Tambo"],
-      ans:  2,
-      img:  null
+      q:    "Which Zulu poet and author, known as the 'Zulu Shakespeare', wrote the famous novel 'Insila kaShaka' in 1930?",
+      opts: ["B.W. Vilakazi", "John Dube", "R.R.R. Dhlomo", "Sibusiso Nyembezi"],
+      ans:  1,
+      img:  "public/zulu-photos/insila.jpg"
     },
     {
       cat:  "Notable People",
       q:    "Prince Mangosuthu Buthelezi founded which major Zulu political organization in 1975?",
       opts: ["ANC", "PAC", "Inkatha Freedom Party", "DA"],
       ans:  2,
-      img:  null
+      img:  "public/zulu-photos/buthelezi.png"
     },
     {
       cat:  "Notable People",
       q:    "The current (as of 2024) Zulu King is?",
       opts: ["Goodwill Zwelithini", "Misuzulu kaZwelithini", "Cetshwayo II", "Dingane II"],
       ans:  1,
-      img:  null
+      img:  "public/zulu-photos/king-misuzulu.jpg"
     },
   ]
 };
