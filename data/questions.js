@@ -41,7 +41,7 @@ const CULTURES = {
   swati:     typeof SWATI_QUESTIONS !== 'undefined' ? SWATI_QUESTIONS : safeCulture(null, "Swati", "siSwati", "🛡️"),
   ndebele:   typeof NDEBELE_QUESTIONS !== 'undefined' ? NDEBELE_QUESTIONS : safeCulture(null, "Ndebele", "isiNdebele", "🎨"),
   afrikaans: typeof AFRIKAANS_QUESTIONS !== 'undefined' ? AFRIKAANS_QUESTIONS : safeCulture(null, "Afrikaans", "Afrikaans", "🌻"),
-  
+  swahili:   typeof SWAHILI_QUESTIONS !== 'undefined' ? SWAHILI_QUESTIONS : safeCulture(null, "Swahili", "Kiswahili", "🏝️"),
 };
 
 // Validation helper - shows warning in console if unlocked cultures have <10 questions
