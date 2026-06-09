@@ -52,7 +52,7 @@ const TSWANA_QUESTIONS = {
       q:    "Which famous Tswana chief led his people during the Difaqane/Mfecane wars?",
       opts: ["Kgosi Sechele I", "King Moshoeshoe", "King Shaka", "Kgosi Mampuru"],
       ans:  0,
-      img:  "public/tswana-photos/kgosi-sechele.jpg"
+      img:  "public/tswana-photos/sechele.jpg"
     },
     {
       cat:  "History",
@@ -131,7 +131,7 @@ const TSWANA_QUESTIONS = {
       q:    "What is the Tswana concept of community and togetherness called?",
       opts: ["Ubuntu", "Botho", "Harambee", "Umoja"],
       ans:  1,
-      img:  null
+      img:  "public/tswana-photos/tswana-concept.jpg"
     },
 
     /* MUSIC & ARTS */
@@ -177,14 +177,14 @@ const TSWANA_QUESTIONS = {
       q:    "The Tswana people are concentrated in which South African region?",
       opts: ["Bushveld", "Highveld", "Lowveld", "West Rand"],
       ans:  1,
-      img:  null
+      img:  "public/tswana-photos/highveld.jpg"
     },
     {
       cat:  "Geography",
       q:    "The Kalahari Desert covers much of which Tswana-inhabited area?",
       opts: ["Eastern Cape", "Botswana", "KwaZulu-Natal", "Limpopo"],
       ans:  1,
-      img:  "public/tswana-photos/kalahari-desert.jpg"
+      img:  "public/tswana-photos/kalahari-dessert.jpg"
     },
 
     /* FOOD */
@@ -240,14 +240,14 @@ const TSWANA_QUESTIONS = {
       q:    "Quett Masire served as the second President of which country?",
       opts: ["South Africa", "Zambia", "Botswana", "Lesotho"],
       ans:  2,
-      img:  null
+      img:  "public/tswana-photos/masire.jpg"
     },
     {
       cat:  "Notable People",
       q:    "Which famous Tswana musician sang 'Africa' and was part of Mango Groove?",
       opts: ["Brenda Fassie", "Miriam Makeba", "Claire Johnston", "Yvonne Chaka Chaka"],
       ans:  2,
-      img:  null
+      img:  "public/tswana-photos/claire-johnston.jpg"
     }
   ]
 };
