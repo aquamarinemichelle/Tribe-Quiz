@@ -236,10 +236,14 @@
 
     /* ── PLAY NOW: redirect to auth if not logged in ── */
     async function handlePlayNow() {
-      const loggedIn = await window.requireAuth();
-      if (loggedIn) {
-        document.getElementById('culture-section')
-          .scrollIntoView({ behavior: 'smooth' });
+      if (window.requireAuth) {
+        const loggedIn = await window.requireAuth();
+        if (loggedIn) {
+          document.getElementById('culture-section')
+            .scrollIntoView({ behavior: 'smooth' });
+        } else {
+          window.location.href = 'auth.html?tab=signup';
+        }
       } else {
         window.location.href = 'auth.html?tab=signup';
       }
@@ -247,19 +251,26 @@
 
     /* ── Mobile sign out ── */
     async function mobileSignOut() {
-      await _supabase.auth.signOut();
+      if (window._supabase) {
+        await window._supabase.auth.signOut();
+      }
       document.getElementById('mobile-signin-link').style.display = '';
       document.getElementById('mobile-signup-link').style.display = '';
       document.getElementById('mobile-signout-link').style.display = 'none';
+      if (typeof buildCultureGrid === 'function') {
+        setTimeout(() => buildCultureGrid(), 100);
+      }
     }
 
     /* ── Mobile nav auth state ── */
     async function updateMobileNav() {
-      const { data } = await _supabase.auth.getSession();
-      const loggedIn = !!data.session;
-      document.getElementById('mobile-signin-link').style.display  = loggedIn ? 'none' : '';
-      document.getElementById('mobile-signup-link').style.display  = loggedIn ? 'none' : '';
-      document.getElementById('mobile-signout-link').style.display = loggedIn ? '' : 'none';
+      if (window._supabase) {
+        const { data } = await window._supabase.auth.getSession();
+        const loggedIn = !!data.session;
+        document.getElementById('mobile-signin-link').style.display  = loggedIn ? 'none' : '';
+        document.getElementById('mobile-signup-link').style.display  = loggedIn ? 'none' : '';
+        document.getElementById('mobile-signout-link').style.display = loggedIn ? '' : 'none';
+      }
     }
     updateMobileNav();
 
@@ -269,13 +280,33 @@
     }
 
     /* ── Mobile hamburger ── */
-    document.getElementById('nav-hamburger').addEventListener('click', function () {
-      document.getElementById('mobile-nav').classList.toggle('open');
-    });
+    const hamburger = document.getElementById('nav-hamburger');
+    if (hamburger) {
+      hamburger.addEventListener('click', function () {
+        document.getElementById('mobile-nav').classList.toggle('open');
+      });
+    }
 
     /* ── Close modal clicking outside ── */
-    document.getElementById('howto-modal').addEventListener('click', function (e) {
-      if (e.target === this) hideHowToPlay();
+    const modal = document.getElementById('howto-modal');
+    if (modal) {
+      modal.addEventListener('click', function (e) {
+        if (e.target === this) hideHowToPlay();
+      });
+    }
+
+    /* ── Make _supabase available globally for mobile sign out ── */
+    if (typeof _supabase !== 'undefined') {
+      window._supabase = _supabase;
+    }
+
+    /* ── Rebuild culture grid after page fully loads and auth is ready ── */
+    document.addEventListener('DOMContentLoaded', function() {
+      setTimeout(function() {
+        if (typeof buildCultureGrid === 'function') {
+          buildCultureGrid();
+        }
+      }, 500);
     });
   </script>
 </body>

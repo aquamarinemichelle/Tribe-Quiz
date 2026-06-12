@@ -58,11 +58,9 @@ function showScreen(name) {
 
 /* ══════════════════════════════════════
    BUILD CULTURE CARDS ON HOME SCREEN
-   Cards now have: image/icon on top, name,
-   language, and a PLAY NOW button — just
-   like the screenshot you shared.
 ══════════════════════════════════════ */
 function buildCultureGrid() {
+  if (!el.cultureGrid) return;
   el.cultureGrid.innerHTML = '';
 
   Object.entries(CULTURES).forEach(([key, culture]) => {
@@ -70,6 +68,7 @@ function buildCultureGrid() {
     /* Outer card */
     const card = document.createElement('div');
     card.className = 'culture-card' + (culture.locked ? ' locked' : '');
+    card.setAttribute('data-culture', key);
 
     /* ── Top image / icon area ── */
     const isImagePath = culture.icon && (
@@ -83,7 +82,6 @@ function buildCultureGrid() {
 
     let topHtml = '';
     if (isImagePath) {
-      /* Use the image file, fall back to emoji if it fails to load */
       const fallback = culture.iconFallback || '📚';
       topHtml = `
         <div class="culture-icon-wrapper">
@@ -96,7 +94,6 @@ function buildCultureGrid() {
           <span class="culture-icon" style="display:none;">${fallback}</span>
         </div>`;
     } else {
-      /* Just an emoji */
       topHtml = `
         <div class="culture-icon-wrapper">
           <span class="culture-icon">${culture.icon || '📚'}</span>
@@ -120,10 +117,20 @@ function buildCultureGrid() {
 
     /* Click anywhere on unlocked card starts quiz */
     if (!culture.locked) {
-      card.addEventListener('click', async () => {
+      card.addEventListener('click', async (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        // Check if auth is available and user is logged in
         if (window.requireAuth) {
-          const loggedIn = await window.requireAuth();
-          if (!loggedIn) {
+          try {
+            const loggedIn = await window.requireAuth();
+            if (!loggedIn) {
+              window.location.href = 'auth.html?tab=signup';
+              return;
+            }
+          } catch (err) {
+            console.warn('Auth check failed:', err);
             window.location.href = 'auth.html?tab=signup';
             return;
           }
@@ -365,7 +372,14 @@ function truncate(str, maxLen) {
 }
 
 /* ══════════════════════════════════════
-   INIT
+   INIT - Make functions globally available
 ══════════════════════════════════════ */
-buildCultureGrid();
+window.buildCultureGrid = buildCultureGrid;
+window.startQuiz = startQuiz;
+window.showScreen = showScreen;
+
+// Initial build
+if (typeof CULTURES !== 'undefined') {
+  buildCultureGrid();
+}
 showScreen('home');
