@@ -8,6 +8,10 @@
 const { createClient } = supabase;
 const _supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
+// Make requireAuth globally available for game.js
+window.requireAuth = function() {
+  return _supabase.auth.getSession().then(({ data }) => !!data.session);
+};
 
 /* ══════════════════════════════════════
    AUTH PAGE LOGIC  (auth.html)
@@ -132,7 +136,6 @@ const _supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
   });
 })();
 
-
 /* ══════════════════════════════════════
    HOME PAGE SESSION / NAVBAR  (index.html)
 ══════════════════════════════════════ */
@@ -167,13 +170,18 @@ const _supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
   btnSignOut && btnSignOut.addEventListener('click', async () => {
     await _supabase.auth.signOut();
     refreshNav();
+    // Rebuild culture grid after sign out
+    if (typeof buildCultureGrid === 'function') {
+      setTimeout(() => buildCultureGrid(), 100);
+    }
   });
 
-  /* Guard: culture card clicks require login */
-  window.requireAuth = function() {
-    return _supabase.auth.getSession().then(({ data }) => !!data.session);
-  };
-
   /* Listen for auth changes (tab refocus, etc.) */
-  _supabase.auth.onAuthStateChange(() => refreshNav());
+  _supabase.auth.onAuthStateChange(() => {
+    refreshNav();
+    // Rebuild culture grid when auth state changes
+    if (typeof buildCultureGrid === 'function') {
+      setTimeout(() => buildCultureGrid(), 100);
+    }
+  });
 })();
