@@ -120,7 +120,16 @@ function buildCultureGrid() {
 
     /* Click anywhere on unlocked card starts quiz */
     if (!culture.locked) {
-      card.addEventListener('click', () => startQuiz(key));
+      card.addEventListener('click', async () => {
+        if (window.requireAuth) {
+          const loggedIn = await window.requireAuth();
+          if (!loggedIn) {
+            window.location.href = 'auth.html?tab=signup';
+            return;
+          }
+        }
+        startQuiz(key);
+      });
     }
 
     el.cultureGrid.appendChild(card);
@@ -128,7 +137,7 @@ function buildCultureGrid() {
 }
 
 /* ══════════════════════════════════════
-   START QUIZ
+   START QUIZ 
 ══════════════════════════════════════ */
 function startQuiz(cultureKey) {
   const culture = CULTURES[cultureKey];
@@ -142,10 +151,8 @@ function startQuiz(cultureKey) {
   answered     = false;
   answerLog    = [];
 
-  /* Show emoji in quiz header (not image path) */
-  const isImagePath = culture.icon && culture.icon.includes('.');
-  const displayIcon = isImagePath ? (culture.iconFallback || '🌍') : (culture.icon || '🌍');
-  el.quizCultureLabel.textContent = displayIcon + ' ' + culture.name;
+  // Show ONLY culture name in header 
+  el.quizCultureLabel.textContent = culture.name;
   el.liveScore.textContent = '0 pts';
 
   showScreen('quiz');
@@ -266,7 +273,7 @@ el.nextBtn.addEventListener('click', () => {
 });
 
 /* ══════════════════════════════════════
-   RESULTS SCREEN (with SVG icons instead of emojis)
+   RESULTS SCREEN 
 ══════════════════════════════════════ */
 function showResults() {
   const total   = questions.length;
@@ -279,7 +286,7 @@ function showResults() {
   if (pct >= 90) {
     medalLevel = 'gold';
     titleIconClass = 'chief';
-    titleText = 'Inkosi! (Chief!)';
+    titleText = 'Exceptional';
     msg = 'Incredible knowledge of ' + culture.name + ' culture!';
   } else if (pct >= 70) {
     medalLevel = 'silver';

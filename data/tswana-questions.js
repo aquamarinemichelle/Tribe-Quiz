@@ -87,7 +87,7 @@ const TSWANA_QUESTIONS = {
         "An ancestral worship ritual"
       ],
       ans:  1,
-      img:  null
+      img:  "public/tswana-photos/bogadi.jpg"
     },
     {
       cat:  "Tradition",
@@ -124,7 +124,7 @@ const TSWANA_QUESTIONS = {
       q:    "The Tswana traditional dwelling is called?",
       opts: ["Rondavel", "Lapa", "Ntlo", "Moraka"],
       ans:  2,
-      img:  null
+      img:  "public/tswana-photos/ntlo.jpg"
     },
     {
       cat:  "Culture",
@@ -147,7 +147,7 @@ const TSWANA_QUESTIONS = {
       q:    "Famous Tswana musician known for 'Korobela' is?",
       opts: ["Mahlathini", "Oliver Mtukudzi", "Dr. Mageba", "Mpharanyana"],
       ans:  2,
-      img:  null
+      img:  "public/tswana-photos/mageba.png"
     },
     {
       cat:  "Music",

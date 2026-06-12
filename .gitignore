@@ -1,0 +1,16 @@
+# Supabase credentials
+js/supabase-config.js
+
+# Node
+node_modules/
+package-lock.json
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/
+
+# Logs
+*.log
