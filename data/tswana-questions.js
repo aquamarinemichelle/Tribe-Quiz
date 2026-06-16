@@ -59,7 +59,7 @@ const TSWANA_QUESTIONS = {
       q:    "The Tswana royal lineage is known as?",
       opts: ["The House of Senzangakhona", "The House of Chieftaincy", "The Bahurutshe", "The Zulu Kingdom"],
       ans:  2,
-      img:  null
+      img:  "public/tswana-photos/bahurutshe.jpg"
     },
     {
       cat:  "History",
@@ -161,7 +161,7 @@ const TSWANA_QUESTIONS = {
       q:    "The Tswana praise song performed at important ceremonies is called?",
       opts: ["Serankure", "Maboko", "Dipina", "Makgotla"],
       ans:  1,
-      img:  null
+      img:  "public/tswana-photos/maboko.jpg"
     },
 
     /* GEOGRAPHY */
@@ -226,7 +226,7 @@ const TSWANA_QUESTIONS = {
       q:    "Sir Seretse Khama was the first President of which country?",
       opts: ["South Africa", "Zimbabwe", "Botswana", "Namibia"],
       ans:  2,
-      img:  "public/tswana-photos/seretse-khama.jpg"
+      img:  "public/tswana-photos/seretse.png"
     },
     {
       cat:  "Notable People",
@@ -247,7 +247,7 @@ const TSWANA_QUESTIONS = {
       q:    "Which famous Tswana musician sang 'Africa' and was part of Mango Groove?",
       opts: ["Brenda Fassie", "Miriam Makeba", "Claire Johnston", "Yvonne Chaka Chaka"],
       ans:  2,
-      img:  "public/tswana-photos/claire-johnston.jpg"
+      img:  "public/tswana-photos/claire-johnston.jpeg"
     }
   ]
 };
