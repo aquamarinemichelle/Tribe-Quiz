@@ -268,6 +268,18 @@ function showFeedback(isCorrect, message) {
 }
 
 /* ══════════════════════════════════════
+   SAVE SCORE TO LEADERBOARD
+══════════════════════════════════════ */
+async function saveScoreToLeaderboard() {
+  const culture = CULTURES[currentCultureKey];
+  if (!culture) return;
+  
+  if (typeof window.saveScore === 'function') {
+    await window.saveScore(culture.name, score, questions.length);
+  }
+}
+
+/* ══════════════════════════════════════
    NEXT BUTTON
 ══════════════════════════════════════ */
 el.nextBtn.addEventListener('click', () => {
@@ -280,12 +292,15 @@ el.nextBtn.addEventListener('click', () => {
 });
 
 /* ══════════════════════════════════════
-   RESULTS SCREEN 
+   RESULTS SCREEN (with score saving)
 ══════════════════════════════════════ */
 function showResults() {
   const total   = questions.length;
   const pct     = Math.round((score / total) * 100);
   const culture = CULTURES[currentCultureKey];
+
+  // ⭐ SAVE SCORE TO LEADERBOARD ⭐
+  saveScoreToLeaderboard();
 
   // Set medal level and title icon based on score
   let medalLevel, titleIconClass, titleText, msg;

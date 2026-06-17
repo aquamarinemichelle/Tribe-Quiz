@@ -20,3 +20,5 @@ CREATE POLICY "Anyone can view scores"
 CREATE POLICY "Users can insert own scores"
   ON scores FOR INSERT
   WITH CHECK (auth.uid() = user_id);
+
+  

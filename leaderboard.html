@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Leaderboard – Ubuntu Quiz</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/leaderboard.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <div class="leaderboard-page">
+    <!-- Background -->
+    <div class="home-bg-image"></div>
+    <div class="home-bg-overlay"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="navbar-brand">
+        <span class="navbar-globe">🌍</span>
+        <span class="navbar-title">Ubuntu Quiz</span>
+      </div>
+      <ul class="navbar-links">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="#" class="nav-link" onclick="showHowToPlay(); return false;">How to Play</a></li>
+        <li><a href="leaderboard.html" class="nav-link active">Leaderboard</a></li>
+        <li><a href="#" class="nav-link">About</a></li>
+      </ul>
+      <div id="nav-auth-area" class="nav-auth-area" style="display:none;">
+        <a href="auth.html" class="nav-link">Sign In</a>
+        <a href="auth.html?tab=signup" class="btn-nav-signup">Sign Up</a>
+      </div>
+      <div id="nav-user-area" class="nav-user-area" style="display:none;">
+        <span id="nav-user-name" class="nav-user-name"></span>
+        <button id="btn-signout" class="btn-nav-signout">Sign Out</button>
+      </div>
+      <button class="nav-hamburger" id="nav-hamburger">☰</button>
+    </nav>
+
+    <div class="mobile-nav" id="mobile-nav">
+      <a href="index.html" class="mobile-link">Home</a>
+      <a href="#" class="mobile-link" onclick="showHowToPlay(); return false;">How to Play</a>
+      <a href="leaderboard.html" class="mobile-link active">Leaderboard</a>
+      <a href="#" class="mobile-link">About</a>
+      <hr class="mobile-nav-divider" />
+      <a href="auth.html" class="mobile-link" id="mobile-signin-link">Sign In</a>
+      <a href="auth.html?tab=signup" class="mobile-link mobile-link-signup" id="mobile-signup-link">Sign Up</a>
+      <a href="#" class="mobile-link" id="mobile-signout-link" style="display:none;" onclick="mobileSignOut(); return false;">Sign Out</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="leaderboard-container">
+      <div class="leaderboard-header">
+        <h1 class="leaderboard-title">
+          <span class="title-icon">🏆</span>
+          Leaderboard
+        </h1>
+        <p class="leaderboard-subtitle">Top players from across South Africa</p>
+      </div>
+
+      <!-- Culture Filters -->
+      <div class="leaderboard-filters">
+        <button class="filter-btn active" data-culture="all">All Cultures</button>
+        <button class="filter-btn" data-culture="Zulu">Zulu</button>
+        <button class="filter-btn" data-culture="Xhosa">Xhosa</button>
+        <button class="filter-btn" data-culture="Sesotho">Sesotho</button>
+        <button class="filter-btn" data-culture="Sepedi">Sepedi</button>
+        <button class="filter-btn" data-culture="Tswana">Tswana</button>
+        <button class="filter-btn" data-culture="Swati">Swati</button>
+        <button class="filter-btn" data-culture="Ndebele">Ndebele</button>
+      </div>
+
+      <!-- Leaderboard Table -->
+      <div id="leaderboard-list" class="leaderboard-list">
+        <div class="leaderboard-loading">
+          <div class="loading-spinner"></div>
+          <p>Loading scores...</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- How to Play Modal -->
+  <div class="modal-overlay" id="howto-modal">
+    <div class="modal-box">
+      <button class="modal-close" onclick="hideHowToPlay()">✕</button>
+      <h2 class="modal-title">How to Play</h2>
+      <ol class="howto-steps">
+        <li>Choose a South African culture from the home screen</li>
+        <li>Answer 10 questions about that culture</li>
+        <li>Pick the correct answer from 4 options</li>
+        <li>Each correct answer earns you 10 points</li>
+        <li>See your results and beat your high score!</li>
+      </ol>
+      <button class="btn-start modal-got-it" onclick="hideHowToPlay()">Got it! Let's Play</button>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+  <script src="js/supabase-config.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/leaderboard.js"></script>
+
+  <script>
+    function showHowToPlay() {
+      document.getElementById('howto-modal').style.display = 'flex';
+    }
+    function hideHowToPlay() {
+      document.getElementById('howto-modal').style.display = 'none';
+    }
+
+    // Close modal clicking outside
+    document.getElementById('howto-modal').addEventListener('click', function(e) {
+      if (e.target === this) hideHowToPlay();
+    });
+
+    // Mobile hamburger
+    document.getElementById('nav-hamburger').addEventListener('click', function() {
+      document.getElementById('mobile-nav').classList.toggle('open');
+    });
+
+    // Mobile sign out
+    async function mobileSignOut() {
+      if (typeof _supabase !== 'undefined') {
+        await _supabase.auth.signOut();
+      }
+      document.getElementById('mobile-signin-link').style.display = '';
+      document.getElementById('mobile-signup-link').style.display = '';
+      document.getElementById('mobile-signout-link').style.display = 'none';
+    }
+
+    // Initialize leaderboard
+    if (typeof initLeaderboard === 'function') {
+      initLeaderboard();
+    }
+  </script>
+</body>
+</html>

@@ -8,10 +8,16 @@
 const { createClient } = supabase;
 const _supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
+// Make _supabase globally available for other scripts (leaderboard, game, etc.)
+window._supabase = _supabase;
+
 // Make requireAuth globally available for game.js
 window.requireAuth = function() {
   return _supabase.auth.getSession().then(({ data }) => !!data.session);
 };
+
+// Expose supabase client for other scripts
+window.supabase = _supabase;
 
 /* ══════════════════════════════════════
    AUTH PAGE LOGIC  (auth.html)
@@ -98,10 +104,15 @@ window.requireAuth = function() {
     btn.disabled    = true;
     btn.textContent = 'Creating account…';
 
-    const { error } = await _supabase.auth.signUp({
+    // Sign up with display_name in metadata
+    const { data, error } = await _supabase.auth.signUp({
       email,
       password,
-      options: { data: { display_name: name } }
+      options: { 
+        data: { 
+          display_name: name 
+        } 
+      }
     });
 
     if (error) {
@@ -109,6 +120,28 @@ window.requireAuth = function() {
       btn.disabled    = false;
       btn.textContent = 'Create Account';
     } else {
+      // If user was created successfully, the trigger will create the profile
+      // But we'll also insert directly to be safe
+      if (data?.user) {
+        try {
+          // Try to insert into profiles table directly
+          // This ensures the profile exists even if trigger fails
+          const { error: profileError } = await _supabase
+            .from('profiles')
+            .upsert({
+              id: data.user.id,
+              display_name: name
+            }, { onConflict: 'id' });
+          
+          if (profileError) {
+            console.warn('Profile insert warning:', profileError);
+            // The trigger should handle it, so we don't show error to user
+          }
+        } catch (profileErr) {
+          console.warn('Profile insert error:', profileErr);
+        }
+      }
+      
       showMessage(
         'Account created! Check your email to confirm, then sign in.',
         false
@@ -125,7 +158,12 @@ window.requireAuth = function() {
     btn.addEventListener('click', async () => {
       await _supabase.auth.signInWithOAuth({
         provider: 'google',
-        options:  { redirectTo: window.location.origin + '/index.html' }
+        options:  { 
+          redirectTo: window.location.origin + '/index.html',
+          data: {
+            display_name: 'Google User' // Default name for Google users
+          }
+        }
       });
     });
   });
@@ -153,9 +191,30 @@ window.requireAuth = function() {
     const session  = data.session;
 
     if (session) {
-      const name = session.user.user_metadata?.display_name
-                || session.user.email.split('@')[0];
-      navUserName.textContent = '👤 ' + name;
+      // Try to get display name from profiles table first
+      let displayName = session.user.user_metadata?.display_name;
+      
+      // If not in metadata, try to fetch from profiles table
+      if (!displayName) {
+        try {
+          const { data: profileData, error: profileError } = await _supabase
+            .from('profiles')
+            .select('display_name')
+            .eq('id', session.user.id)
+            .single();
+          
+          if (!profileError && profileData?.display_name) {
+            displayName = profileData.display_name;
+          }
+        } catch (e) {
+          // Fallback to email or default
+        }
+      }
+      
+      // Fallback to email or default
+      displayName = displayName || session.user.email?.split('@')[0] || 'Player';
+      
+      navUserName.textContent = '👤 ' + displayName;
       navAuthArea.style.display = 'none';
       navUser.style.display     = 'flex';
     } else {
