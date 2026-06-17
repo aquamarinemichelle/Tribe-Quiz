@@ -121,7 +121,6 @@ function buildCultureGrid() {
         e.preventDefault();
         e.stopPropagation();
         
-        // Check if auth is available and user is logged in
         if (window.requireAuth) {
           try {
             const loggedIn = await window.requireAuth();
@@ -158,7 +157,6 @@ function startQuiz(cultureKey) {
   answered     = false;
   answerLog    = [];
 
-  // Show ONLY culture name in header 
   el.quizCultureLabel.textContent = culture.name;
   el.liveScore.textContent = '0 pts';
 
@@ -178,18 +176,15 @@ function loadQuestion() {
   el.qCounter.textContent  = (currentIndex + 1) + ' / ' + total;
   el.qText.textContent     = q.q;
 
-  /* Progress bar */
   el.progressBar.style.width = ((currentIndex / total) * 100) + '%';
 
-  /* Reset feedback + next btn */
   el.feedbackBar.className   = 'feedback-bar';
   el.feedbackBar.textContent = '';
   el.nextBtn.style.display   = 'none';
   el.nextBtn.textContent     = currentIndex === total - 1
-    ? 'See my results 🏆'
+    ? 'See my results'
     : 'Next question →';
 
-  /* Question image */
   if (q.img && q.img.trim() !== '' && q.img !== null) {
     el.questionImg.src = q.img;
     el.questionImg.style.display = 'block';
@@ -240,14 +235,14 @@ function handleAnswer(clickedBtn, chosenIndex, correctIndex, questionText, corre
     score++;
     totalPoints += POINTS_PER_CORRECT;
     clickedBtn.classList.add('correct');
-    showFeedback(true, '✓ Correct! Well done!');
+    showFeedback(true, 'Correct! Well done!');
   } else {
     clickedBtn.classList.add('wrong');
     allBtns.forEach(b => {
       const match = shuffled.find(s => s.text === b.textContent);
       if (match && match.origIndex === correctIndex) b.classList.add('correct');
     });
-    showFeedback(false, '✗ Incorrect. Correct answer: ' + correctText);
+    showFeedback(false, 'Incorrect. Correct answer: ' + correctText);
   }
 
   el.liveScore.textContent = totalPoints + ' pts';
@@ -327,22 +322,18 @@ function showResults() {
     msg = 'There\'s lots more to discover about ' + culture.name + ' culture!';
   }
 
-  // Set medal with data attribute (CSS will show SVG)
   el.resultsMedal.setAttribute('data-level', medalLevel);
-  el.resultsMedal.textContent = '';  // Clear emoji text
+  el.resultsMedal.textContent = '';
   
-  // Set title with icon + text
   el.resultsTitle.innerHTML = `<span class="results-title-icon ${titleIconClass}"></span> ${titleText}`;
   el.resultsScoreBig.textContent = score + ' / ' + total;
   el.resultsMsg.textContent = msg;
 
-  // Animate percentage bar
   el.resultsPctBar.style.width = '0%';
   setTimeout(() => {
     el.resultsPctBar.style.width = pct + '%';
   }, 100);
 
-  // Fill in breakdown
   el.breakdownList.innerHTML = answerLog.map(entry => `
     <div class="breakdown-row ${entry.correct ? 'ok' : 'bad'}">
       <span class="bd-q">
@@ -350,8 +341,8 @@ function showResults() {
         ${!entry.correct ? '<span class="bd-correct-ans">✓ ' + entry.correctAnswer + '</span>' : ''}
       </span>
       ${entry.correct
-        ? '<span class="bd-result-correct">✓</span>'
-        : '<span class="bd-result-wrong">✗</span>'}
+        ? '<span class="bd-result-correct">Correct</span>'
+        : '<span class="bd-result-wrong">Incorrect</span>'}
     </div>
   `).join('');
 
@@ -387,13 +378,12 @@ function truncate(str, maxLen) {
 }
 
 /* ══════════════════════════════════════
-   INIT - Make functions globally available
+   INIT
 ══════════════════════════════════════ */
 window.buildCultureGrid = buildCultureGrid;
 window.startQuiz = startQuiz;
 window.showScreen = showScreen;
 
-// Initial build
 if (typeof CULTURES !== 'undefined') {
   buildCultureGrid();
 }
