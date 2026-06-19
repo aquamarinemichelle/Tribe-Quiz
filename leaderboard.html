@@ -26,7 +26,7 @@
         <li><a href="index.html" class="nav-link">Home</a></li>
         <li><a href="#" class="nav-link" onclick="showHowToPlay(); return false;">How to Play</a></li>
         <li><a href="leaderboard.html" class="nav-link active">Leaderboard</a></li>
-        <li><a href="#" class="nav-link">About</a></li>
+        <li><a href="#" class="nav-link" onclick="showAbout(); return false;">About</a></li>
       </ul>
       <div id="nav-auth-area" class="nav-auth-area" style="display:none;">
         <a href="auth.html" class="nav-link">Sign In</a>
@@ -43,7 +43,7 @@
       <a href="index.html" class="mobile-link">Home</a>
       <a href="#" class="mobile-link" onclick="showHowToPlay(); return false;">How to Play</a>
       <a href="leaderboard.html" class="mobile-link active">Leaderboard</a>
-      <a href="#" class="mobile-link">About</a>
+      <a href="#" class="mobile-link" onclick="showAbout(); return false;">About</a>
       <hr class="mobile-nav-divider" />
       <a href="auth.html" class="mobile-link" id="mobile-signin-link">Sign In</a>
       <a href="auth.html?tab=signup" class="mobile-link mobile-link-signup" id="mobile-signup-link">Sign Up</a>
@@ -53,10 +53,14 @@
     <!-- Main Content -->
     <div class="leaderboard-container">
       <div class="leaderboard-header">
-        <h1 class="leaderboard-title">
-          <span class="title-icon">🏆</span>
-          Leaderboard
-        </h1>
+        <div class="lb-stars-wrap">
+          <span class="lb-star lb-star-side">★</span>
+          <span class="lb-star lb-star-main">★<span class="lb-trophy">🏆</span></span>
+          <span class="lb-star lb-star-side">★</span>
+        </div>
+        <div class="lb-ribbon">
+          <span class="lb-ribbon-text">LEADERBOARD</span>
+        </div>
         <p class="leaderboard-subtitle">Top players from across South Africa</p>
       </div>
 
@@ -98,6 +102,26 @@
     </div>
   </div>
 
+  <!-- About Modal -->
+  <div class="modal-overlay" id="about-modal">
+    <div class="modal-box">
+      <button class="modal-close" onclick="hideAbout()">✕</button>
+      <h2 class="modal-title">About Ubuntu Quiz</h2>
+      <p class="about-text">
+        Ubuntu Quiz celebrates the rich cultural heritage of South Africa.
+        Test your knowledge of Zulu, Xhosa, Sesotho, Sepedi, Tswana, Swati,
+        and Ndebele traditions, language, food, and customs.
+      </p>
+      <p class="about-text">
+        Whether you're learning about your own culture or discovering
+        someone else's, every question is a step toward celebrating the
+        diversity that makes South Africa special. <strong>Ubuntu</strong> —
+        "I am because we are."
+      </p>
+      <button class="btn-start modal-got-it" onclick="hideAbout()">Close</button>
+    </div>
+  </div>
+
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
   <script src="js/supabase-config.js"></script>
@@ -111,10 +135,19 @@
     function hideHowToPlay() {
       document.getElementById('howto-modal').style.display = 'none';
     }
+    function showAbout() {
+      document.getElementById('about-modal').style.display = 'flex';
+    }
+    function hideAbout() {
+      document.getElementById('about-modal').style.display = 'none';
+    }
 
     // Close modal clicking outside
     document.getElementById('howto-modal').addEventListener('click', function(e) {
       if (e.target === this) hideHowToPlay();
+    });
+    document.getElementById('about-modal').addEventListener('click', function(e) {
+      if (e.target === this) hideAbout();
     });
 
     // Mobile hamburger

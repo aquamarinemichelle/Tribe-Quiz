@@ -43,6 +43,83 @@
   margin-top: 0.5rem;
 }
 
+/* ── Stars + Ribbon Banner ── */
+.lb-stars-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: -22px;
+  position: relative;
+  z-index: 2;
+}
+.lb-star {
+  color: #f5c842;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.4);
+  filter: drop-shadow(0 0 8px rgba(245, 200, 66, 0.5));
+}
+.lb-star-side {
+  font-size: 34px;
+  margin-top: 14px;
+}
+.lb-star-main {
+  font-size: 64px;
+  position: relative;
+  display: inline-block;
+}
+.lb-trophy {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -42%);
+  font-size: 26px;
+  filter: none;
+}
+
+.lb-ribbon {
+  position: relative;
+  display: inline-block;
+  background: linear-gradient(180deg, #f5c842 0%, #d4a017 50%, #a07010 100%);
+  border: 2px solid #8a5c0a;
+  color: #2a1800;
+  font-family: 'Cinzel', 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: 1.6rem;
+  letter-spacing: 3px;
+  padding: 10px 48px;
+  margin: 0 auto;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.4);
+}
+.lb-ribbon::before,
+.lb-ribbon::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+.lb-ribbon::before {
+  left: -22px;
+  border-width: 24px 22px 24px 0;
+  border-color: transparent #8a5c0a transparent transparent;
+}
+.lb-ribbon::after {
+  right: -22px;
+  border-width: 24px 0 24px 22px;
+  border-color: transparent transparent transparent #8a5c0a;
+}
+.lb-ribbon-text {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 480px) {
+  .lb-star-main { font-size: 48px; }
+  .lb-star-side { font-size: 26px; margin-top: 10px; }
+  .lb-ribbon { font-size: 1.1rem; padding: 8px 28px; letter-spacing: 2px; }
+}
+
 /* Filters */
 .leaderboard-filters {
   display: flex;

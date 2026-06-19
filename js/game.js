@@ -289,13 +289,22 @@ el.nextBtn.addEventListener('click', () => {
 /* ══════════════════════════════════════
    RESULTS SCREEN (with score saving)
 ══════════════════════════════════════ */
-function showResults() {
+async function showResults() {
   const total   = questions.length;
   const pct     = Math.round((score / total) * 100);
   const culture = CULTURES[currentCultureKey];
 
   // ⭐ SAVE SCORE TO LEADERBOARD ⭐
-  saveScoreToLeaderboard();
+  // Disable nav buttons so the user can't navigate away before the
+  // save finishes (this was the cause of missing culture scores)
+  el.playAgainBtn.disabled     = true;
+  el.changeCultureBtn.disabled = true;
+  saveScoreToLeaderboard()
+    .catch(err => console.error('Score save failed:', err))
+    .finally(() => {
+      el.playAgainBtn.disabled     = false;
+      el.changeCultureBtn.disabled = false;
+    });
 
   // Set medal level and title icon based on score
   let medalLevel, titleIconClass, titleText, msg;

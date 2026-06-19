@@ -272,7 +272,7 @@ async function saveScore(culture, score, total) {
     return false;
   }
   
-  console.log('👤 Saving score for user:', session.user.id);
+  console.log('👤 Saving score for user:', session.user.id, '| culture:', JSON.stringify(culture));
   
   try {
     const { data, error } = await _supabase
