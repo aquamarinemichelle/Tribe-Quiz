@@ -1,6 +1,6 @@
 /**
  * SWAHILI (Kiswahili) QUESTIONS
- * Team Member: [Your Name]
+ * Team Member: Kwanele Myeni
  */
 
 const SWAHILI_QUESTIONS = {

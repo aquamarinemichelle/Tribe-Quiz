@@ -1,6 +1,6 @@
 /**
  * SESOTHO (Sesotho) QUESTIONS
- * Team Member: [Your Name]
+ * Team Member: Michelle Mazibuko
  * Status: Ready to unlock
  */
 

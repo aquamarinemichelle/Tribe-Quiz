@@ -1,6 +1,6 @@
 /**
  * XHOSA (IsiXhosa) QUESTIONS
- * Team Member: Kwanele
+ * Team Member: Kwanele Myeni
  */
 
 const XHOSA_QUESTIONS = {
