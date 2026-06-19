@@ -1,14 +1,13 @@
 /**
  * SESOTHO (Sesotho) QUESTIONS
  * Team Member: Michelle Mazibuko
- * Status: Ready to unlock
+ * 
  */
 
 const SOTHO_QUESTIONS = {
   name:   "Sesotho",
   lang:   "Sesotho",
   icon:   "public/homepage/sesotho.png", 
-  iconFallback: "🏔️",
   locked: false,  
   questions: [
     /* LANGUAGE */
@@ -54,21 +53,21 @@ const SOTHO_QUESTIONS = {
       q:    "Who was the legendary founder of the Basotho nation in the early 19th century?",
       opts: ["Moshoeshoe I", "Shaka Zulu", "Mzilikazi", "Sobhuza I"],
       ans:  0,
-      img:  null
+      img:  "public/sotho-photos/moshoeshoe.jpg"
     },
     {
       cat:  "History",
       q:    "King Moshoeshoe I established his stronghold on which mountain?",
       opts: ["Table Mountain", "Thaba-Bosiu", "Drakensberg", "Majesty Mountain"],
       ans:  1,
-      img:  null
+      img:  "public/sotho-photos/thaba-bosiu.jpg"
     },
     {
       cat:  "History",
       q:    "The Basotho successfully defended themselves against which colonial power in the Free State-Basotho Wars?",
       opts: ["British", "Portuguese", "Boers (Dutch settlers)", "Germans"],
       ans:  2,
-      img:  null
+      img:  "public/sotho-photos/basotho-war.jpg"
     },
     {
       cat:  "History",
