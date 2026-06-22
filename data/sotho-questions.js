@@ -148,14 +148,14 @@ const SOTHO_QUESTIONS = {
       q:    "What is the traditional Basotho homestead called?",
       opts: ["Kraal", "Motenko", "Rondavel", "Lapa"],
       ans:  1,
-      img:  null
+      img:  "public/sotho-photos/homestead.png"
     },
     {
       cat:  "Culture",
       q:    "Basotho women are famous for what type of traditional art?",
       opts: ["Beadwork", "Pottery", "Mural painting", "Basket weaving"],
       ans:  2,
-      img:  null
+      img:  "public/sotho-photos/mural-art.png"
     },
 
     /* MUSIC & ARTS */
@@ -164,21 +164,21 @@ const SOTHO_QUESTIONS = {
       q:    "Which traditional Lesotho musical instrument is a stringed bow?",
       opts: ["Thomo", "Lesiba", "Uhadi", "Mbira"],
       ans:  1,
-      img:  null
+      img:  "public/sotho-photos/lesiba.jpg"
     },
     {
       cat:  "Music",
       q:    "Famo music is a popular genre in Lesotho. What instrument is central to Famo?",
       opts: ["Guitar", "Accordion", "Drums", "Violin"],
       ans:  1,
-      img:  null
+      img:  "public/sotho-photos/famo.jpg"
     },
     {
       cat:  "Music",
       q:    "Which famous Lesotho musician is known for the hit 'Mosotho'?",
       opts: ["Tsepo Tshola", "Sankomota", "Lekanta", "Machesa"],
       ans:  0,
-      img:  null
+      img:  "public/sotho-photos/tsepo.png"
     },
     {
       cat:  "Music",
