@@ -104,21 +104,21 @@ const SOTHO_QUESTIONS = {
       q:    "What is the distinctive conical hat of Lesotho called?",
       opts: ["Mokorotlo", "Basotho hat", "Mophato", "Seanamarena"],
       ans:  0,
-      img:  "public/sotho-photos/mokorotlo.png"
+      img:  "public/sotho-photos/mokorotlo.png" 
     },
     {
       cat:  "Tradition",
       q:    "The traditional Basotho dance performed at ceremonies is called?",
       opts: ["Indlamu", "Pantsula", "Mokhibo", "Gumboot"],
       ans:  2,
-      img:  null
+      img:  "public/sotho-photos/mokhibo.jpg"
     },
     {
       cat:  "Tradition",
       q:    "What is 'Lekhotla' in Basotho culture?",
       opts: ["A traditional wedding", "A village council/meeting", "A harvest festival", "A rainmaking ceremony"],
       ans:  1,
-      img:  null
+      img:  "public/sotho-photos/lekhotla.png"
     },
 
     /* CULTURE */
@@ -127,21 +127,21 @@ const SOTHO_QUESTIONS = {
       q:    "The Basotho people are known for their colorful traditional blankets. Which company is famous for producing them?",
       opts: ["Aranda", "Woolworths", "Aranda and Victoria Blankets", "Basotho Mills"],
       ans:  2,
-      img:  null
+      img:  "public/sotho-photos/aranda&victoria.png"
     },
     {
       cat:  "Culture",
       q:    "What is 'Pitso' in Basotho culture?",
       opts: ["A public gathering/indaba", "A type of food", "A traditional weapon", "A wedding ceremony"],
       ans:  0,
-      img:  null
+      img:  "public/sotho-photos/pitso.jpg"
     },
     {
       cat:  "Culture",
       q:    "The Basotho phrase 'Botho' is similar to which South African philosophy?",
       opts: ["Ubuntu", "Sawubona", "Hunhu", "Undhu"],
       ans:  0,
-      img:  null
+      img:  "public/sotho-photos/botho.png"
     },
     {
       cat:  "Culture",
