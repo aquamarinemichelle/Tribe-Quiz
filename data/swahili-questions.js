@@ -67,14 +67,14 @@ const SWAHILI_QUESTIONS = {
       q:    "The ancient Swahili city-states included which famous trading port?",
       opts: ["Timbuktu", "Great Zimbabwe", "Kilwa Kisiwani", "Meroë"],
       ans:  2,
-      img:  "public/swahili-photos/kilwa.jpg"
+      img:  "public/swahili-photos/kilwa-kisiwani.jpg"
     },
     {
       cat:  "History",
       q:    "Swahili is heavily influenced by which language due to trade?",
       opts: ["Portuguese", "English", "Arabic", "French"],
       ans:  2,
-      img:  null
+      img:  "public/swahili-photos/arabic.jpg"
     },
     {
       cat:  "History",
@@ -151,7 +151,7 @@ const SWAHILI_QUESTIONS = {
       q:    "The Swahili concept of 'Ujamaa' means?",
       opts: ["Freedom", "Familyhood/Community", "Respect", "Peace"],
       ans:  1,
-      img:  null
+      img:  "public/swahili-photos/familyhood.jpg"
     },
     {
       cat:  "Culture",

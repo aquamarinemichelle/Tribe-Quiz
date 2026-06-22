@@ -200,7 +200,7 @@
   </div>
 
 
-  <!-- LOAD ALL CULTURE FILES -->
+  
   <script src="data/zulu-questions.js"></script>
   <script src="data/xhosa-questions.js"></script>
   <script src="data/sotho-questions.js"></script>
@@ -226,7 +226,7 @@
   <script src="js/auth.js"></script>
 
   <script>
-    /* ── Modal helpers ── */
+    
     function showHowToPlay() {
       document.getElementById('howto-modal').style.display = 'flex';
     }
@@ -234,7 +234,7 @@
       document.getElementById('howto-modal').style.display = 'none';
     }
 
-    /* ── PLAY NOW: redirect to auth if not logged in ── */
+   
     async function handlePlayNow() {
       if (window.requireAuth) {
         const loggedIn = await window.requireAuth();
@@ -249,7 +249,7 @@
       }
     }
 
-    /* ── Mobile sign out ── */
+    
     async function mobileSignOut() {
       if (window._supabase) {
         await window._supabase.auth.signOut();
@@ -262,7 +262,7 @@
       }
     }
 
-    /* ── Mobile nav auth state ── */
+    
     async function updateMobileNav() {
       if (window._supabase) {
         const { data } = await window._supabase.auth.getSession();
@@ -274,12 +274,12 @@
     }
     updateMobileNav();
 
-    /* ── Scroll to culture cards ── */
+   
     function scrollToCultures() {
       document.getElementById('culture-section').scrollIntoView({ behavior: 'smooth' });
     }
 
-    /* ── Mobile hamburger ── */
+    
     const hamburger = document.getElementById('nav-hamburger');
     if (hamburger) {
       hamburger.addEventListener('click', function () {
@@ -287,7 +287,7 @@
       });
     }
 
-    /* ── Close modal clicking outside ── */
+    
     const modal = document.getElementById('howto-modal');
     if (modal) {
       modal.addEventListener('click', function (e) {
@@ -295,12 +295,12 @@
       });
     }
 
-    /* ── Make _supabase available globally for mobile sign out ── */
+   
     if (typeof _supabase !== 'undefined') {
       window._supabase = _supabase;
     }
 
-    /* ── Rebuild culture grid after page fully loads and auth is ready ── */
+   
     document.addEventListener('DOMContentLoaded', function() {
       setTimeout(function() {
         if (typeof buildCultureGrid === 'function') {
