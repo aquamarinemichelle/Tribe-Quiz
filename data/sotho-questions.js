@@ -74,14 +74,14 @@ const SOTHO_QUESTIONS = {
       q:    "Lesotho gained full independence from Britain in which year?",
       opts: ["1960", "1966", "1970", "1975"],
       ans:  1,
-      img:  null
+      img:  "public/sotho-photos/independence.png"
     },
     {
       cat:  "History",
       q:    "Who was the first Prime Minister of independent Lesotho?",
       opts: ["King Moshoeshoe II", "Leabua Jonathan", "Ntsu Mokhehle", "Pakalitha Mosisili"],
       ans:  1,
-      img:  null
+      img:  "public/sotho-photos/prime-minister.jpg"
     },
 
     /* TRADITION */
@@ -90,21 +90,21 @@ const SOTHO_QUESTIONS = {
       q:    "What is the traditional Basotho blanket called?",
       opts: ["Kente", "Shweshwe", "Seanamarena", "Basotho blanket"],
       ans:  2,
-      img:  "public/sesotho-blanket.png"
+      img:  "public/sotho-photos/seanamarena.jpg"
     },
     {
       cat:  "Tradition",
       q:    "The initiation school for Basotho boys is called?",
       opts: ["Lebollo", "Mokorotlo", "Pitso", "Lekhotla"],
       ans:  0,
-      img:  null
+      img:  "public/sotho-photos/lebollo.jpg"
     },
     {
       cat:  "Tradition",
       q:    "What is the distinctive conical hat of Lesotho called?",
       opts: ["Mokorotlo", "Basotho hat", "Mophato", "Seanamarena"],
       ans:  0,
-      img:  "public/mokorotlo-hat.png"
+      img:  "public/sotho-photos/mokorotlo.png"
     },
     {
       cat:  "Tradition",
