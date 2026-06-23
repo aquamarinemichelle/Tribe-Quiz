@@ -37,14 +37,14 @@ const SWAHILI_QUESTIONS = {
       q:    "How do you say 'Goodbye' in Swahili?",
       opts: ["Asante", "Karibu", "Kwaheri", "Habari"],
       ans:  2,
-      img:  null
+      img:  "public/swahili-photos/goodbye.jpg"
     },
     {
       cat:  "Language",
       q:    "What does 'Karibu' mean in Swahili?",
       opts: ["You're welcome", "Good morning", "Sorry", "Please"],
       ans:  0,
-      img:  null
+      img:  "public/swahili-photos/karibu.jpg"
     },
     {
       cat:  "Language",
@@ -60,7 +60,7 @@ const SWAHILI_QUESTIONS = {
       q:    "The Swahili language originated along which coast of Africa?",
       opts: ["West Africa", "East Africa", "North Africa", "South Africa"],
       ans:  1,
-      img:  "public/swahili-photos/east-africa-coast.jpg"
+      img:  "public/swahili-photos/east-africa.jpg"
     },
     {
       cat:  "History",
@@ -81,7 +81,7 @@ const SWAHILI_QUESTIONS = {
       q:    "The word 'Swahili' comes from the Arabic word 'Sawahil' meaning?",
       opts: ["Coasts", "Traders", "People", "Language"],
       ans:  0,
-      img:  null
+      img:  "public/swahili-photos/coasts.jpg"
     },
     {
       cat:  "History",
@@ -109,7 +109,7 @@ const SWAHILI_QUESTIONS = {
         "An ancestral ritual"
       ],
       ans:  1,
-      img:  null
+      img:  "public/swahili-photos/mchango.jpg"
     },
     {
       cat:  "Tradition",
@@ -144,7 +144,7 @@ const SWAHILI_QUESTIONS = {
         "A religious ceremony"
       ],
       ans:  1,
-      img:  "public/swahili-photos/taarab-music.jpg"
+      img:  "public/swahili-photos/taarabi.jpg"
     },
     {
       cat:  "Culture",
@@ -181,14 +181,14 @@ const SWAHILI_QUESTIONS = {
       q:    "Bongo Flava music originated in which country?",
       opts: ["Kenya", "Uganda", "Tanzania", "Rwanda"],
       ans:  2,
-      img:  "public/swahili-photos/bongo-flava.jpg"
+      img:  "public/swahili-photos/flava.jpg"
     },
     {
       cat:  "Music",
       q:    "The famous Swahili poet and composer of 'Mwana Mdogo' was?",
       opts: ["Muyaka bin Haji", "Siti binti Saad", "Fumo Liyongo", "Shaaban Robert"],
       ans:  1,
-      img:  null
+      img:  "public/swahili-photos/siti.jpg"
     },
 
     /* GEOGRAPHY */
@@ -218,7 +218,7 @@ const SWAHILI_QUESTIONS = {
       q:    "Mombasa, a historic Swahili port city, is in which country?",
       opts: ["Tanzania", "Mozambique", "Kenya", "Somalia"],
       ans:  2,
-      img:  "public/swahili-photos/mombasa.jpg"
+      img:  "public/swahili-photos/kenya.jpg"
     },
 
     /* FOOD */
@@ -258,7 +258,7 @@ const SWAHILI_QUESTIONS = {
       q:    "'Samaki wa Kupaka' is a Swahili dish of?",
       opts: ["Fried fish", "Grilled fish with coconut curry sauce", "Fish soup", "Dried fish"],
       ans:  1,
-      img:  "public/swahili-photos/samaki-kupaka.jpg"
+      img:  "public/swahili-photos/samaki.jpg"
     },
 
     /* NOTABLE PEOPLE */
@@ -288,7 +288,7 @@ const SWAHILI_QUESTIONS = {
       q:    "Barack Obama, who famously used the Swahili phrase 'Sisi kwa sisi', was?",
       opts: ["Kenyan President", "US President", "UN Secretary", "Tanzanian activist"],
       ans:  1,
-      img:  "public/swahili-photos/obama-swahili.jpg"
+      img:  "public/swahili-photos/obama.jpg"
     },
 
     /* PROVERBS & WISDOM */
@@ -302,7 +302,7 @@ const SWAHILI_QUESTIONS = {
         "Patience is a virtue"
       ],
       ans:  1,
-      img:  null
+      img:  "public/swahili-photos/haraka.jpg"
     },
     {
       cat:  "Proverbs",
@@ -314,7 +314,7 @@ const SWAHILI_QUESTIONS = {
         "Don't judge a book by its cover"
       ],
       ans:  0,
-      img:  null
+      img:  "public/swahili-photos/samaki-mmoja.jpg"
     },
     {
       cat:  "Proverbs",

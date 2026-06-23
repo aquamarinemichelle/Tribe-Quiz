@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ubuntu Quiz – South African Cultures</title>
+  <title>Ubuntu Quiz – African Cultures</title>
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/leaderboard.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
 </head>
@@ -23,15 +24,15 @@
     <!-- ── NAVBAR ── -->
     <nav class="navbar">
       <div class="navbar-brand">
-        <span class="navbar-globe">🌍</span>
+        <img src="public/homepage/africa.png" alt="Africa" class="navbar-icon" />
         <span class="navbar-title">Ubuntu Quiz</span>
       </div>
 
       <ul class="navbar-links">
         <li><a href="#" class="nav-link active">Home</a></li>
         <li><a href="#" class="nav-link" onclick="showHowToPlay(); return false;">How to Play</a></li>
-        <li><a href="#" class="nav-link">Leaderboard</a></li>
-        <li><a href="#" class="nav-link">About</a></li>
+       <li><a href="leaderboard.html" class="nav-link">Leaderboard</a></li>
+        <li><a href="#" class="nav-link" onclick="showAbout(); return false;">About</a></li>
       </ul>
 
       <!-- Auth area: shown when logged OUT -->
@@ -55,7 +56,7 @@
       <a href="#" class="mobile-link">Home</a>
       <a href="#" class="mobile-link" onclick="showHowToPlay(); return false;">How to Play</a>
       <a href="#" class="mobile-link">Leaderboard</a>
-      <a href="#" class="mobile-link">About</a>
+      <a href="#" class="mobile-link" onclick="showAbout(); return false;">About</a>
       <hr class="mobile-nav-divider" />
       <a href="auth.html" class="mobile-link" id="mobile-signin-link">Sign In</a>
       <a href="auth.html?tab=signup" class="mobile-link mobile-link-signup" id="mobile-signup-link">Sign Up</a>
@@ -147,6 +148,28 @@
     </div>
   </div>
 
+  <!-- ══════════════════════════════════
+       ABOUT MODAL
+  ══════════════════════════════════ -->
+  <div class="modal-overlay" id="about-modal">
+    <div class="modal-box">
+      <button class="modal-close" onclick="hideAbout()">✕</button>
+      <h2 class="modal-title">About Ubuntu Quiz</h2>
+      <p class="about-text">
+        Ubuntu Quiz celebrates the rich cultural heritage of Africa.
+        Test your knowledge of Zulu, Xhosa, Sesotho, Sepedi, Tswana, Swati,
+        and other African traditions, language, food, and customs.
+      </p>
+      <p class="about-text">
+        Whether you're learning about your own culture or discovering
+        someone else's, every question is a step toward celebrating the
+        diversity that makes Africa special. <strong>Ubuntu</strong> —
+        "I am because we are."
+      </p>
+      <button class="btn-start modal-got-it" onclick="hideAbout()">Close</button>
+    </div>
+  </div>
+
 
   <!-- ══════════════════════════════════
        SCREEN 2 — QUIZ
@@ -224,6 +247,8 @@
   <script src="js/supabase-config.js"></script>
   <!-- AUTH LOGIC -->
   <script src="js/auth.js"></script>
+  <!-- LEADERBOARD LOGIC (needed for saveScore on results screen) -->
+  <script src="js/leaderboard.js"></script>
 
   <script>
     
@@ -232,6 +257,12 @@
     }
     function hideHowToPlay() {
       document.getElementById('howto-modal').style.display = 'none';
+    }
+    function showAbout() {
+      document.getElementById('about-modal').style.display = 'flex';
+    }
+    function hideAbout() {
+      document.getElementById('about-modal').style.display = 'none';
     }
 
    
@@ -292,6 +323,12 @@
     if (modal) {
       modal.addEventListener('click', function (e) {
         if (e.target === this) hideHowToPlay();
+      });
+    }
+    const aboutModal = document.getElementById('about-modal');
+    if (aboutModal) {
+      aboutModal.addEventListener('click', function (e) {
+        if (e.target === this) hideAbout();
       });
     }
 

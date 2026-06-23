@@ -1,14 +1,13 @@
 /**
  * SESOTHO (Sesotho) QUESTIONS
- * Team Member: [Your Name]
- * Status: Ready to unlock
+ * Team Member: Michelle Mazibuko
+ * 
  */
 
 const SOTHO_QUESTIONS = {
   name:   "Sesotho",
   lang:   "Sesotho",
   icon:   "public/homepage/sesotho.png", 
-  iconFallback: "🏔️",
   locked: false,  
   questions: [
     /* LANGUAGE */
@@ -54,35 +53,35 @@ const SOTHO_QUESTIONS = {
       q:    "Who was the legendary founder of the Basotho nation in the early 19th century?",
       opts: ["Moshoeshoe I", "Shaka Zulu", "Mzilikazi", "Sobhuza I"],
       ans:  0,
-      img:  null
+      img:  "public/sotho-photos/moshoeshoe.jpg"
     },
     {
       cat:  "History",
       q:    "King Moshoeshoe I established his stronghold on which mountain?",
       opts: ["Table Mountain", "Thaba-Bosiu", "Drakensberg", "Majesty Mountain"],
       ans:  1,
-      img:  null
+      img:  "public/sotho-photos/thaba-bosiu.jpg"
     },
     {
       cat:  "History",
       q:    "The Basotho successfully defended themselves against which colonial power in the Free State-Basotho Wars?",
       opts: ["British", "Portuguese", "Boers (Dutch settlers)", "Germans"],
       ans:  2,
-      img:  null
+      img:  "public/sotho-photos/basotho-war.jpg"
     },
     {
       cat:  "History",
       q:    "Lesotho gained full independence from Britain in which year?",
       opts: ["1960", "1966", "1970", "1975"],
       ans:  1,
-      img:  null
+      img:  "public/sotho-photos/independence.png"
     },
     {
       cat:  "History",
       q:    "Who was the first Prime Minister of independent Lesotho?",
       opts: ["King Moshoeshoe II", "Leabua Jonathan", "Ntsu Mokhehle", "Pakalitha Mosisili"],
       ans:  1,
-      img:  null
+      img:  "public/sotho-photos/prime-minister.jpg"
     },
 
     /* TRADITION */
@@ -91,35 +90,35 @@ const SOTHO_QUESTIONS = {
       q:    "What is the traditional Basotho blanket called?",
       opts: ["Kente", "Shweshwe", "Seanamarena", "Basotho blanket"],
       ans:  2,
-      img:  "public/sesotho-blanket.png"
+      img:  "public/sotho-photos/seanamarena.jpg"
     },
     {
       cat:  "Tradition",
       q:    "The initiation school for Basotho boys is called?",
       opts: ["Lebollo", "Mokorotlo", "Pitso", "Lekhotla"],
       ans:  0,
-      img:  null
+      img:  "public/sotho-photos/lebollo.jpg"
     },
     {
       cat:  "Tradition",
       q:    "What is the distinctive conical hat of Lesotho called?",
       opts: ["Mokorotlo", "Basotho hat", "Mophato", "Seanamarena"],
       ans:  0,
-      img:  "public/mokorotlo-hat.png"
+      img:  "public/sotho-photos/mokorotlo.png" 
     },
     {
       cat:  "Tradition",
       q:    "The traditional Basotho dance performed at ceremonies is called?",
       opts: ["Indlamu", "Pantsula", "Mokhibo", "Gumboot"],
       ans:  2,
-      img:  null
+      img:  "public/sotho-photos/mokhibo.jpg"
     },
     {
       cat:  "Tradition",
       q:    "What is 'Lekhotla' in Basotho culture?",
       opts: ["A traditional wedding", "A village council/meeting", "A harvest festival", "A rainmaking ceremony"],
       ans:  1,
-      img:  null
+      img:  "public/sotho-photos/lekhotla.png"
     },
 
     /* CULTURE */
@@ -128,35 +127,35 @@ const SOTHO_QUESTIONS = {
       q:    "The Basotho people are known for their colorful traditional blankets. Which company is famous for producing them?",
       opts: ["Aranda", "Woolworths", "Aranda and Victoria Blankets", "Basotho Mills"],
       ans:  2,
-      img:  null
+      img:  "public/sotho-photos/aranda&victoria.png"
     },
     {
       cat:  "Culture",
       q:    "What is 'Pitso' in Basotho culture?",
       opts: ["A public gathering/indaba", "A type of food", "A traditional weapon", "A wedding ceremony"],
       ans:  0,
-      img:  null
+      img:  "public/sotho-photos/pitso.jpg"
     },
     {
       cat:  "Culture",
       q:    "The Basotho phrase 'Botho' is similar to which South African philosophy?",
       opts: ["Ubuntu", "Sawubona", "Hunhu", "Undhu"],
       ans:  0,
-      img:  null
+      img:  "public/sotho-photos/botho.png"
     },
     {
       cat:  "Culture",
       q:    "What is the traditional Basotho homestead called?",
       opts: ["Kraal", "Motenko", "Rondavel", "Lapa"],
       ans:  1,
-      img:  null
+      img:  "public/sotho-photos/homestead.png"
     },
     {
       cat:  "Culture",
       q:    "Basotho women are famous for what type of traditional art?",
       opts: ["Beadwork", "Pottery", "Mural painting", "Basket weaving"],
       ans:  2,
-      img:  null
+      img:  "public/sotho-photos/mural-art.png"
     },
 
     /* MUSIC & ARTS */
@@ -165,21 +164,21 @@ const SOTHO_QUESTIONS = {
       q:    "Which traditional Lesotho musical instrument is a stringed bow?",
       opts: ["Thomo", "Lesiba", "Uhadi", "Mbira"],
       ans:  1,
-      img:  null
+      img:  "public/sotho-photos/lesiba.jpg"
     },
     {
       cat:  "Music",
       q:    "Famo music is a popular genre in Lesotho. What instrument is central to Famo?",
       opts: ["Guitar", "Accordion", "Drums", "Violin"],
       ans:  1,
-      img:  null
+      img:  "public/sotho-photos/famo.jpg"
     },
     {
       cat:  "Music",
       q:    "Which famous Lesotho musician is known for the hit 'Mosotho'?",
       opts: ["Tsepo Tshola", "Sankomota", "Lekanta", "Machesa"],
       ans:  0,
-      img:  null
+      img:  "public/sotho-photos/tsepo.png"
     },
     {
       cat:  "Music",

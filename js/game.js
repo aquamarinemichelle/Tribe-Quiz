@@ -263,6 +263,18 @@ function showFeedback(isCorrect, message) {
 }
 
 /* ══════════════════════════════════════
+   SAVE SCORE TO LEADERBOARD
+══════════════════════════════════════ */
+async function saveScoreToLeaderboard() {
+  const culture = CULTURES[currentCultureKey];
+  if (!culture) return;
+  
+  if (typeof window.saveScore === 'function') {
+    await window.saveScore(culture.name, score, questions.length);
+  }
+}
+
+/* ══════════════════════════════════════
    NEXT BUTTON
 ══════════════════════════════════════ */
 el.nextBtn.addEventListener('click', () => {
@@ -275,13 +287,26 @@ el.nextBtn.addEventListener('click', () => {
 });
 
 /* ══════════════════════════════════════
-   RESULTS SCREEN — Professional (No emojis)
+   RESULTS SCREEN (with score saving)
 ══════════════════════════════════════ */
-function showResults() {
+async function showResults() {
   const total   = questions.length;
   const pct     = Math.round((score / total) * 100);
   const culture = CULTURES[currentCultureKey];
 
+  // ⭐ SAVE SCORE TO LEADERBOARD ⭐
+  // Disable nav buttons so the user can't navigate away before the
+  // save finishes (this was the cause of missing culture scores)
+  el.playAgainBtn.disabled     = true;
+  el.changeCultureBtn.disabled = true;
+  saveScoreToLeaderboard()
+    .catch(err => console.error('Score save failed:', err))
+    .finally(() => {
+      el.playAgainBtn.disabled     = false;
+      el.changeCultureBtn.disabled = false;
+    });
+
+  // Set medal level and title icon based on score
   let medalLevel, titleIconClass, titleText, msg;
   
   if (pct >= 90) {
