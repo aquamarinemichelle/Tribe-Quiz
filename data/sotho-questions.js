@@ -222,14 +222,14 @@ const SOTHO_QUESTIONS = {
       q:    "What is the capital city of Lesotho?",
       opts: ["Maseru", "Mafeteng", "Leribe", "Quthing"],
       ans:  0,
-      img:  null
+      img:  "public/sotho-photos/maseru.png"
     },
     {
       cat:  "Geography",
       q:    "The Maloti Mountains are part of which larger mountain range?",
       opts: ["Drakensberg", "Rwenzori", "Atlas", "Ethiopian Highlands"],
       ans:  0,
-      img:  null
+      img:  "public/sotho-photos/drakensberg.jpeg"
     },
 
     /* FOOD */
@@ -238,22 +238,24 @@ const SOTHO_QUESTIONS = {
       q:    "What is 'Papa' or 'Mieliepap' in Sesotho cuisine?",
       opts: ["Maize porridge", "Meat stew", "Vegetable dish", "Fermented milk"],
       ans:  0,
-      img:  null
+      img:  "public/sotho-photos/papa.jpg"
     },
     {
       cat:  "Food",
       q:    "What is 'Morohe' in Basotho cuisine?",
       opts: ["Dried meat", "Wild spinach/cabbage dish", "Sorghum beer", "Maize bread"],
       ans:  1,
-      img:  null
+      img:  "public/sotho-photos/morohe.jpg"
     },
     {
       cat:  "Food",
       q:    "'Motoho' is a traditional Basotho drink made from...",
       opts: ["Fermented sorghum", "Maize", "Soured milk", "Fruit juice"],
       ans:  0,
-      img:  null
+      img:  "public/sotho-photos/motoho.png"
     },
+  ]
+    /*
     {
       cat:  "Food",
       q:    "What is 'Likhobe'?",
@@ -269,7 +271,7 @@ const SOTHO_QUESTIONS = {
       img:  null
     },
 
-    /* NOTABLE PEOPLE */
+    <!--NOTABLE PEOPLE -->
     {
       cat:  "Notable People",
       q:    "Who is known as the father of the Basotho nation?",
@@ -305,5 +307,5 @@ const SOTHO_QUESTIONS = {
       ans:  3,
       img:  null
     },
-  ]
+  ] */
 };
