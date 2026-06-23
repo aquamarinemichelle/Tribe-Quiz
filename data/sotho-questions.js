@@ -185,14 +185,14 @@ const SOTHO_QUESTIONS = {
       q:    "The band Sankomota, led by Tsepo Tshola, was popular in which decade?",
       opts: ["1970s", "1980s", "1990s", "2000s"],
       ans:  1,
-      img:  null
+      img:  "public/sotho-photos/sankomota.jpg"
     },
     {
       cat:  "Music",
       q:    "What is 'Mokorotlo' also known as in Basotho music?",
       opts: ["A dance", "A traditional song genre", "A musical instrument", "A festival"],
       ans:  1,
-      img:  null
+      img:  "public/sotho-photos/mokorotlo-music.jpg"
     },
 
     /* GEOGRAPHY */
@@ -201,21 +201,21 @@ const SOTHO_QUESTIONS = {
       q:    "Lesotho is known as 'The Kingdom in the Sky' because...",
       opts: ["It has high mountains", "It has many clouds", "It is the highest country in Africa", "It has many airports"],
       ans:  2,
-      img:  "public/lesotho-mountains.png"
+      img:  "public/sotho-photos/lesotho.jpg"
     },
     {
       cat:  "Geography",
       q:    "What is the highest point in Lesotho and southern Africa?",
       opts: ["Table Mountain", "Thabana Ntlenyana", "Drakensberg Peak", "Mount Kilimanjaro"],
       ans:  1,
-      img:  null
+      img:  "public/sotho-photos/thabana-ntlenyana.jpg"
     },
     {
       cat:  "Geography",
       q:    "Lesotho is completely surrounded by which country?",
       opts: ["South Africa", "Botswana", "Zimbabwe", "Eswatini"],
       ans:  0,
-      img:  null
+      img:  "public/sotho-photos/lesotho-sa.jpg"
     },
     {
       cat:  "Geography",
