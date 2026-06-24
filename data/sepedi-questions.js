@@ -95,7 +95,7 @@ const SEPEDI_QUESTIONS = {
         "Ikhazi"
       ],
       ans:  2,
-      img:  null
+      img:  "public/sepedi-photos/magadi.png"
     },
     {
       cat:  "Tradition",
@@ -107,7 +107,7 @@ const SEPEDI_QUESTIONS = {
         "Morena"
       ],
       ans:  1,
-      img:  null
+      img:  "public/sepedi-photos/kgosi.png"
     },
 
     /* CULTURE */
@@ -128,14 +128,14 @@ const SEPEDI_QUESTIONS = {
         "A male elder"
       ],
       ans:  1,
-      img:  null
+      img:  "public/sepedi-photos/ngaka.jpg"
     },
     {
       cat:  "Culture",
       q:    "The concept of 'botho' in Sepedi culture is closely related to which pan-African philosophy?",
       opts: ["Negritude", "Ubuntu", "Pan-Africanism", "Afrocentrism"],
       ans:  1,
-      img:  null
+      img:  "public/sepedi-photos/botho.png"
     },
     {
       cat:  "Culture",
