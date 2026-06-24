@@ -53,21 +53,21 @@ const SEPEDI_QUESTIONS = {
       q:    "King Sekhukhune I famously resisted which colonial power in the 1870s?",
       opts: ["Portuguese", "German", "French", "British"],
       ans:  3,
-      img:  "public/sepedi-photos/sekhukhune.jpg"
+      img:  "public/sepedi-photos/king-sekhukhune.jpg"
     },
     {
       cat:  "History",
       q:    "The Bapedi kingdom's capital during King Sekhukhune's reign was located in which mountain area?",
       opts: ["Magaliesberg", "Drakensberg", "Leolo Mountains", "Waterberg"],
       ans:  2,
-      img:  null
+      img: "public/sepedi-photos/leolo.jpg"
     },
     {
       cat:  "History",
       q:    "The Bapedi people are a subgroup of which broader language family?",
       opts: ["Nguni", "Sotho-Tswana", "Tsonga", "Venda"],
       ans:  1,
-      img:  null
+      img:  "public/sepedi-photos/bapedi.jpg"
     },
 
     /* TRADITION */
@@ -76,14 +76,14 @@ const SEPEDI_QUESTIONS = {
       q:    "The Bapedi initiation school for boys is called?",
       opts: ["Koma", "Umemulo", "Ukweshwama", "Bogwera"],
       ans:  0,
-      img:  "public/sepedi-photos/koma.jpg"
+      img:  "public/sepedi-photos/pedi-initiation.jpg"
     },
     {
       cat:  "Tradition",
       q:    "The Bapedi female initiation ceremony is known as?",
       opts: ["Umhlanga", "Koma ya basadi", "Lobola", "Bjale"],
       ans:  1,
-      img:  null
+      img:  "public/sepedi-photos/pedi-girls-initiation.jpg"
     },
     {
       cat:  "Tradition",
