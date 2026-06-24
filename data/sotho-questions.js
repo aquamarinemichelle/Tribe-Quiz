@@ -34,13 +34,6 @@ const SOTHO_QUESTIONS = {
     },
     {
       cat:  "Language",
-      q:    "Sesotho is an official language of which TWO countries?",
-      opts: ["South Africa & Zimbabwe", "South Africa & Lesotho", "Lesotho & Botswana", "South Africa & Eswatini"],
-      ans:  1,
-      img:  null
-    },
-    {
-      cat:  "Language",
       q:    "What does 'Lebitso la ka ke...' mean?",
       opts: ["I am from...", "My name is...", "I live in...", "I work at..."],
       ans:  1,

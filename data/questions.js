@@ -1,17 +1,3 @@
-/**
- * UBUNTU QUIZ — MASTER QUESTIONS DATABASE
- * ═══════════════════════════════════════════════════════════
- * This file combines all culture-specific question files
- * into the master CULTURES object.
- * 
- * TO UNLOCK A CULTURE:
- *   1. Go to the culture's file (e.g., xhosa-questions.js)
- *   2. Change 'locked: true' to 'locked: false'
- *   3. Make sure there are at least 10 questions
- * 
- * TEAM MEMBERS: Edit ONLY your culture's file!
- * ═══════════════════════════════════════════════════════════
- */
 
 // Helper function to safely get culture data
 function safeCulture(cultureVar, defaultName, defaultLang, defaultIcon) {
@@ -28,8 +14,6 @@ function safeCulture(cultureVar, defaultName, defaultLang, defaultIcon) {
   };
 }
 
-// Combine all culture modules into master CULTURES object
-// This safely handles missing files
 const CULTURES = {
   zulu:      typeof ZULU_QUESTIONS !== 'undefined' ? ZULU_QUESTIONS : safeCulture(null, "Zulu", "IsiZulu", "🥁"),
   xhosa:     typeof XHOSA_QUESTIONS !== 'undefined' ? XHOSA_QUESTIONS : safeCulture(null, "Xhosa", "IsiXhosa", "🌊"),

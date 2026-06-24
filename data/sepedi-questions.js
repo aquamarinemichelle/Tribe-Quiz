@@ -1,6 +1,6 @@
 /**
- * SEPEDI (Sesotho sa Leboa / Northern Sotho) QUESTIONS
- * Team Member: [Your Name]
+ * SEPEDI (Sesotho sa Leboa) QUESTIONS
+ * Team Member: Michelle Mazibuko
  */
 
 const SEPEDI_QUESTIONS = {
