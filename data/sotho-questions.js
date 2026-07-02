@@ -185,14 +185,14 @@ const SOTHO_QUESTIONS = {
       q:    "The band Sankomota, led by Tsepo Tshola, was popular in which decade?",
       opts: ["1970s", "1980s", "1990s", "2000s"],
       ans:  1,
-      img:  null
+      img:  "public/sotho-photos/sankomota.jpg"
     },
     {
       cat:  "Music",
       q:    "What is 'Mokorotlo' also known as in Basotho music?",
       opts: ["A dance", "A traditional song genre", "A musical instrument", "A festival"],
       ans:  1,
-      img:  null
+      img:  "public/sotho-photos/mokorotlo-music.jpg"
     },
 
     /* GEOGRAPHY */
@@ -201,35 +201,35 @@ const SOTHO_QUESTIONS = {
       q:    "Lesotho is known as 'The Kingdom in the Sky' because...",
       opts: ["It has high mountains", "It has many clouds", "It is the highest country in Africa", "It has many airports"],
       ans:  2,
-      img:  "public/lesotho-mountains.png"
+      img:  "public/sotho-photos/lesotho.jpg"
     },
     {
       cat:  "Geography",
       q:    "What is the highest point in Lesotho and southern Africa?",
       opts: ["Table Mountain", "Thabana Ntlenyana", "Drakensberg Peak", "Mount Kilimanjaro"],
       ans:  1,
-      img:  null
+      img:  "public/sotho-photos/thabana-ntlenyana.jpg"
     },
     {
       cat:  "Geography",
       q:    "Lesotho is completely surrounded by which country?",
       opts: ["South Africa", "Botswana", "Zimbabwe", "Eswatini"],
       ans:  0,
-      img:  null
+      img:  "public/sotho-photos/lesotho-sa.jpg"
     },
     {
       cat:  "Geography",
       q:    "What is the capital city of Lesotho?",
       opts: ["Maseru", "Mafeteng", "Leribe", "Quthing"],
       ans:  0,
-      img:  null
+      img:  "public/sotho-photos/maseru.png"
     },
     {
       cat:  "Geography",
       q:    "The Maloti Mountains are part of which larger mountain range?",
       opts: ["Drakensberg", "Rwenzori", "Atlas", "Ethiopian Highlands"],
       ans:  0,
-      img:  null
+      img:  "public/sotho-photos/drakensberg.jpeg"
     },
 
     /* FOOD */
@@ -238,22 +238,24 @@ const SOTHO_QUESTIONS = {
       q:    "What is 'Papa' or 'Mieliepap' in Sesotho cuisine?",
       opts: ["Maize porridge", "Meat stew", "Vegetable dish", "Fermented milk"],
       ans:  0,
-      img:  null
+      img:  "public/sotho-photos/papa.jpg"
     },
     {
       cat:  "Food",
       q:    "What is 'Morohe' in Basotho cuisine?",
       opts: ["Dried meat", "Wild spinach/cabbage dish", "Sorghum beer", "Maize bread"],
       ans:  1,
-      img:  null
+      img:  "public/sotho-photos/morohe.jpg"
     },
     {
       cat:  "Food",
       q:    "'Motoho' is a traditional Basotho drink made from...",
       opts: ["Fermented sorghum", "Maize", "Soured milk", "Fruit juice"],
       ans:  0,
-      img:  null
+      img:  "public/sotho-photos/motoho.png"
     },
+  ]
+    /*
     {
       cat:  "Food",
       q:    "What is 'Likhobe'?",
@@ -269,7 +271,7 @@ const SOTHO_QUESTIONS = {
       img:  null
     },
 
-    /* NOTABLE PEOPLE */
+    <!--NOTABLE PEOPLE -->
     {
       cat:  "Notable People",
       q:    "Who is known as the father of the Basotho nation?",
@@ -305,5 +307,5 @@ const SOTHO_QUESTIONS = {
       ans:  3,
       img:  null
     },
-  ]
+  ] */
 };

@@ -124,7 +124,7 @@ const TSONGA_QUESTIONS = {
       q:    "The Tsonga traditional dwelling is called?",
       opts: ["Rondavel", "Ntanga", "Yindlu", "Xivala"],
       ans:  2,
-      img:  null
+      img:  "public/tsonga-photos/yindlu.jpg"
     },
     {
       cat:  "Culture",
@@ -177,7 +177,7 @@ const TSONGA_QUESTIONS = {
       q:    "In Mozambique, Tsonga people are primarily found in which province?",
       opts: ["Maputo Province", "Gaza Province", "Inhambane", "Nampula"],
       ans:  1,
-      img:  null
+      img:  "public/tsonga-photos/mozambique-prov.jpg"
     },
     {
       cat:  "Geography",
