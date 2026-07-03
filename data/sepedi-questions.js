@@ -1,6 +1,6 @@
 /**
- * SEPEDI (Sesotho sa Leboa / Northern Sotho) QUESTIONS
- * Team Member: [Your Name]
+ * SEPEDI (Sesotho sa Leboa) QUESTIONS
+ * Team Member: Michelle Mazibuko
  */
 
 const SEPEDI_QUESTIONS = {
@@ -16,14 +16,14 @@ const SEPEDI_QUESTIONS = {
       q:    "How do you greet someone in Sepedi (Northern Sotho)?",
       opts: ["Sawubona", "Dumela", "Molweni", "Lotsha"],
       ans:  1,
-      img:  null
+      img:  "public/sepedi-photos/greet.png"
     },
     {
       cat:  "Language",
       q:    "What does 'Ke a leboga' mean in Sepedi?",
       opts: ["Good morning", "Goodbye", "Thank you", "I am hungry"],
       ans:  2,
-      img:  null
+      img:  "public/sepedi-photos/thank-you.png"
     },
     {
       cat:  "Language",
@@ -46,28 +46,28 @@ const SEPEDI_QUESTIONS = {
       q:    "The Bapedi people are historically associated with which South African province?",
       opts: ["KwaZulu-Natal", "Western Cape", "Limpopo", "Free State"],
       ans:  2,
-      img:  null
+      img:  "public/sepedi-photos/limpopo.png"
     },
     {
       cat:  "History",
       q:    "King Sekhukhune I famously resisted which colonial power in the 1870s?",
       opts: ["Portuguese", "German", "French", "British"],
       ans:  3,
-      img:  "public/sepedi-photos/sekhukhune.jpg"
+      img:  "public/sepedi-photos/king-sekhukhune.jpg"
     },
     {
       cat:  "History",
       q:    "The Bapedi kingdom's capital during King Sekhukhune's reign was located in which mountain area?",
       opts: ["Magaliesberg", "Drakensberg", "Leolo Mountains", "Waterberg"],
       ans:  2,
-      img:  null
+      img: "public/sepedi-photos/leolo.jpg"
     },
     {
       cat:  "History",
       q:    "The Bapedi people are a subgroup of which broader language family?",
       opts: ["Nguni", "Sotho-Tswana", "Tsonga", "Venda"],
       ans:  1,
-      img:  null
+      img:  "public/sepedi-photos/bapedi.jpg"
     },
 
     /* TRADITION */
@@ -76,14 +76,14 @@ const SEPEDI_QUESTIONS = {
       q:    "The Bapedi initiation school for boys is called?",
       opts: ["Koma", "Umemulo", "Ukweshwama", "Bogwera"],
       ans:  0,
-      img:  "public/sepedi-photos/koma.jpg"
+      img:  "public/sepedi-photos/pedi-initiation.jpg"
     },
     {
       cat:  "Tradition",
       q:    "The Bapedi female initiation ceremony is known as?",
       opts: ["Umhlanga", "Koma ya basadi", "Lobola", "Bjale"],
       ans:  1,
-      img:  null
+      img:  "public/sepedi-photos/pedi-girls-initiation.jpg"
     },
     {
       cat:  "Tradition",
@@ -95,7 +95,7 @@ const SEPEDI_QUESTIONS = {
         "Ikhazi"
       ],
       ans:  2,
-      img:  null
+      img:  "public/sepedi-photos/magadi.png"
     },
     {
       cat:  "Tradition",
@@ -107,7 +107,7 @@ const SEPEDI_QUESTIONS = {
         "Morena"
       ],
       ans:  1,
-      img:  null
+      img:  "public/sepedi-photos/kgosi.png"
     },
 
     /* CULTURE */
@@ -128,14 +128,14 @@ const SEPEDI_QUESTIONS = {
         "A male elder"
       ],
       ans:  1,
-      img:  null
+      img:  "public/sepedi-photos/ngaka.jpg"
     },
     {
       cat:  "Culture",
       q:    "The concept of 'botho' in Sepedi culture is closely related to which pan-African philosophy?",
       opts: ["Negritude", "Ubuntu", "Pan-Africanism", "Afrocentrism"],
       ans:  1,
-      img:  null
+      img:  "public/sepedi-photos/botho.png"
     },
     {
       cat:  "Culture",
@@ -147,7 +147,7 @@ const SEPEDI_QUESTIONS = {
         "Underground earth shelters"
       ],
       ans:  1,
-      img:  "public/sepedi-photos/bapedi-home.jpg"
+      img:  "public/sepedi-photos/bapedi-home.png"
     },
 
     /* MUSIC & ARTS */
@@ -156,21 +156,21 @@ const SEPEDI_QUESTIONS = {
       q:    "The Bapedi are famous for which energetic dance and musical style that uses drums and leg rattles?",
       opts: ["Kiba", "Indlamu", "Gumboot", "Mohobelo"],
       ans:  0,
-      img:  "public/sepedi-photos/kiba.jpg"
+      img:  "public/sepedi-photos/kiba.png"
     },
     {
       cat:  "Music",
       q:    "In Kiba music, the metal leg rattles worn by male dancers are called?",
       opts: ["Dipela", "Moropa", "Setinkane", "Digoma"],
       ans:  0,
-      img:  null
+      img:  "public/sepedi-photos/kiba.png"
     },
     {
       cat:  "Music",
       q:    "The 'moropa' is a well-known instrument in Sepedi music. What type of instrument is it?",
       opts: ["A stringed bow", "A flute", "A traditional drum", "A horn trumpet"],
       ans:  2,
-      img:  null
+      img:  "public/sepedi-photos/moropa.jpeg"
     },
     {
       cat:  "Music",
@@ -186,21 +186,21 @@ const SEPEDI_QUESTIONS = {
       q:    "Sepedi is the most widely spoken language in which South African province?",
       opts: ["Mpumalanga", "North West", "Limpopo", "Gauteng"],
       ans:  2,
-      img:  null
+      img:  "public/sepedi-photos/limpopo.png"
     },
     {
       cat:  "Geography",
       q:    "The Sekhukhune District, the historical heartland of the Bapedi, is located in which part of Limpopo?",
       opts: ["Far North (Vhembe)", "Central Limpopo (Sekhukhuneland)", "Waterberg", "Mopani"],
       ans:  1,
-      img:  null
+      img:  "public/sepedi-photos/sekhukhune.png"
     },
     {
       cat:  "Geography",
       q:    "Which major river runs through Sekhukhuneland and is important to Bapedi heritage?",
       opts: ["Limpopo River", "Vaal River", "Olifants (Lepelle) River", "Crocodile River"],
       ans:  2,
-      img:  null
+      img:  "public/sepedi-photos/olifants.jpg"
     },
 
     /* FOOD */
@@ -214,7 +214,7 @@ const SEPEDI_QUESTIONS = {
         "Sadza"
       ],
       ans:  2,
-      img:  null
+      img:  "public/sepedi-photos/bogobe.jpg"
     },
     {
       cat:  "Food",
@@ -238,7 +238,7 @@ const SEPEDI_QUESTIONS = {
         "A marula fruit brew"
       ],
       ans:  1,
-      img:  null
+      img:  "public/sepedi-photos/mageu.jpg"
     },
 
     /* NOTABLE PEOPLE */
@@ -247,7 +247,7 @@ const SEPEDI_QUESTIONS = {
       q:    "Which South African politician, of Bapedi heritage, served as Deputy President from 2014 to 2018 and became President in 2018?",
       opts: ["Jacob Zuma", "Kgalema Motlanthe", "Cyril Ramaphosa", "Thabo Mbeki"],
       ans:  2,
-      img:  null
+      img:  "public/sepedi-photos/ramaphosa.jpg"
     },
     {
       cat:  "Notable People",
@@ -259,7 +259,7 @@ const SEPEDI_QUESTIONS = {
         "The unification of all Sotho peoples"
       ],
       ans:  1,
-      img:  null
+      img:  "public/sepedi-photos/king-sekhukhune.jpg"
     },
     {
       cat:  "Notable People",
