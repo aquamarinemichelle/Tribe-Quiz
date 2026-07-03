@@ -22,7 +22,7 @@ const TSONGA_QUESTIONS = {
       q:    "How do you say 'Thank you' in Xitsonga?",
       opts: ["Inkomu", "Dumela", "Ndza khensa", "Siyabonga"],
       ans:  2,
-      img:  "public/tsonga-photos/ndza-khensa.jpg"
+      img:  "public/tsonga-photos/thank-you.jpg"
     },
     {
       cat:  "Language",
@@ -52,7 +52,7 @@ const TSONGA_QUESTIONS = {
       q:    "The Tsonga people are historically descendants of which larger group?",
       opts: ["Nguni", "Sotho-Tswana", "Shangaan/Tsonga", "Venda"],
       ans:  2,
-      img:  null
+      img:  "public/tsonga-photos/shangaan.jpg"
     },
     {
       cat:  "History",
@@ -75,7 +75,7 @@ const TSONGA_QUESTIONS = {
       q:    "The traditional Tsonga wedding ceremony is called?",
       opts: ["Mabogo", "Lobola", "Chikweru", "Bogadi"],
       ans:  2,
-      img:  "public/tsonga-photos/tsonga-wedding.jpg"
+      img:  "public/tsonga-photos/tsonga-wedd.jpg"
     },
     {
       cat:  "Tradition",
@@ -87,21 +87,21 @@ const TSONGA_QUESTIONS = {
         "An ancestral worship ritual"
       ],
       ans:  1,
-      img:  null
+      img:  "public/tsonga-photos/lobola.jpg"
     },
     {
       cat:  "Tradition",
       q:    "The Tsonga initiation school for young men is called?",
       opts: ["Khomba", "Matimba", "Ka Xidziso", "Mghunda"],
       ans:  1,
-      img:  "public/tsonga-photos/matimba.jpg"
+      img:  "public/tsonga-photos/tsonga-initiation.png"
     },
     {
       cat:  "Tradition",
       q:    "The Tsonga initiation school for young women is called?",
       opts: ["Khomba", "Matimba", "Xidziso", "Mghunda"],
       ans:  0,
-      img:  "public/tsonga-photos/khomba.jpg"
+      img:  "public/tsonga-photos/girls.jpg"
     },
 
     /* CULTURE */
@@ -117,7 +117,7 @@ const TSONGA_QUESTIONS = {
       q:    "The Xibelani dance is famously performed with what accessory?",
       opts: ["Beaded necklace", "Straw skirt", "Animal skin", "Feather headdress"],
       ans:  1,
-      img:  "public/tsonga-photos/xibelani-skirt.jpg"
+      img:  "public/tsonga-photos/straw-skirt.jpg"
     },
     {
       cat:  "Culture",
@@ -131,7 +131,7 @@ const TSONGA_QUESTIONS = {
       q:    "What is the Tsonga concept of respect and proper behavior called?",
       opts: ["Ubuntu", "Xixima", "Botho", "Mensen"],
       ans:  1,
-      img:  null
+      img:  "public/tsonga-photos/xixima.jpg"
     },
 
     /* MUSIC & ARTS */
@@ -154,7 +154,7 @@ const TSONGA_QUESTIONS = {
       q:    "Which South African music genre originated from Tsonga culture?",
       opts: ["Kwaito", "Shangaan Electro", "Amapiano", "Mbaqanga"],
       ans:  1,
-      img:  "public/tsonga-photos/shangaan-electro.jpg"
+      img:  "public/tsonga-photos/shangaaan-electro.jpg"
     },
     {
       cat:  "Music",
@@ -233,7 +233,7 @@ const TSONGA_QUESTIONS = {
       q:    "Dr. Nkosazana Dlamini-Zuma, who has Tsonga heritage, served as?",
       opts: ["President of South Africa", "AU Commission Chairperson", "UN Secretary General", "IMF Director"],
       ans:  1,
-      img:  "public/tsonga-photos/nkosazana-dlamini-zuma.jpg"
+      img:  "public/tsonga-photos/nkosazana.jpg"
     },
     {
       cat:  "Notable People",
@@ -247,7 +247,7 @@ const TSONGA_QUESTIONS = {
       q:    "Which Tsonga actress is known for her role as 'Mamokete' on Skeem Saam?",
       opts: ["Connie Ferguson", "Inno Sadiki", "Harriet Manamela", "Sophie Ndaba"],
       ans:  2,
-      img:  "public/tsonga-photos/harriet-manamela.jpg"
+      img:  "public/tsonga-photos/Harriet-manamela.jpg"
     }
   ]
 };
