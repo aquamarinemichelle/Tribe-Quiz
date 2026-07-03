@@ -60,14 +60,14 @@ const SWATI_QUESTIONS = {
       q:    "The Swazi nation is named after which king?",
       opts: ["King Mswati II", "King Sobhuza I", "King Ngwane III", "King Mbandzeni"],
       ans:  0,
-      img:  null
+      img:  "public/swati-phots/king-sobhuza.jpg"
     },
     {
       cat:  "History",
       q:    "Eswatini (formerly Swaziland) gained independence from Britain in which year?",
       opts: ["1960", "1968", "1975", "1980"],
       ans:  1,
-      img:  null
+      img:  "public/swati-photos/swati-flag.jpg"
     },
     {
       cat:  "History",
@@ -81,7 +81,7 @@ const SWATI_QUESTIONS = {
       q:    "What was Eswatini officially renamed from in 2018?",
       opts: ["Swaziland", "Ngwane", "KaNgwane", "Swati Nation"],
       ans:  0,
-      img:  null
+      img:  "public/swati-photos/swaziland.jpg"
     },
 
     /* TRADITION & CEREMONIES */
@@ -97,7 +97,7 @@ const SWATI_QUESTIONS = {
       q:    "The Incwala ceremony is also known as what?",
       opts: ["Kingship Ceremony", "First Fruits Ceremony", "Reed Dance", "Harvest Festival"],
       ans:  1,
-      img:  "public/incwala.png"
+      img:  "public/swati-photos/incwala.jpg"
     },
     {
       cat:  "Tradition",
@@ -144,7 +144,7 @@ const SWATI_QUESTIONS = {
       q:    "What is the Swati Queen Mother called?",
       opts: ["Ndlovukati", "Indlovukazi", "Inkosikazi", "Mama waTinkhosi"],
       ans:  0,
-      img:  null
+      img:  "public/swati-photos/queen-mother.jpg"
     },
     {
       cat:  "Culture",
@@ -156,14 +156,14 @@ const SWATI_QUESTIONS = {
         "Unity is strength"
       ],
       ans:  0,
-      img:  null
+      img:  "public/swati-photos/ubuntu.jpg"
     },
     {
       cat:  "Culture",
       q:    "What is the traditional Swati homestead called?",
       opts: ["Umuzi", "Kraal", "Lobamba", "Sibaya"],
       ans:  0,
-      img:  null
+      img:  "public/swati-photos/homestead.jpg"
     },
     {
       cat:  "Culture",
@@ -209,7 +209,7 @@ const SWATI_QUESTIONS = {
       q:    "Eswatini is landlocked and completely surrounded by which country?",
       opts: ["South Africa", "Mozambique", "Both South Africa and Mozambique", "Zimbabwe"],
       ans:  2,
-      img:  "public/eswatini-map.png"
+      img:  "public/southafrica-moz.jpg"
     },
     {
       cat:  "Geography",
@@ -230,7 +230,7 @@ const SWATI_QUESTIONS = {
       q:    "The famous cultural village of Swazi people is located in?",
       opts: ["Mantenga", "Lobamba", "Ezulwini Valley", "Mbabane"],
       ans:  0,
-      img:  null
+      img:  "public/swati-photos/mantenga.jpg"
     },
 
     /* FOOD & ATTIRE */
@@ -246,7 +246,7 @@ const SWATI_QUESTIONS = {
       q:    "What is 'Emasi' in Swati culture?",
       opts: ["Fermented milk", "Traditional beer", "Meat stew", "Maize porridge"],
       ans:  0,
-      img:  null
+      img:  "public/swati-photos/emasi.jpg"
     },
     {
       cat:  "Food",
@@ -276,7 +276,7 @@ const SWATI_QUESTIONS = {
       q:    "Which famous Swati gospel singer is known internationally?",
       opts: ["Dr. Rebecca Malope", "Lundi Tyamara", "Bheki Mseleku", "Pastor Nomathemba"],
       ans:  0,
-      img:  null
+      img:  "public/swati-photos/rebecca-malope.jpg"
     },
     {
       cat:  "Notable People",
@@ -288,14 +288,14 @@ const SWATI_QUESTIONS = {
         "Being a fashion designer"
       ],
       ans:  0,
-      img:  "public/princess-sikhanyiso.png"
+      img:  "public/swati-photos/sikhanyiso.jpg"
     },
     {
       cat:  "Culture",
       q:    "What is 'Ligugu' in Swati culture?",
       opts: ["Traditional skirt", "Beaded necklace", "Honor/Pride", "Ceremonial shield"],
       ans:  2,
-      img:  null
+      img:  "public/swati-photos/pride.jpg"
     },
   ]
 };
