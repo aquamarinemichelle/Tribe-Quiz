@@ -24,14 +24,14 @@ const VENDA_QUESTIONS = {
       q:    "What does 'Vhuthu' mean in Tshivenḓa?",
       opts: ["War", "Humanity / Personhood", "Rain", "Fire"],
       ans:  1,
-      img:  null
+      img:  "public/venda-photos/vhuthu.png"
     },
     {
       cat:  "Language",
       q:    "How do you say 'Thank you' in Tshivenḓa?",
       opts: ["Ndo livhuwa", "Ndaa", "Ndi fhano", "Vho da"],
       ans:  0,
-      img:  null
+      img:  "public/venda-photos/thank-you.jpg"
     },
     {
       cat:  "Language",
@@ -52,14 +52,14 @@ const VENDA_QUESTIONS = {
       q:    "What is the Tshivenḓa word for water?",
       opts: ["Mufhiso", "Maḓi", "Mulilo", "Muya"],
       ans:  1,
-      img:  null
+      img:  "public/venda-photos/water.jpg"
     },
     {
       cat:  "Language",
       q:    "In which South African province is Tshivenḓa primarily spoken?",
       opts: ["Gauteng", "KwaZulu-Natal", "Limpopo", "Western Cape"],
       ans:  2,
-      img:  null
+      img:  "public/venda-photos/limpopo.png"
     },
 
     /* ── HISTORY ── */
@@ -68,7 +68,7 @@ const VENDA_QUESTIONS = {
       q:    "The VhaVenḓa people are believed to have migrated from which region before settling in present-day Limpopo?",
       opts: ["West Africa", "Central Africa (Great Lakes region)", "North Africa", "Southern coastal areas"],
       ans:  1,
-      img:  null
+      img:  "public/venda-photos/central-africa.jpg"
     },
     {
       cat:  "History",
