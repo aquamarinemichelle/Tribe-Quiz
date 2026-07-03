@@ -200,7 +200,7 @@ const SEPEDI_QUESTIONS = {
       q:    "Which major river runs through Sekhukhuneland and is important to Bapedi heritage?",
       opts: ["Limpopo River", "Vaal River", "Olifants (Lepelle) River", "Crocodile River"],
       ans:  2,
-      img:  null
+      img:  "public/sepedi-photos/olifants.jpg"
     },
 
     /* FOOD */
@@ -214,7 +214,7 @@ const SEPEDI_QUESTIONS = {
         "Sadza"
       ],
       ans:  2,
-      img:  null
+      img:  "public/sepedi-photos/bogobe.jpg"
     },
     {
       cat:  "Food",
@@ -238,7 +238,7 @@ const SEPEDI_QUESTIONS = {
         "A marula fruit brew"
       ],
       ans:  1,
-      img:  null
+      img:  "public/sepedi-photos/mageu.jpg"
     },
 
     /* NOTABLE PEOPLE */
@@ -247,7 +247,7 @@ const SEPEDI_QUESTIONS = {
       q:    "Which South African politician, of Bapedi heritage, served as Deputy President from 2014 to 2018 and became President in 2018?",
       opts: ["Jacob Zuma", "Kgalema Motlanthe", "Cyril Ramaphosa", "Thabo Mbeki"],
       ans:  2,
-      img:  null
+      img:  "public/sepedi-photos/ramaphosa.jpg"
     },
     {
       cat:  "Notable People",
