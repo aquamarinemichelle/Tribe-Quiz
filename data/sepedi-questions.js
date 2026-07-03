@@ -147,7 +147,7 @@ const SEPEDI_QUESTIONS = {
         "Underground earth shelters"
       ],
       ans:  1,
-      img:  "public/sepedi-photos/bapedi-home.jpg"
+      img:  "public/sepedi-photos/bapedi-home.png"
     },
 
     /* MUSIC & ARTS */
@@ -156,7 +156,7 @@ const SEPEDI_QUESTIONS = {
       q:    "The Bapedi are famous for which energetic dance and musical style that uses drums and leg rattles?",
       opts: ["Kiba", "Indlamu", "Gumboot", "Mohobelo"],
       ans:  0,
-      img:  "public/sepedi-photos/kiba.jpg"
+      img:  "public/sepedi-photos/kiba.png"
     },
     {
       cat:  "Music",
@@ -170,7 +170,7 @@ const SEPEDI_QUESTIONS = {
       q:    "The 'moropa' is a well-known instrument in Sepedi music. What type of instrument is it?",
       opts: ["A stringed bow", "A flute", "A traditional drum", "A horn trumpet"],
       ans:  2,
-      img:  null
+      img:  "public/sepedi-photos/moropa.jpeg"
     },
     {
       cat:  "Music",
@@ -186,14 +186,14 @@ const SEPEDI_QUESTIONS = {
       q:    "Sepedi is the most widely spoken language in which South African province?",
       opts: ["Mpumalanga", "North West", "Limpopo", "Gauteng"],
       ans:  2,
-      img:  null
+      img:  "public/sepedi-photos/limpopo.png"
     },
     {
       cat:  "Geography",
       q:    "The Sekhukhune District, the historical heartland of the Bapedi, is located in which part of Limpopo?",
       opts: ["Far North (Vhembe)", "Central Limpopo (Sekhukhuneland)", "Waterberg", "Mopani"],
       ans:  1,
-      img:  null
+      img:  "public/sepedi-photos/sekhukhune.png"
     },
     {
       cat:  "Geography",
