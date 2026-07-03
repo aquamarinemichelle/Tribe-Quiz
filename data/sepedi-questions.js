@@ -16,14 +16,14 @@ const SEPEDI_QUESTIONS = {
       q:    "How do you greet someone in Sepedi (Northern Sotho)?",
       opts: ["Sawubona", "Dumela", "Molweni", "Lotsha"],
       ans:  1,
-      img:  null
+      img:  "public/sepedi-photos/greet.png"
     },
     {
       cat:  "Language",
       q:    "What does 'Ke a leboga' mean in Sepedi?",
       opts: ["Good morning", "Goodbye", "Thank you", "I am hungry"],
       ans:  2,
-      img:  null
+      img:  "public/sepedi-photos/thank-you.png"
     },
     {
       cat:  "Language",
@@ -46,7 +46,7 @@ const SEPEDI_QUESTIONS = {
       q:    "The Bapedi people are historically associated with which South African province?",
       opts: ["KwaZulu-Natal", "Western Cape", "Limpopo", "Free State"],
       ans:  2,
-      img:  null
+      img:  "public/sepedi-photos/limpopo.png"
     },
     {
       cat:  "History",
@@ -163,7 +163,7 @@ const SEPEDI_QUESTIONS = {
       q:    "In Kiba music, the metal leg rattles worn by male dancers are called?",
       opts: ["Dipela", "Moropa", "Setinkane", "Digoma"],
       ans:  0,
-      img:  null
+      img:  "public/sepedi-photos/kiba.png"
     },
     {
       cat:  "Music",
@@ -259,7 +259,7 @@ const SEPEDI_QUESTIONS = {
         "The unification of all Sotho peoples"
       ],
       ans:  1,
-      img:  null
+      img:  "public/sepedi-photos/king-sekhukhune.jpg"
     },
     {
       cat:  "Notable People",
