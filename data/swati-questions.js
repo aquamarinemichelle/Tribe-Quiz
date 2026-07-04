@@ -137,7 +137,7 @@ const SWATI_QUESTIONS = {
       q:    "Who is the current reigning king of Eswatini (as of 2024)?",
       opts: ["King Sobhuza II", "King Mswati III", "King Makhosetive", "King Ngwane V"],
       ans:  1,
-      img:  "public/king-mswati.png"
+      img:  "public/swati-photos/king-mswati.jpg"
     },
     {
       cat:  "Culture",
@@ -216,7 +216,7 @@ const SWATI_QUESTIONS = {
       q:    "What is the largest city in Eswatini?",
       opts: ["Mbabane", "Lobamba", "Manzini", "Nhlangano"],
       ans:  2,
-      img:  null
+      img:  "public/swati-photos/manzini.jpg"
     },
     {
       cat:  "Geography",
@@ -253,7 +253,7 @@ const SWATI_QUESTIONS = {
       q:    "Traditional Swati beer is called?",
       opts: ["Umqombothi", "Tjwala", "Amasi", "Utshwala"],
       ans:  3,
-      img:  null
+      img:  "public/swati-photos/utshwala.jpg"
     },
     {
       cat:  "Food",
