@@ -60,7 +60,7 @@ const SWATI_QUESTIONS = {
       q:    "The Swazi nation is named after which king?",
       opts: ["King Mswati II", "King Sobhuza I", "King Ngwane III", "King Mbandzeni"],
       ans:  0,
-      img:  "public/swati-phots/king-sobhuza.jpg"
+      img:  "public/swati-photos/mswati.jpg"
     },
     {
       cat:  "History",
@@ -74,7 +74,7 @@ const SWATI_QUESTIONS = {
       q:    "Who was the longest-reigning monarch in Swazi history (reigned 82 years)?",
       opts: ["King Mswati II", "King Sobhuza II", "King Ngwane III", "King Mswati III"],
       ans:  1,
-      img:  null
+      img:  "public/swati-photos/king-sobhuza.jpg"
     },
     {
       cat:  "History",
@@ -104,7 +104,7 @@ const SWATI_QUESTIONS = {
       q:    "During the Umhlanga (Reed Dance), what do young Swati women present to the Queen Mother?",
       opts: ["Flowers", "Reeds", "Beads", "Traditional beer"],
       ans:  1,
-      img:  null
+      img:  "public/swati-photos/reeds.jpg"
     },
     {
       cat:  "Tradition",
@@ -193,7 +193,7 @@ const SWATI_QUESTIONS = {
       q:    "What is the name of the Swati royal war dance?",
       opts: ["Indlamu", "Sibhaca", "Umchwasho", "Siswati"],
       ans:  1,
-      img:  null
+      img:  "public/swati-photos/sibhaca.jpg"
     },
     {
       cat:  "Music",
@@ -209,7 +209,7 @@ const SWATI_QUESTIONS = {
       q:    "Eswatini is landlocked and completely surrounded by which country?",
       opts: ["South Africa", "Mozambique", "Both South Africa and Mozambique", "Zimbabwe"],
       ans:  2,
-      img:  "public/southafrica-moz.jpg"
+      img:  "public/swati-photos/southafrica-moz.jpg"
     },
     {
       cat:  "Geography",
@@ -223,7 +223,7 @@ const SWATI_QUESTIONS = {
       q:    "Eswatini is divided into how many administrative regions?",
       opts: ["2", "4", "6", "8"],
       ans:  1,
-      img:  null
+      img:  "public/swati-photos/regions.jpg"
     },
     {
       cat:  "Geography",
@@ -239,7 +239,7 @@ const SWATI_QUESTIONS = {
       q:    "What is the staple food in Swati cuisine?",
       opts: ["Pap (mealie-meal porridge)", "Rice", "Bread", "Potatoes"],
       ans:  0,
-      img:  null
+      img:  "public/swati-photos/sishwala.jpg"
     },
     {
       cat:  "Food",
@@ -260,7 +260,7 @@ const SWATI_QUESTIONS = {
       q:    "What is 'Sishwala'?",
       opts: ["Thick porridge", "Thin porridge", "Meat dish", "Vegetable relish"],
       ans:  0,
-      img:  null
+      img:  "public/swati-photos/porridge.jpg"
     },
 
     /* NOTABLE PEOPLE */
@@ -276,7 +276,7 @@ const SWATI_QUESTIONS = {
       q:    "Which famous Swati gospel singer is known internationally?",
       opts: ["Dr. Rebecca Malope", "Lundi Tyamara", "Bheki Mseleku", "Pastor Nomathemba"],
       ans:  0,
-      img:  "public/swati-photos/rebecca-malope.jpg"
+      img:  "public/swati-photos/reebecca-malope.jpg"
     },
     {
       cat:  "Notable People",
