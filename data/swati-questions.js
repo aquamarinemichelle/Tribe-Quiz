@@ -90,7 +90,7 @@ const SWATI_QUESTIONS = {
       q:    "What is the famous Reed Dance ceremony in Eswatini called?",
       opts: ["Umhlanga", "Incwala", "Umchwasho", "Lusekwane"],
       ans:  0,
-      img:  "public/umhlanga-swati.png"
+      img:  "public/swati-photos/umhlanga.jpg"
     },
     {
       cat:  "Tradition",
@@ -170,7 +170,7 @@ const SWATI_QUESTIONS = {
       q:    "The capital city of Eswatini (royal and legislative) is?",
       opts: ["Mbabane", "Lobamba", "Manzini", "Siteki"],
       ans:  1,
-      img:  null
+      img:  "public/swati-photos/lobamba.jpg"
     },
 
     /* MUSIC & DANCE */
@@ -269,7 +269,7 @@ const SWATI_QUESTIONS = {
       q:    "Who is known as the 'Mother of the Nation' in Eswatini?",
       opts: ["Queen Ntombi", "Queen Mother Ndlovukati", "Princess Sikhanyiso", "Queen LaMatsebula"],
       ans:  1,
-      img:  null
+      img:  "public/swati-photos/ndlovukazi.png"
     },
     {
       cat:  "Notable People",
