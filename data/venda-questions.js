@@ -106,7 +106,7 @@ const VENDA_QUESTIONS = {
       q:    "The Venda homeland during apartheid was known as?",
       opts: ["Bophuthatswana", "Transkei", "Venda", "Gazankulu"],
       ans:  2,
-      img:  null
+      img:  "public/venda-photos/venda-homeland.png"
     },
     {
       cat:  "History",
@@ -125,7 +125,7 @@ const VENDA_QUESTIONS = {
       q:    "The Venda people are closely related culturally and linguistically to which other group across the border?",
       opts: ["Shona people of Zimbabwe", "Zulu people", "Xhosa people", "Sotho people"],
       ans:  0,
-      img:  null
+      img:  "public/venda-photos/venda-people.jpg"
     },
 
     /* ── TRADITIONS ── */
