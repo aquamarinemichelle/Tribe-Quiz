@@ -2,6 +2,7 @@
  * VENDA CULTURE QUESTIONS
  * Covers Tshivenḓa language, Venda history, traditions, and food.
  * The Venda people (VhaVenḓa) are primarily found in Limpopo, South Africa.
+ * Zinhle Michelle Mazibuko.
  */
 
 const VENDA_QUESTIONS = {
@@ -229,7 +230,7 @@ const VENDA_QUESTIONS = {
       q:    "What is 'Mutuku', a popular Venda staple?",
       opts: ["A thick porridge made from millet or sorghum", "A grilled fish dish", "A type of soup", "A fried dough snack"],
       ans:  0,
-      img:  null
+      img:  "public/venda-photos/mutuku.png"
     },
     {
       cat:  "Food",
