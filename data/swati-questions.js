@@ -60,28 +60,28 @@ const SWATI_QUESTIONS = {
       q:    "The Swazi nation is named after which king?",
       opts: ["King Mswati II", "King Sobhuza I", "King Ngwane III", "King Mbandzeni"],
       ans:  0,
-      img:  null
+      img:  "public/swati-photos/mswati.jpg"
     },
     {
       cat:  "History",
       q:    "Eswatini (formerly Swaziland) gained independence from Britain in which year?",
       opts: ["1960", "1968", "1975", "1980"],
       ans:  1,
-      img:  null
+      img:  "public/swati-photos/swati-flag.jpg"
     },
     {
       cat:  "History",
       q:    "Who was the longest-reigning monarch in Swazi history (reigned 82 years)?",
       opts: ["King Mswati II", "King Sobhuza II", "King Ngwane III", "King Mswati III"],
       ans:  1,
-      img:  null
+      img:  "public/swati-photos/king-sobhuza.jpg"
     },
     {
       cat:  "History",
       q:    "What was Eswatini officially renamed from in 2018?",
       opts: ["Swaziland", "Ngwane", "KaNgwane", "Swati Nation"],
       ans:  0,
-      img:  null
+      img:  "public/swati-photos/swaziland.jpg"
     },
 
     /* TRADITION & CEREMONIES */
@@ -90,21 +90,21 @@ const SWATI_QUESTIONS = {
       q:    "What is the famous Reed Dance ceremony in Eswatini called?",
       opts: ["Umhlanga", "Incwala", "Umchwasho", "Lusekwane"],
       ans:  0,
-      img:  "public/umhlanga-swati.png"
+      img:  "public/swati-photos/umhlanga.jpg"
     },
     {
       cat:  "Tradition",
       q:    "The Incwala ceremony is also known as what?",
       opts: ["Kingship Ceremony", "First Fruits Ceremony", "Reed Dance", "Harvest Festival"],
       ans:  1,
-      img:  "public/incwala.png"
+      img:  "public/swati-photos/incwala.jpg"
     },
     {
       cat:  "Tradition",
       q:    "During the Umhlanga (Reed Dance), what do young Swati women present to the Queen Mother?",
       opts: ["Flowers", "Reeds", "Beads", "Traditional beer"],
       ans:  1,
-      img:  null
+      img:  "public/swati-photos/reeds.jpg"
     },
     {
       cat:  "Tradition",
@@ -137,14 +137,14 @@ const SWATI_QUESTIONS = {
       q:    "Who is the current reigning king of Eswatini (as of 2024)?",
       opts: ["King Sobhuza II", "King Mswati III", "King Makhosetive", "King Ngwane V"],
       ans:  1,
-      img:  "public/king-mswati.png"
+      img:  "public/swati-photos/king-mswati.jpg"
     },
     {
       cat:  "Culture",
       q:    "What is the Swati Queen Mother called?",
       opts: ["Ndlovukati", "Indlovukazi", "Inkosikazi", "Mama waTinkhosi"],
       ans:  0,
-      img:  null
+      img:  "public/swati-photos/queen-mother.jpg"
     },
     {
       cat:  "Culture",
@@ -156,21 +156,21 @@ const SWATI_QUESTIONS = {
         "Unity is strength"
       ],
       ans:  0,
-      img:  null
+      img:  "public/swati-photos/ubuntu.jpg"
     },
     {
       cat:  "Culture",
       q:    "What is the traditional Swati homestead called?",
       opts: ["Umuzi", "Kraal", "Lobamba", "Sibaya"],
       ans:  0,
-      img:  null
+      img:  "public/swati-photos/homestead.jpg"
     },
     {
       cat:  "Culture",
       q:    "The capital city of Eswatini (royal and legislative) is?",
       opts: ["Mbabane", "Lobamba", "Manzini", "Siteki"],
       ans:  1,
-      img:  null
+      img:  "public/swati-photos/lobamba.jpg"
     },
 
     /* MUSIC & DANCE */
@@ -193,7 +193,7 @@ const SWATI_QUESTIONS = {
       q:    "What is the name of the Swati royal war dance?",
       opts: ["Indlamu", "Sibhaca", "Umchwasho", "Siswati"],
       ans:  1,
-      img:  null
+      img:  "public/swati-photos/sibhaca.jpg"
     },
     {
       cat:  "Music",
@@ -209,28 +209,28 @@ const SWATI_QUESTIONS = {
       q:    "Eswatini is landlocked and completely surrounded by which country?",
       opts: ["South Africa", "Mozambique", "Both South Africa and Mozambique", "Zimbabwe"],
       ans:  2,
-      img:  "public/eswatini-map.png"
+      img:  "public/swati-photos/southafrica-moz.jpg"
     },
     {
       cat:  "Geography",
       q:    "What is the largest city in Eswatini?",
       opts: ["Mbabane", "Lobamba", "Manzini", "Nhlangano"],
       ans:  2,
-      img:  null
+      img:  "public/swati-photos/manzini.jpg"
     },
     {
       cat:  "Geography",
       q:    "Eswatini is divided into how many administrative regions?",
       opts: ["2", "4", "6", "8"],
       ans:  1,
-      img:  null
+      img:  "public/swati-photos/regions.jpg"
     },
     {
       cat:  "Geography",
       q:    "The famous cultural village of Swazi people is located in?",
       opts: ["Mantenga", "Lobamba", "Ezulwini Valley", "Mbabane"],
       ans:  0,
-      img:  null
+      img:  "public/swati-photos/mantenga.jpg"
     },
 
     /* FOOD & ATTIRE */
@@ -239,28 +239,28 @@ const SWATI_QUESTIONS = {
       q:    "What is the staple food in Swati cuisine?",
       opts: ["Pap (mealie-meal porridge)", "Rice", "Bread", "Potatoes"],
       ans:  0,
-      img:  null
+      img:  "public/swati-photos/sishwala.jpg"
     },
     {
       cat:  "Food",
       q:    "What is 'Emasi' in Swati culture?",
       opts: ["Fermented milk", "Traditional beer", "Meat stew", "Maize porridge"],
       ans:  0,
-      img:  null
+      img:  "public/swati-photos/emasi.jpg"
     },
     {
       cat:  "Food",
       q:    "Traditional Swati beer is called?",
       opts: ["Umqombothi", "Tjwala", "Amasi", "Utshwala"],
       ans:  3,
-      img:  null
+      img:  "public/swati-photos/utshwala.jpg"
     },
     {
       cat:  "Food",
       q:    "What is 'Sishwala'?",
       opts: ["Thick porridge", "Thin porridge", "Meat dish", "Vegetable relish"],
       ans:  0,
-      img:  null
+      img:  "public/swati-photos/porridge.jpg"
     },
 
     /* NOTABLE PEOPLE */
@@ -269,14 +269,14 @@ const SWATI_QUESTIONS = {
       q:    "Who is known as the 'Mother of the Nation' in Eswatini?",
       opts: ["Queen Ntombi", "Queen Mother Ndlovukati", "Princess Sikhanyiso", "Queen LaMatsebula"],
       ans:  1,
-      img:  null
+      img:  "public/swati-photos/ndlovukazi.png"
     },
     {
       cat:  "Notable People",
       q:    "Which famous Swati gospel singer is known internationally?",
       opts: ["Dr. Rebecca Malope", "Lundi Tyamara", "Bheki Mseleku", "Pastor Nomathemba"],
       ans:  0,
-      img:  null
+      img:  "public/swati-photos/reebecca-malope.jpg"
     },
     {
       cat:  "Notable People",
@@ -288,14 +288,14 @@ const SWATI_QUESTIONS = {
         "Being a fashion designer"
       ],
       ans:  0,
-      img:  "public/princess-sikhanyiso.png"
+      img:  "public/swati-photos/sikhanyiso.jpg"
     },
     {
       cat:  "Culture",
       q:    "What is 'Ligugu' in Swati culture?",
       opts: ["Traditional skirt", "Beaded necklace", "Honor/Pride", "Ceremonial shield"],
       ans:  2,
-      img:  null
+      img:  "public/swati-photos/pride.jpg"
     },
   ]
 };
