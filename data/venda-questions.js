@@ -87,7 +87,7 @@ const VENDA_QUESTIONS = {
       q:    "Who is considered the founding ancestor/king of the VhaVenḓa people?",
       opts: ["Shaka", "Dimbanyika", "Tshivhase", "Makhado"],
       ans:  1,
-      img:  null
+      img:  "public/venda-photos/dimbanyika.png"
     },
     {
       cat:  "History",
@@ -99,7 +99,7 @@ const VENDA_QUESTIONS = {
         "Introducing Christianity to the Venda"
       ],
       ans:  1,
-      img:  "public/venda-photos/king-makhado.jpg"
+      img:  "public/venda-photos/king-makhado.png"
     },
     {
       cat:  "History",
