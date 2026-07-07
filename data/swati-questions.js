@@ -16,35 +16,35 @@ const SWATI_QUESTIONS = {
       q:    "What does 'Sawubona' mean in siSwati?",
       opts: ["Goodbye", "Hello / I see you", "Thank you", "How are you?"],
       ans:  1,
-      img:  null
+      img:  "public/swati-photos/hello.jpg"
     },
     {
       cat:  "Language",
       q:    "How do you say 'Thank you' in siSwati?",
       opts: ["Siyabonga", "Ngiyabonga", "Yebo", "Sala kahle"],
       ans:  0,
-      img:  null
+      img:  "public/swati-photos/thank-you.jpg"
     },
     {
       cat:  "Language",
       q:    "What does 'Yebo' mean in siSwati?",
       opts: ["No", "Yes", "Please", "Goodbye"],
       ans:  1,
-      img:  null
+      img:  "public/swati-photos/yes.jpg"
     },
     {
       cat:  "Language",
       q:    "How do you say 'How are you?' in siSwati?",
       opts: ["Unjani?", "Kunjani?", "Sawubona", "Ngiyaphila"],
       ans:  0,
-      img:  null
+      img:  "public/swati-photos/how-are-you.jpg"
     },
     {
       cat:  "Language",
       q:    "What does 'Sala kahle' mean in siSwati?",
       opts: ["Hello", "Goodbye (stay well)", "Thank you", "Yes"],
       ans:  1,
-      img:  null
+      img:  "public/swati-photos/goodbye.jpg"
     },
 
     /* HISTORY */
@@ -53,7 +53,7 @@ const SWATI_QUESTIONS = {
       q:    "Who was the first king of the Swazi nation (Eswatini)?",
       opts: ["King Sobhuza I", "King Mswati II", "King Ngwane III", "King Sobhuza II"],
       ans:  2,
-      img:  "public/swati-king.png"
+      img:  "public/swati-photos/ngwane.jpeg"
     },
     {
       cat:  "History",
@@ -67,7 +67,7 @@ const SWATI_QUESTIONS = {
       q:    "Eswatini (formerly Swaziland) gained independence from Britain in which year?",
       opts: ["1960", "1968", "1975", "1980"],
       ans:  1,
-      img:  "public/swati-photos/swati-flag.jpg"
+      img:  "public/swati-photos/swazi-flag.jpg"
     },
     {
       cat:  "History",
@@ -97,7 +97,7 @@ const SWATI_QUESTIONS = {
       q:    "The Incwala ceremony is also known as what?",
       opts: ["Kingship Ceremony", "First Fruits Ceremony", "Reed Dance", "Harvest Festival"],
       ans:  1,
-      img:  "public/swati-photos/incwala.jpg"
+      img:  "public/swati-photos/incwala-2.jpg"
     },
     {
       cat:  "Tradition",
@@ -110,13 +110,13 @@ const SWATI_QUESTIONS = {
       cat:  "Tradition",
       q:    "What is 'Lusekwane' in Swati tradition?",
       opts: [
-        "A sacred tree used in Incwala", 
+        "A sacred tree used in Incwala",
         "A type of beadwork", 
         "A wedding ceremony", 
         "A traditional dance"
       ],
       ans:  0,
-      img:  null
+      img:  "public/swati-photos/lusekwane.jpg"
     },
     {
       cat:  "Tradition",
@@ -128,7 +128,7 @@ const SWATI_QUESTIONS = {
         "Only married couples"
       ],
       ans:  0,
-      img:  "public/umchwasho.png"
+      img:  "public/swati-photos/umchwasho.jpg"
     },
 
     /* CULTURE & ROYALTY */
@@ -186,7 +186,7 @@ const SWATI_QUESTIONS = {
       q:    "Which instrument is central to Swati traditional music?",
       opts: ["Drum (Sigubhu)", "Mbira", "Guitar", "Flute"],
       ans:  0,
-      img:  null
+      img:  "public/swati-photos/sigubhu.jpg"
     },
     {
       cat:  "Music",
