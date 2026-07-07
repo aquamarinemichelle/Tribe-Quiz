@@ -3,8 +3,6 @@
  * Team Member: Michelle Mazibuko
  * 
  * 
- * The Ndebele people are known for their vibrant geometric art, 
- * distinctive jewelery, and rich cultural heritage in South Africa.
  */
 
 const NDEBELE_QUESTIONS = {
