@@ -268,14 +268,14 @@ const VENDA_QUESTIONS = {
         "Dried fish stew"
       ],
       ans:  0,
-      img:  null
+      img: "public/venda-photos/dzikungo.jpg"
     },
     {
       cat:  "Food",
       q:    "Which grain is most traditionally associated with Venda cooking and brewing?",
       opts: ["Maize only", "Wheat", "Sorghum and millet", "Rice"],
       ans:  2,
-      img:  null
+      img:  "public/venda-photos/sorghum-millet.png"
     }
 
   ]
