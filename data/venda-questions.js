@@ -170,7 +170,7 @@ const VENDA_QUESTIONS = {
         "It is a popular tourist resort"
       ],
       ans:  1,
-      img:  "public/venda-photos/lake-fundudzi.jpg"
+      img:  "public/venda-photos/lake-fundudzi.png"
     },
     {
       cat:  "Traditions",
@@ -182,7 +182,7 @@ const VENDA_QUESTIONS = {
         "To sing a prayer song"
       ],
       ans:  1,
-      img:  null
+      img:  "public/venda-photos/lake-fundudzi-ritual.png"
     },
     {
       cat:  "Traditions",
@@ -201,7 +201,7 @@ const VENDA_QUESTIONS = {
         "A type of traditional dress"
       ],
       ans:  0,
-      img:  null
+      img:  "public/venda-photos/murundu.jpg"
     },
     {
       cat:  "Traditions",
