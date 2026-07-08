@@ -1,5 +1,4 @@
-# African Quiz 
-### African Culture Quiz Game
+# Tribe Quiz
 
 A web-based quiz game covering the cultures of Africa.  
 Live : https://african-quiz.onrender.com
@@ -22,7 +21,7 @@ Live : https://african-quiz.onrender.com
 - [ ] Difficulty levels (Easy / Medium / Hard)
 
 
-## Cultures Planned (South Africa's 11 Official Languages)
+## Cultures Planned (Africa's Languages)
 | Culture    | Language    | Status       |
 |------------|-------------|--------------|
 | Zulu       | IsiZulu     | ✅ Live      |
@@ -35,4 +34,4 @@ Live : https://african-quiz.onrender.com
 | Swati      | siSwati     | ✅ Live      |
 | Ndebele    | isiNdebele  | ✅ Live      |
 | Afrikaans  | Afrikaans   | ✅ Live      |
-| English    | English     | ✅ Live      |
+| Swahili    | Swahili     | ✅ Live      |
