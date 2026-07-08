@@ -28,28 +28,7 @@ const AFRIKAANS_QUESTIONS = {
       q:    "How do you say 'Thank you' in Afrikaans?",
       opts: ["Asseblief", "Dankie", "Totsiens", "Goeie dag"],
       ans:  1,
-      img:  null
-    },
-    {
-      cat:  "Language",
-      q:    "What does 'Lekker' mean in Afrikaans?",
-      opts: ["Sad", "Nice / Great", "Tired", "Angry"],
-      ans:  1,
-      img:  null
-    },
-    {
-      cat:  "Language",
-      q:    "How do you say 'Goodbye' in Afrikaans?",
-      opts: ["Hallo", "Totsiens", "Dankie", "Asseblief"],
-      ans:  1,
-      img:  null
-    },
-    {
-      cat:  "Language",
-      q:    "In which year was Afrikaans officially recognised as one of South Africa's languages (alongside English)?",
-      opts: ["1902", "1925", "1948", "1961"],
-      ans:  1,
-      img:  null
+      img:  "public/afrikaans-photos/thank-you.jpg"
     },
     {
       cat:  "Language",
@@ -89,7 +68,7 @@ const AFRIKAANS_QUESTIONS = {
         "An annual harvest festival"
       ],
       ans:  1,
-      img:  "public/afrikaans-photos/great-trek.jpg"
+      img:  "public/afrikaans-photos/great-trek-exp.jpg"
     },
     {
       cat:  "History",
@@ -108,7 +87,7 @@ const AFRIKAANS_QUESTIONS = {
         "The Zulu Kingdom"
       ],
       ans:  1,
-      img:  null
+      img:  "public/afrikaans-photos/Voortrekkers.jpg"
     },
     {
       cat:  "History",
@@ -122,7 +101,7 @@ const AFRIKAANS_QUESTIONS = {
       q:    "When did the Anglo-Boer War take place?",
       opts: ["1850-1852", "1879-1881", "1899-1902", "1914-1918"],
       ans:  2,
-      img:  null
+      img:  "public/afrikaans-photos/anglo-war.jpg"
     },
     {
       cat:  "History",
@@ -188,7 +167,7 @@ const AFRIKAANS_QUESTIONS = {
       q:    "The Dutch Reformed Church has historically played a major role in which aspect of Afrikaner life?",
       opts: ["Sport", "Religion and community life", "Agriculture only", "Mining"],
       ans:  1,
-      img:  "public/afrikaans-photos/religion.jpg"
+      img:  "public/afrikaans-photos/dutch-church.jpg"
     },
     {
       cat:  "Traditions",
@@ -223,7 +202,7 @@ const AFRIKAANS_QUESTIONS = {
       q:    "What is 'melktert'?",
       opts: ["A spicy curry", "A milk tart dessert", "A type of bread roll", "A meat pie"],
       ans:  1,
-      img:  "public/afrikaans-photos/melkterk.jpg"
+      img:  "public/afrikaans-photos/melktert.jpg"
     },
     {
       cat:  "Food",
