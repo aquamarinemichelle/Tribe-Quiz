@@ -1182,8 +1182,16 @@ html, body {
 }
 
 .auth-logo {
-  font-size: 40px;
   margin-bottom: 6px;
+  display: flex;
+  justify-content: center;
+}
+.auth-logo img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 10px rgba(255, 200, 80, 0.7))
+          drop-shadow(0 0 20px rgba(255, 160, 40, 0.4));
 }
 .auth-title {
   font-family: var(--font-display);
