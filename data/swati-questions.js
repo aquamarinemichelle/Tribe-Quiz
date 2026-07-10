@@ -25,7 +25,28 @@ const SWATI_QUESTIONS = {
       ans:  0,
       img:  "public/swati-photos/thank-you.jpg"
     },
-    
+    {
+      cat:  "Language",
+      q:    "What does 'Yebo' mean in siSwati?",
+      opts: ["No", "Yes", "Please", "Goodbye"],
+      ans:  1,
+      img:  "public/swati-photos/yes.jpg"
+    },
+    {
+      cat:  "Language",
+      q:    "How do you say 'How are you?' in siSwati?",
+      opts: ["Unjani?", "Kunjani?", "Sawubona", "Ngiyaphila"],
+      ans:  0,
+      img:  "public/swati-photos/how-are-you.jpg"
+    },
+    {
+      cat:  "Language",
+      q:    "What does 'Sala kahle' mean in siSwati?",
+      opts: ["Hello", "Goodbye (stay well)", "Thank you", "Yes"],
+      ans:  1,
+      img:  "public/swati-photos/goodbye.jpg"
+    },
+
     /* HISTORY */
     {
       cat:  "History",

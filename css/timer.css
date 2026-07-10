@@ -1,0 +1,53 @@
+/* ══════════════════════════════════
+   TIMER PER QUESTION — styles
+   Countdown bar shown on the quiz screen.
+══════════════════════════════════ */
+
+.timer-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 20px 4px;
+}
+
+.timer-icon {
+  font-size: 15px;
+  line-height: 1;
+}
+
+.timer-track {
+  flex: 1;
+  height: 9px;
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.timer-bar {
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+  background-color: #2ecc71;
+  transition: width 0.1s linear, background-color 0.3s ease;
+}
+
+.timer-bar.timer-green  { background-color: #2ecc71; }
+.timer-bar.timer-orange { background-color: #f39c12; }
+.timer-bar.timer-red    { background-color: #e74c3c; }
+
+.timer-bar.timer-red.timer-pulse {
+  animation: timerPulse 0.5s ease-in-out infinite;
+}
+
+@keyframes timerPulse {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.55; }
+}
+
+.timer-text {
+  font-size: 13px;
+  font-weight: 800;
+  min-width: 30px;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}

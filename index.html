@@ -6,6 +6,7 @@
   <title>Tribe Quiz – African Cultures</title>
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/leaderboard.css" />
+  <link rel="stylesheet" href="css/timer.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
 </head>
@@ -182,6 +183,13 @@
     <div class="progress-wrap">
       <div class="progress-bar" id="progress-bar"></div>
     </div>
+    <div class="timer-wrap" id="timer-wrap">
+      <span class="timer-icon">⏱</span>
+      <div class="timer-track">
+        <div class="timer-bar" id="timer-bar"></div>
+      </div>
+      <span class="timer-text" id="timer-text">15s</span>
+    </div>
     <main class="quiz-main">
       <div class="q-meta">
         <span class="q-category" id="q-category">Category</span>
@@ -222,7 +230,6 @@
   </div>
 
 
-  
   <script src="data/zulu-questions.js"></script>
   <script src="data/xhosa-questions.js"></script>
   <script src="data/sotho-questions.js"></script>
