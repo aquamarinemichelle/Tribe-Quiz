@@ -75,7 +75,7 @@ const NDEBELE_QUESTIONS = {
       q:    "The Ndebele in South Africa are primarily located in which province?",
       opts: ["Limpopo", "Gauteng", "Mpumalanga", "KwaZulu-Natal"],
       ans:  2,
-      img:  null
+      img:  "public/ndebele-photos/kwandebele.jpg"
     },
     {
       cat:  "History",
@@ -205,7 +205,7 @@ const NDEBELE_QUESTIONS = {
       q:    "The main Ndebele area in South Africa is known as?",
       opts: ["KwaNdebele", "Mapumalanga", "KwaZulu", "Eastern Cape"],
       ans:  0,
-      img:  null
+      img:  "public/ndebele-photos/kwandebele.jpg"
     },
     {
       cat:  "Geography",
