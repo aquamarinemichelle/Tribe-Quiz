@@ -1,7 +1,8 @@
 /**
  * UBUNTU QUIZ — GAME LOGIC
  * Handles: screen navigation, culture card building,
- * question loading, answering, scoring, and results.
+ * question loading, answering, scoring, results,
+ * and the per-question countdown timer.
  */
 
 /* ── STATE ── */
@@ -13,9 +14,16 @@ let totalPoints        = 0;
 let answered           = false;
 let answerLog          = [];
 
+/* ── TIMER STATE ── */
+let timerInterval    = null;   // handle for the running countdown
+let timeLeft         = 0;      // seconds remaining on the current question
+let autoAdvanceTimer = null;   // handle for the "move on after timeout" delay
+
 /* ── CONSTANTS ── */
-const POINTS_PER_CORRECT = 10;
+const POINTS_PER_CORRECT  = 10;
 const MAX_QUESTIONS       = 10;
+const QUESTION_TIME_LIMIT = 15; // seconds allowed per question
+const AUTO_ADVANCE_DELAY  = 1800; // ms to show "time's up" before jumping on
 
 /* ── DOM REFERENCES ── */
 const screens = {
@@ -29,6 +37,8 @@ const el = {
   quizCultureLabel: document.getElementById('quiz-culture-label'),
   liveScore:        document.getElementById('live-score'),
   progressBar:      document.getElementById('progress-bar'),
+  timerBar:         document.getElementById('timer-bar'),
+  timerText:        document.getElementById('timer-text'),
   qCategory:        document.getElementById('q-category'),
   qCounter:         document.getElementById('q-counter'),
   qText:            document.getElementById('q-text'),
@@ -168,6 +178,7 @@ function startQuiz(cultureKey) {
    LOAD QUESTION
 ══════════════════════════════════════ */
 function loadQuestion() {
+  clearAutoAdvance();
   const q     = questions[currentIndex];
   const total = questions.length;
   answered    = false;
@@ -197,6 +208,7 @@ function loadQuestion() {
   }
 
   renderOptions(q);
+  startTimer();
 }
 
 /* ══════════════════════════════════════
@@ -212,6 +224,7 @@ function renderOptions(q) {
     const btn = document.createElement('button');
     btn.className   = 'opt-btn';
     btn.textContent = opt.text;
+    btn.dataset.origIndex = opt.origIndex;
     btn.addEventListener('click', () => {
       handleAnswer(btn, opt.origIndex, q.ans, q.q, q.opts[q.ans], shuffled);
     });
@@ -220,11 +233,98 @@ function renderOptions(q) {
 }
 
 /* ══════════════════════════════════════
+   TIMER — countdown per question
+══════════════════════════════════════ */
+function startTimer() {
+  clearTimer();
+
+  timeLeft = QUESTION_TIME_LIMIT;
+  updateTimerDisplay();
+
+  // Ticks 10x/second so the bar shrinks smoothly rather than jumping.
+  timerInterval = setInterval(() => {
+    timeLeft = Math.max(0, timeLeft - 0.1);
+    updateTimerDisplay();
+
+    if (timeLeft <= 0) {
+      clearTimer();
+      handleTimeout();
+    }
+  }, 100);
+}
+
+function clearTimer() {
+  if (timerInterval) {
+    clearInterval(timerInterval);
+    timerInterval = null;
+  }
+}
+
+function clearAutoAdvance() {
+  if (autoAdvanceTimer) {
+    clearTimeout(autoAdvanceTimer);
+    autoAdvanceTimer = null;
+  }
+}
+
+function updateTimerDisplay() {
+  if (!el.timerBar || !el.timerText) return;
+
+  const pct = (timeLeft / QUESTION_TIME_LIMIT) * 100;
+  el.timerBar.style.width = pct + '%';
+  el.timerText.textContent = Math.ceil(timeLeft) + 's';
+
+  el.timerBar.classList.remove('timer-green', 'timer-orange', 'timer-red', 'timer-pulse');
+  if (pct > 50) {
+    el.timerBar.classList.add('timer-green');
+  } else if (pct > 20) {
+    el.timerBar.classList.add('timer-orange');
+  } else {
+    el.timerBar.classList.add('timer-red');
+    if (pct > 0) el.timerBar.classList.add('timer-pulse');
+  }
+}
+
+/* Called automatically when the countdown reaches zero and the
+   player hasn't answered yet — marks the question wrong. */
+function handleTimeout() {
+  if (answered) return;
+  answered = true;
+
+  const q = questions[currentIndex];
+  const allBtns = el.optionsGrid.querySelectorAll('.opt-btn');
+  allBtns.forEach(b => {
+    b.disabled = true;
+    if (parseInt(b.dataset.origIndex, 10) === q.ans) {
+      b.classList.add('correct');
+    }
+  });
+
+  showFeedback(false, "Time's up! Correct answer: " + q.opts[q.ans]);
+  el.liveScore.textContent = totalPoints + ' pts';
+
+  answerLog.push({
+    question:      q.q,
+    yourAnswer:    '(no answer — time ran out)',
+    correctAnswer: q.opts[q.ans],
+    correct:       false,
+  });
+
+  el.nextBtn.style.display = 'block';
+
+  // Question is already marked wrong — move on automatically so the
+  // player isn't stuck waiting on a question they missed.
+  clearAutoAdvance();
+  autoAdvanceTimer = setTimeout(goToNextQuestion, AUTO_ADVANCE_DELAY);
+}
+
+/* ══════════════════════════════════════
    HANDLE ANSWER
 ══════════════════════════════════════ */
 function handleAnswer(clickedBtn, chosenIndex, correctIndex, questionText, correctText, shuffled) {
   if (answered) return;
   answered = true;
+  clearTimer();
 
   const allBtns = el.optionsGrid.querySelectorAll('.opt-btn');
   allBtns.forEach(b => (b.disabled = true));
@@ -277,14 +377,18 @@ async function saveScoreToLeaderboard() {
 /* ══════════════════════════════════════
    NEXT BUTTON
 ══════════════════════════════════════ */
-el.nextBtn.addEventListener('click', () => {
+el.nextBtn.addEventListener('click', goToNextQuestion);
+
+function goToNextQuestion() {
+  clearAutoAdvance();
+  clearTimer();
   currentIndex++;
   if (currentIndex >= questions.length) {
     showResults();
   } else {
     loadQuestion();
   }
-});
+}
 
 /* ══════════════════════════════════════
    RESULTS SCREEN (with score saving)
@@ -366,6 +470,8 @@ el.playAgainBtn.addEventListener('click',     () => startQuiz(currentCultureKey)
 el.changeCultureBtn.addEventListener('click', () => showScreen('home'));
 el.backBtn.addEventListener('click', () => {
   if (confirm('Go back to the home screen? Your progress will be lost.')) {
+    clearTimer();
+    clearAutoAdvance();
     showScreen('home');
   }
 });
