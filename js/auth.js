@@ -159,10 +159,7 @@ window.supabase = _supabase;
       await _supabase.auth.signInWithOAuth({
         provider: 'google',
         options:  { 
-          redirectTo: window.location.origin + '/index.html',
-          data: {
-            display_name: 'Google User' // Default name for Google users
-          }
+          redirectTo: window.location.origin + '/index.html'
         }
       });
     });
@@ -192,7 +189,9 @@ window.supabase = _supabase;
 
     if (session) {
       // Try to get display name from profiles table first
-      let displayName = session.user.user_metadata?.display_name;
+      let displayName = session.user.user_metadata?.display_name 
+                        || session.user.user_metadata?.full_name
+                        || session.user.user_metadata?.name;
       
       // If not in metadata, try to fetch from profiles table
       if (!displayName) {
