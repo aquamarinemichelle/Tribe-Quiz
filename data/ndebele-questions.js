@@ -3,8 +3,6 @@
  * Team Member: Michelle Mazibuko
  * 
  * 
- * The Ndebele people are known for their vibrant geometric art, 
- * distinctive jewelery, and rich cultural heritage in South Africa.
  */
 
 const NDEBELE_QUESTIONS = {
@@ -17,20 +15,20 @@ const NDEBELE_QUESTIONS = {
     {
       cat:  "Language",
       q:    "What does 'Lotjhani' mean in isiNdebele?",
-      opts: ["Goodbye", "Hello / How are you?", "Thank you", "Yes"],
+      opts: ["Goodbye", "Hello", "Thank you", "Yes"],
       ans:  1,
       img:  null
     },
     {
       cat:  "Language",
       q:    "How do you say 'Thank you' in isiNdebele?",
-      opts: ["Ngiyabonga", "Siyabonga", "Lotjhani", "Yebo"],
+      opts: ["Ngiyabonga", "Ngiyathokoza", "Lotjhani", "Yebo"],
       ans:  1,
       img:  null
     },
     {
       cat:  "Language",
-      q:    "What does 'Yebo' mean in isiNdebele?",
+      q:    "What does 'Iye' mean in isiNdebele?",
       opts: ["No", "Yes", "Maybe", "Hello"],
       ans:  1,
       img:  null
@@ -38,7 +36,7 @@ const NDEBELE_QUESTIONS = {
     {
       cat:  "Language",
       q:    "How do you say 'Goodbye' in isiNdebele?",
-      opts: ["Salakahle", "Lotjhani", "Hamba kahle", "Nihlale kahle"],
+      opts: ["Salakahle", "Lotjhani", "Hamba kahle", "Nisale kuhle"],
       ans:  3,
       img:  null
     },
@@ -53,21 +51,21 @@ const NDEBELE_QUESTIONS = {
     /* HISTORY */
     {
       cat:  "History",
-      q:    "Who was the famous Ndebele warrior queen known for leading her people during the Mfecane?",
+      q:    "",
       opts: ["Queen Manthatisi", "Queen Nzinga", "Queen Mkabayi", "Queen Modjadji"],
       ans:  0,
       img:  "public/ndebele-queen.png"
     },
     {
       cat:  "History",
-      q:    "The Ndebele people broke away from which larger Nguni group under chief Mzilikazi?",
+      q:    "",
       opts: ["Xhosa", "Zulu", "Swati", "Tswana"],
       ans:  1,
       img:  null
     },
     {
       cat:  "History",
-      q:    "What is the name of the Ndebele king who led his people north into Zimbabwe?",
+      q:    "",
       opts: ["Lobengula", "Mzilikazi", "Khama", "Moshoeshoe"],
       ans:  1,
       img:  null
@@ -93,32 +91,32 @@ const NDEBELE_QUESTIONS = {
       q:    "What are Ndebele women famous for wearing around their necks, arms, and legs?",
       opts: ["Beaded necklaces", "Brass rings (idzila)", "Feathers", "Cowrie shells"],
       ans:  1,
-      img:  "public/ndebele-rings.png"
+      img:  "public/ndebele-photos/idzila.jpg"
     },
     {
       cat:  "Tradition",
       q:    "The colorful geometric patterns painted on Ndebele houses are called?",
-      opts: ["Ndebele art", "Iimbali", "Amaphepha", "Ukugwala"],
+      opts: ["Umgwalo", "Iimbali", "Amaphepha", "Painting"],
       ans:  0,
-      img:  "public/ndebele-house.png"
+      img: "public/ndebele-photos/umgwalo.jpg"
     },
     {
       cat:  "Tradition",
-      q:    "What is the traditional Ndebele wedding apron called?",
-      opts: ["Isiphaphalazi", "Lepato", "Thethu", "Mokorotlo"],
-      ans:  0,
-      img:  null
+      q:    "Which traditional ceremony is important in Ndebele culture?",
+      opts: ["Umhlanga", "Wedding ceremonies", "Initiation ceremonies", "Ukweshwama"],
+      ans:  2,
+      img:  "public/ndebele-photos/ukuwela.jpg"
     },
     {
       cat:  "Tradition",
-      q:    "What does 'Ukugwala' mean in Ndebele culture?",
+      q:    "What does 'Ukuthomba' mean in Ndebele culture?",
       opts: ["A wedding ceremony", "A coming-of-age ritual for girls", "A harvest festival", "A prayer ritual"],
       ans:  1,
-      img:  null
+      img:  "public/ndebele-photos/iqude.png"
     },
     {
       cat:  "Tradition",
-      q:    "Ndebele traditional healers are known as?",
+      q:    "What is the role of a 'Sangoma' in Ndebele culture?",
       opts: ["Sangoma", "Inyanga", "Isangoma", "Muthi"],
       ans:  2,
       img:  null
@@ -135,7 +133,7 @@ const NDEBELE_QUESTIONS = {
         "Tourist attraction"
       ],
       ans:  1,
-      img:  "public/ndebele-art.png"
+      img: null
     },
     {
       cat:  "Art",
@@ -218,7 +216,7 @@ const NDEBELE_QUESTIONS = {
     },
     {
       cat:  "Geography",
-      q:    "The Ndebele Cultural Village is located near which town?",
+      q:    "",
       opts: ["Bronkhorstspruit", "Pretoria", "Johannesburg", "Botshabelo"],
       ans:  3,
       img:  null
@@ -284,30 +282,30 @@ const NDEBELE_QUESTIONS = {
       q:    "BMW famously commissioned which Ndebele artist to paint a luxury car?",
       opts: ["Esther Mahlangu", "Dr. Esther Mnguni", "Noria Mabasa", "Jackson Hlungwani"],
       ans:  0,
-      img:  "public/bmw-ndebele.png"
+      img:  "public/ndebele-photos/bmw.jpg"
     },
     {
       cat:  "Notable People",
-      q:    "Dr. Esther Mahlangu's artwork is displayed in which famous museum?",
+      q:    "Who is the current reigning king of the Ndebele(Ndzundza) in South Africa?",
       opts: [
-        "British Museum", 
-        "Louvre", 
-        "British Museum and Smithsonian", 
-        "Metropolitan Museum"
+        "King Makhosoke II", 
+        "King Nyabela", 
+        "King Mabhoko III", 
+        "King Makhosonke II"
       ],
       ans:  2,
-      img:  null
+      img:  "public/ndebele-photos/king-mabhoko-iii.png"
     },
     {
       cat:  "Culture",
       q:    "What is the traditional Ndebele marriage blanket called?",
-      opts: ["Nguba", "Lepato", "Irhasi", "Mokorotlo"],
-      ans:  0,
-      img:  null
+      opts: ["Nguba", "Umbhalo", "Irhasi", "Mokorotlo"],
+      ans:  1,
+      img:  "public/ndebele-photos/umbhalo.jpg"
     },
     {
       cat:  "Notable People",
-      q:    "Who is the current reigning king of the Ndebele in South Africa?",
+      q:    "Who is the current reigning king of the Ndebele(Manala) in South Africa?",
       opts: [
         "King Makhosoke II", 
         "King Nyabela", 
@@ -315,7 +313,7 @@ const NDEBELE_QUESTIONS = {
         "King Makhosonke II"
       ],
       ans:  0,
-      img:  null
+      img:  "public/ndebele-photos/king-makhosoke-ii.png"
     },
   ]
 };

@@ -2,6 +2,7 @@
  * VENDA CULTURE QUESTIONS
  * Covers Tshivenḓa language, Venda history, traditions, and food.
  * The Venda people (VhaVenḓa) are primarily found in Limpopo, South Africa.
+ * Zinhle Michelle Mazibuko.
  */
 
 const VENDA_QUESTIONS = {
@@ -106,7 +107,7 @@ const VENDA_QUESTIONS = {
       q:    "The Venda homeland during apartheid was known as?",
       opts: ["Bophuthatswana", "Transkei", "Venda", "Gazankulu"],
       ans:  2,
-      img:  null
+      img:  "public/venda-photos/venda-homeland.png"
     },
     {
       cat:  "History",
@@ -125,7 +126,7 @@ const VENDA_QUESTIONS = {
       q:    "The Venda people are closely related culturally and linguistically to which other group across the border?",
       opts: ["Shona people of Zimbabwe", "Zulu people", "Xhosa people", "Sotho people"],
       ans:  0,
-      img:  null
+      img:  "public/venda-photos/venda-people.jpg"
     },
 
     /* ── TRADITIONS ── */
@@ -170,7 +171,7 @@ const VENDA_QUESTIONS = {
         "It is a popular tourist resort"
       ],
       ans:  1,
-      img:  "public/venda-photos/lake-fundudzi.jpg"
+      img:  "public/venda-photos/lake-fundudzi.png"
     },
     {
       cat:  "Traditions",
@@ -182,7 +183,7 @@ const VENDA_QUESTIONS = {
         "To sing a prayer song"
       ],
       ans:  1,
-      img:  null
+      img:  "public/venda-photos/lake-fundudzi-ritual.png"
     },
     {
       cat:  "Traditions",
@@ -201,7 +202,7 @@ const VENDA_QUESTIONS = {
         "A type of traditional dress"
       ],
       ans:  0,
-      img:  null
+      img:  "public/venda-photos/murundu.jpg"
     },
     {
       cat:  "Traditions",
@@ -229,7 +230,7 @@ const VENDA_QUESTIONS = {
       q:    "What is 'Mutuku', a popular Venda staple?",
       opts: ["A thick porridge made from millet or sorghum", "A grilled fish dish", "A type of soup", "A fried dough snack"],
       ans:  0,
-      img:  null
+      img:  "public/venda-photos/mutuku.png"
     },
     {
       cat:  "Food",
@@ -267,14 +268,14 @@ const VENDA_QUESTIONS = {
         "Dried fish stew"
       ],
       ans:  0,
-      img:  null
+      img: "public/venda-photos/dzikungo.jpg"
     },
     {
       cat:  "Food",
       q:    "Which grain is most traditionally associated with Venda cooking and brewing?",
       opts: ["Maize only", "Wheat", "Sorghum and millet", "Rice"],
       ans:  2,
-      img:  null
+      img:  "public/venda-photos/sorghum-millet.png"
     }
 
   ]
