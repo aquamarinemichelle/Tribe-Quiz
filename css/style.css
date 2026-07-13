@@ -196,8 +196,10 @@ html, body {
 /* Hide hamburger on desktop, show on mobile */
 @media (max-width: 680px) {
   .navbar-links,
-  .nav-profile-btn {
-    display: none;
+  .nav-profile-btn,
+  .nav-auth-area,
+  .nav-user-area {
+    display: none !important;
   }
   .nav-hamburger {
     display: block;

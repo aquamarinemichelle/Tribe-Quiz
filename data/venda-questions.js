@@ -8,7 +8,7 @@
 const VENDA_QUESTIONS = {
   name:   "Venda",
   lang:   "Tshivenḓa",
-  icon:   "public/homepage/venda.png",
+  icon:   "public/homepage/vhenda.png",
   locked: false,
   questions: [
 

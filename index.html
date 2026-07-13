@@ -61,6 +61,7 @@
       <hr class="mobile-nav-divider" />
       <a href="auth.html" class="mobile-link" id="mobile-signin-link">Sign In</a>
       <a href="auth.html?tab=signup" class="mobile-link mobile-link-signup" id="mobile-signup-link">Sign Up</a>
+      <span class="mobile-link mobile-user-name" id="mobile-user-name" style="display:none; color: var(--gold); font-weight:700;"></span>
       <a href="#" class="mobile-link" id="mobile-signout-link" style="display:none;" onclick="mobileSignOut(); return false;">Sign Out</a>
     </div>
 
@@ -303,10 +304,23 @@
     async function updateMobileNav() {
       if (window._supabase) {
         const { data } = await window._supabase.auth.getSession();
-        const loggedIn = !!data.session;
+        const session = data.session;
+        const loggedIn = !!session;
         document.getElementById('mobile-signin-link').style.display  = loggedIn ? 'none' : '';
         document.getElementById('mobile-signup-link').style.display  = loggedIn ? 'none' : '';
         document.getElementById('mobile-signout-link').style.display = loggedIn ? '' : 'none';
+        const mobileUserName = document.getElementById('mobile-user-name');
+        if (mobileUserName) {
+          mobileUserName.style.display = loggedIn ? '' : 'none';
+          if (session) {
+            const name = session.user.user_metadata?.display_name
+                      || session.user.user_metadata?.full_name
+                      || session.user.user_metadata?.name
+                      || session.user.email?.split('@')[0]
+                      || 'Player';
+            mobileUserName.textContent = '👤 ' + name;
+          }
+        }
       }
     }
     updateMobileNav();
