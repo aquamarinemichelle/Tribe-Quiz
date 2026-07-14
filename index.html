@@ -6,7 +6,6 @@
   <title>Tribe Quiz – African Cultures</title>
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/leaderboard.css" />
-  <link rel="stylesheet" href="css/timer.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
 </head>
@@ -44,7 +43,7 @@
 
       <!-- User area: shown when logged IN -->
       <div id="nav-user-area" class="nav-user-area" style="display:none;">
-        <span id="nav-user-name" class="nav-user-name"></span>
+        <span id="nav-user-name" class="nav-user-name nav-user-clickable" onclick="showProfile()" title="Edit Profile"></span>
         <button id="btn-signout" class="btn-nav-signout">Sign Out</button>
       </div>
 
@@ -61,7 +60,6 @@
       <hr class="mobile-nav-divider" />
       <a href="auth.html" class="mobile-link" id="mobile-signin-link">Sign In</a>
       <a href="auth.html?tab=signup" class="mobile-link mobile-link-signup" id="mobile-signup-link">Sign Up</a>
-      <span class="mobile-link mobile-user-name" id="mobile-user-name" style="display:none; color: var(--gold); font-weight:700;"></span>
       <a href="#" class="mobile-link" id="mobile-signout-link" style="display:none;" onclick="mobileSignOut(); return false;">Sign Out</a>
     </div>
 
@@ -173,6 +171,47 @@
 
 
   <!-- ══════════════════════════════════
+       PROFILE MODAL
+  ══════════════════════════════════ -->
+  <div class="modal-overlay" id="profile-modal">
+    <div class="modal-box profile-modal-box">
+      <button class="modal-close" onclick="hideProfile()">✕</button>
+      <h2 class="modal-title">👤 Profile</h2>
+
+      <div id="profile-message" class="profile-message" style="display:none;"></div>
+
+      <!-- Update Display Name -->
+      <div class="profile-section">
+        <label class="profile-label">Display Name</label>
+        <div class="profile-input-row">
+          <input id="profile-name-input" type="text" class="profile-input" placeholder="Your display name" />
+          <button class="btn-profile-save" onclick="updateDisplayName()">Save</button>
+        </div>
+      </div>
+
+      <!-- Update Password -->
+      <div class="profile-section">
+        <label class="profile-label">New Password</label>
+        <div class="profile-input-row">
+          <input id="profile-password-input" type="password" class="profile-input" placeholder="Min. 6 characters" />
+          <button class="btn-profile-save" onclick="updatePassword()">Save</button>
+        </div>
+      </div>
+
+      <hr class="profile-divider" />
+
+      <!-- Delete Account -->
+      <div class="profile-section">
+        <label class="profile-label" style="color:#ff6b6b;">Danger Zone</label>
+        <button class="btn-profile-delete" onclick="confirmDeleteAccount()">Delete My Account</button>
+        <p class="profile-delete-warning">This will permanently delete your account and all your scores.</p>
+      </div>
+
+      <button class="btn-start modal-got-it" onclick="hideProfile()">Close</button>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════
        SCREEN 2 — QUIZ
   ══════════════════════════════════ -->
   <div class="screen" id="screen-quiz">
@@ -183,13 +222,6 @@
     </header>
     <div class="progress-wrap">
       <div class="progress-bar" id="progress-bar"></div>
-    </div>
-    <div class="timer-wrap" id="timer-wrap">
-      <span class="timer-icon">⏱</span>
-      <div class="timer-track">
-        <div class="timer-bar" id="timer-bar"></div>
-      </div>
-      <span class="timer-text" id="timer-text">15s</span>
     </div>
     <main class="quiz-main">
       <div class="q-meta">
@@ -231,6 +263,7 @@
   </div>
 
 
+  
   <script src="data/zulu-questions.js"></script>
   <script src="data/xhosa-questions.js"></script>
   <script src="data/sotho-questions.js"></script>
@@ -265,6 +298,93 @@
     function hideHowToPlay() {
       document.getElementById('howto-modal').style.display = 'none';
     }
+    /* ── PROFILE MODAL ── */
+    function showProfile() {
+      // Pre-fill name field with current name
+      const nameEl = document.getElementById('nav-user-name');
+      const currentName = nameEl ? nameEl.textContent.replace('👤 ', '').trim() : '';
+      document.getElementById('profile-name-input').value = currentName;
+      document.getElementById('profile-password-input').value = '';
+      document.getElementById('profile-message').style.display = 'none';
+      document.getElementById('profile-modal').style.display = 'flex';
+    }
+    function hideProfile() {
+      document.getElementById('profile-modal').style.display = 'none';
+    }
+
+    function showProfileMsg(text, isError = false) {
+      const el = document.getElementById('profile-message');
+      el.textContent = text;
+      el.className = 'profile-message ' + (isError ? 'profile-msg-error' : 'profile-msg-success');
+      el.style.display = 'block';
+    }
+
+    async function updateDisplayName() {
+      const name = document.getElementById('profile-name-input').value.trim();
+      if (!name) { showProfileMsg('Please enter a name.', true); return; }
+
+      const { data: { session } } = await window._supabase.auth.getSession();
+      if (!session) return;
+
+      // Update in profiles table
+      const { error: dbError } = await window._supabase
+        .from('profiles')
+        .update({ display_name: name })
+        .eq('id', session.user.id);
+
+      // Update in auth metadata
+      await window._supabase.auth.updateUser({ data: { display_name: name } });
+
+      if (dbError) {
+        showProfileMsg('Failed to update name.', true);
+      } else {
+        showProfileMsg('Display name updated! ✅');
+        // Refresh navbar
+        document.getElementById('nav-user-name').textContent = '👤 ' + name;
+        const mobileEl = document.getElementById('mobile-user-name');
+        if (mobileEl) mobileEl.textContent = '👤 ' + name;
+      }
+    }
+
+    async function updatePassword() {
+      const password = document.getElementById('profile-password-input').value;
+      if (!password || password.length < 6) {
+        showProfileMsg('Password must be at least 6 characters.', true);
+        return;
+      }
+      const { error } = await window._supabase.auth.updateUser({ password });
+      if (error) {
+        showProfileMsg('Failed to update password: ' + error.message, true);
+      } else {
+        showProfileMsg('Password updated! ✅');
+        document.getElementById('profile-password-input').value = '';
+      }
+    }
+
+    async function confirmDeleteAccount() {
+      const confirmed = confirm(
+        'Are you sure you want to delete your account?\n\nThis will permanently delete your account and ALL your scores. This cannot be undone.'
+      );
+      if (!confirmed) return;
+
+      const { data: { session } } = await window._supabase.auth.getSession();
+      if (!session) return;
+
+      // Delete scores first
+      await window._supabase.from('scores').delete().eq('user_id', session.user.id);
+      // Delete profile
+      await window._supabase.from('profiles').delete().eq('id', session.user.id);
+      // Sign out and redirect
+      await window._supabase.auth.signOut();
+      showProfileMsg('Account deleted. Redirecting...', false);
+      setTimeout(() => window.location.href = 'index.html', 1500);
+    }
+
+    // Close profile modal on outside click
+    document.getElementById('profile-modal').addEventListener('click', function(e) {
+      if (e.target === this) hideProfile();
+    });
+
     function showAbout() {
       document.getElementById('about-modal').style.display = 'flex';
     }
@@ -304,23 +424,10 @@
     async function updateMobileNav() {
       if (window._supabase) {
         const { data } = await window._supabase.auth.getSession();
-        const session = data.session;
-        const loggedIn = !!session;
+        const loggedIn = !!data.session;
         document.getElementById('mobile-signin-link').style.display  = loggedIn ? 'none' : '';
         document.getElementById('mobile-signup-link').style.display  = loggedIn ? 'none' : '';
         document.getElementById('mobile-signout-link').style.display = loggedIn ? '' : 'none';
-        const mobileUserName = document.getElementById('mobile-user-name');
-        if (mobileUserName) {
-          mobileUserName.style.display = loggedIn ? '' : 'none';
-          if (session) {
-            const name = session.user.user_metadata?.display_name
-                      || session.user.user_metadata?.full_name
-                      || session.user.user_metadata?.name
-                      || session.user.email?.split('@')[0]
-                      || 'Player';
-            mobileUserName.textContent = '👤 ' + name;
-          }
-        }
       }
     }
     updateMobileNav();
