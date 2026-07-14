@@ -16,7 +16,7 @@ const SWATI_QUESTIONS = {
       q:    "What does 'Sawubona' mean in siSwati?",
       opts: ["Goodbye", "Hello / I see you", "Thank you", "How are you?"],
       ans:  1,
-      img:  "public/swati-photos/hello.jpg"
+      img:  "public/swati-photos/hello.png"
     },
     {
       cat:  "Language",
@@ -30,21 +30,21 @@ const SWATI_QUESTIONS = {
       q:    "What does 'Yebo' mean in siSwati?",
       opts: ["No", "Yes", "Please", "Goodbye"],
       ans:  1,
-      img:  "public/swati-photos/yes.jpg"
+      img:  "public/swati-photos/yes.png"
     },
     {
       cat:  "Language",
       q:    "How do you say 'How are you?' in siSwati?",
       opts: ["Unjani?", "Kunjani?", "Sawubona", "Ngiyaphila"],
       ans:  0,
-      img:  "public/swati-photos/how-are-you.jpg"
+      img:  "public/swati-photos/how-are-you.png"
     },
     {
       cat:  "Language",
       q:    "What does 'Sala kahle' mean in siSwati?",
       opts: ["Hello", "Goodbye (stay well)", "Thank you", "Yes"],
       ans:  1,
-      img:  "public/swati-photos/goodbye.jpg"
+      img:  "public/swati-photos/goodbye.png"
     },
 
     /* HISTORY */
@@ -179,7 +179,7 @@ const SWATI_QUESTIONS = {
       q:    "What is the traditional Swati dance performed at the Incwala ceremony?",
       opts: ["Siswati dance", "Umhlanga dance", "Sibhaca", "Ingoma"],
       ans:  2,
-      img:  "public/sibhaca-dance.png"
+      img:  "public/swati-photos/sibhaca.jpg"
     },
     {
       cat:  "Music",
@@ -195,14 +195,7 @@ const SWATI_QUESTIONS = {
       ans:  1,
       img:  "public/swati-photos/sibhaca.jpg"
     },
-    {
-      cat:  "Music",
-      q:    "Modern Swati music genre influenced by South African Kwaito is called?",
-      opts: ["Swaito", "Amapiano", "Gqom", "Siswati pop"],
-      ans:  0,
-      img:  null
-    },
-
+    
     /* GEOGRAPHY */
     {
       cat:  "Geography",

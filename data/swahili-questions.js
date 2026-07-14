@@ -16,7 +16,7 @@ const SWAHILI_QUESTIONS = {
       q:    "What does 'Jambo' mean in Swahili?",
       opts: ["Goodbye", "Hello", "Thank you", "How are you?"],
       ans:  1,
-      img:  "public/swahili-photos/jambo-greeting.jpg"
+      img:  "public/swahili-photos/hello-swah.png"
     },
     {
       cat:  "Language",
@@ -30,7 +30,7 @@ const SWAHILI_QUESTIONS = {
       q:    "What does 'Habari yako' mean?",
       opts: ["Good night", "How are you?", "What's your name?", "Where are you going?"],
       ans:  1,
-      img:  null
+      img:  "public/swahili-photos/how-are-you-swa.png"
     },
     {
       cat:  "Language",
@@ -51,7 +51,7 @@ const SWAHILI_QUESTIONS = {
       q:    "How do you say 'Yes' and 'No' in Swahili?",
       opts: ["Ee / Hapana", "Ndiyo / Hapana", "Ee / Aa", "Ndio / Sawa"],
       ans:  1,
-      img:  null
+      img:  "public/swahili-photos/yes-swah.png"
     },
 
     /* HISTORY */
@@ -316,17 +316,6 @@ const SWAHILI_QUESTIONS = {
       ans:  0,
       img:  "public/swahili-photos/samaki-mmoja.jpg"
     },
-    {
-      cat:  "Proverbs",
-      q:    "'Akufukuzae hakukosi nyuki' means?",
-      opts: [
-        "Bees are dangerous",
-        "He who chases you has a reason (where there's smoke, there's fire)",
-        "Run from danger",
-        "Help those who help you"
-      ],
-      ans:  1,
-      img:  null
-    }
+   
   ]
 };
