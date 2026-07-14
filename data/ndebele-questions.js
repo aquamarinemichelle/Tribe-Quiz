@@ -164,14 +164,19 @@ const NDEBELE_QUESTIONS = {
          "They replace surnames"
      ],
       ans: 0,
-      img: null
+      img: "public/ndebele-photos/clan-names.jpg"
     },
     {
-      cat:  "Culture",
-      q:    "",
-      opts: ["Nguba", "Kurta", "Shuka", "Basotho blanket"],
-      ans:  0,
-      img:  null
+      cat: "Culture",
+      q: "What makes Southern Ndebele culture easily recognizable around the world?",
+      opts: [
+         "Its colourful geometric art and beadwork",
+         "Its pyramids",
+         "Its snow festivals",
+         "Its wooden castles"
+       ],
+         ans: 0,
+         img: "public/ndebele-photos/ndebele-women"
     },
 
     /* MUSIC & DANCE */
@@ -241,11 +246,11 @@ const NDEBELE_QUESTIONS = {
 
     /* FOOD */
     {
-      cat:  "Food",
-      q:    "",
-      opts: ["Pap (mealie-meal porridge)", "Rice", "Bread", "Potatoes"],
-      ans:  0,
-      img:  null
+      cat: "Food",
+      q: "What is the name of the traditional flour porridge enjoyed by many Southern Ndebele families?",
+      opts: ["Amatlontjisi","Amasi","Ting","Mabele"],
+      ans: 0,
+      img: "public/ndebele-photos/amatlontjisi.jpeg"
     },
     {
       cat:  "Food",
