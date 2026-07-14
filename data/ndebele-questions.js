@@ -192,14 +192,14 @@ const NDEBELE_QUESTIONS = {
       q:    "What instrument is commonly used in Ndebele traditional music?",
       opts: ["Drum (Ingungu)", "Mbira", "Guitar", "Flute"],
       ans:  2,
-      img:  null
+      img:  "public/ndebele-photos/guitar.jpg"
     },
     {
       cat:  "Music",
-      q:    "",
-      opts: ["War songs", "Wedding songs", "Work songs", "Lullabies"],
-      ans:  2,
-      img:  null
+      q:    "Which Southern Ndebele singer is well known for performing traditional isiNdebele music from KwaNdebele?",
+      opts: ["Yvonne Chaka Chaka", "Busi Mhlongo", "Brenda Fassie", "Nothembi Mkhwebane"],
+      ans:  3,
+      img:  "public/ndebele-photos/nothembi.jpg"
     },
     {
       cat:  "Music",
@@ -247,7 +247,7 @@ const NDEBELE_QUESTIONS = {
     /* FOOD */
     {
       cat: "Food",
-      q: "What is the name of the traditional flour porridge enjoyed by many Southern Ndebele families?",
+      q: "What is the name of the traditional flour porridge enjoyed by many Ndebele families?",
       opts: ["Amatlontjisi","Amasi","Ting","Mabele"],
       ans: 0,
       img: "public/ndebele-photos/amatlontjisi.jpeg"
@@ -285,7 +285,7 @@ const NDEBELE_QUESTIONS = {
       q:    "Which famous Ndebele artist is known worldwide for her colorful house paintings?",
       opts: ["Esther Mahlangu", "Maggie Laubser", "Irma Stern", "Mary Sibande"],
       ans:  0,
-      img:  "public/esther-mahlangu.png"
+      img:  "public/ndebele-photos/esther-mahlangu.jpg"
     },
     {
       cat:  "Fashion",
