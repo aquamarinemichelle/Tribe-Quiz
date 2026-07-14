@@ -1119,9 +1119,25 @@ html, body {
   flex-shrink: 0;
 }
 .nav-user-name {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   color: var(--gold);
   font-size: 13px;
   font-weight: 700;
+  background: rgba(212, 160, 23, 0.12);
+  border: 1px solid var(--gold);
+  border-radius: 20px;
+  padding: 6px 14px;
+  cursor: pointer;
+  transition: background 0.2s;
+  text-decoration: none !important;
+}
+.nav-user-name:hover {
+  background: rgba(212, 160, 23, 0.22);
+}
+.nav-user-name svg {
+  flex-shrink: 0;
 }
 .btn-nav-signout {
   background: rgba(255,255,255,0.10);
@@ -1494,27 +1510,25 @@ html, body {
   text-align: left;
 }
 .about-text strong { color: var(--gold); }
+
 /* ══════════════════════════════════════
    PROFILE MODAL
 ══════════════════════════════════════ */
 .nav-user-clickable {
   cursor: pointer;
-  text-decoration: underline dotted;
 }
-.nav-user-clickable:hover {
-  color: var(--gold-light);
+.nav-user-name:hover {
+  background: rgba(212, 160, 23, 0.22);
 }
 
 .profile-modal-box {
   max-width: 400px;
   width: 100%;
 }
-
 .profile-section {
   margin-bottom: 1.2rem;
   text-align: left;
 }
-
 .profile-label {
   display: block;
   font-size: 11px;
@@ -1524,12 +1538,10 @@ html, body {
   color: rgba(255,255,255,0.55);
   margin-bottom: 6px;
 }
-
 .profile-input-row {
   display: flex;
   gap: 8px;
 }
-
 .profile-input {
   flex: 1;
   background: rgba(255,255,255,0.07);
@@ -1548,7 +1560,6 @@ html, body {
 .profile-input::placeholder {
   color: rgba(255,255,255,0.3);
 }
-
 .btn-profile-save {
   background: var(--gold);
   color: var(--dark);
@@ -1569,7 +1580,6 @@ html, body {
   border-top: 1px solid rgba(255,255,255,0.1);
   margin: 1.2rem 0;
 }
-
 .btn-profile-delete {
   width: 100%;
   background: rgba(255,107,107,0.15);
@@ -1591,7 +1601,6 @@ html, body {
   margin-top: 6px;
   text-align: center;
 }
-
 .profile-message {
   font-size: 13px;
   padding: 9px 12px;

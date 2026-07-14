@@ -176,11 +176,10 @@
   <div class="modal-overlay" id="profile-modal">
     <div class="modal-box profile-modal-box">
       <button class="modal-close" onclick="hideProfile()">✕</button>
-      <h2 class="modal-title">👤 Profile</h2>
+      <h2 class="modal-title">Profile</h2>
 
       <div id="profile-message" class="profile-message" style="display:none;"></div>
 
-      <!-- Update Display Name -->
       <div class="profile-section">
         <label class="profile-label">Display Name</label>
         <div class="profile-input-row">
@@ -189,7 +188,6 @@
         </div>
       </div>
 
-      <!-- Update Password -->
       <div class="profile-section">
         <label class="profile-label">New Password</label>
         <div class="profile-input-row">
@@ -200,7 +198,6 @@
 
       <hr class="profile-divider" />
 
-      <!-- Delete Account -->
       <div class="profile-section">
         <label class="profile-label" style="color:#ff6b6b;">Danger Zone</label>
         <button class="btn-profile-delete" onclick="confirmDeleteAccount()">Delete My Account</button>
@@ -300,9 +297,8 @@
     }
     /* ── PROFILE MODAL ── */
     function showProfile() {
-      // Pre-fill name field with current name
       const nameEl = document.getElementById('nav-user-name');
-      const currentName = nameEl ? nameEl.textContent.replace('👤 ', '').trim() : '';
+      const currentName = nameEl ? nameEl.textContent.trim() : '';
       document.getElementById('profile-name-input').value = currentName;
       document.getElementById('profile-password-input').value = '';
       document.getElementById('profile-message').style.display = 'none';
@@ -311,41 +307,32 @@
     function hideProfile() {
       document.getElementById('profile-modal').style.display = 'none';
     }
-
     function showProfileMsg(text, isError = false) {
       const el = document.getElementById('profile-message');
       el.textContent = text;
       el.className = 'profile-message ' + (isError ? 'profile-msg-error' : 'profile-msg-success');
       el.style.display = 'block';
     }
-
     async function updateDisplayName() {
       const name = document.getElementById('profile-name-input').value.trim();
       if (!name) { showProfileMsg('Please enter a name.', true); return; }
-
       const { data: { session } } = await window._supabase.auth.getSession();
       if (!session) return;
-
-      // Update in profiles table
-      const { error: dbError } = await window._supabase
+      const { error } = await window._supabase
         .from('profiles')
         .update({ display_name: name })
         .eq('id', session.user.id);
-
-      // Update in auth metadata
       await window._supabase.auth.updateUser({ data: { display_name: name } });
-
-      if (dbError) {
+      if (error) {
         showProfileMsg('Failed to update name.', true);
       } else {
         showProfileMsg('Display name updated! ✅');
-        // Refresh navbar
-        document.getElementById('nav-user-name').textContent = '👤 ' + name;
+        const PERSON_ICON = '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>';
+        document.getElementById('nav-user-name').innerHTML = PERSON_ICON + ' ' + name;
         const mobileEl = document.getElementById('mobile-user-name');
-        if (mobileEl) mobileEl.textContent = '👤 ' + name;
+        if (mobileEl) mobileEl.innerHTML = PERSON_ICON + ' ' + name;
       }
     }
-
     async function updatePassword() {
       const password = document.getElementById('profile-password-input').value;
       if (!password || password.length < 6) {
@@ -354,33 +341,23 @@
       }
       const { error } = await window._supabase.auth.updateUser({ password });
       if (error) {
-        showProfileMsg('Failed to update password: ' + error.message, true);
+        showProfileMsg('Failed: ' + error.message, true);
       } else {
         showProfileMsg('Password updated! ✅');
         document.getElementById('profile-password-input').value = '';
       }
     }
-
     async function confirmDeleteAccount() {
-      const confirmed = confirm(
-        'Are you sure you want to delete your account?\n\nThis will permanently delete your account and ALL your scores. This cannot be undone.'
-      );
+      const confirmed = confirm('Are you sure? This will permanently delete your account and ALL your scores. This cannot be undone.');
       if (!confirmed) return;
-
       const { data: { session } } = await window._supabase.auth.getSession();
       if (!session) return;
-
-      // Delete scores first
       await window._supabase.from('scores').delete().eq('user_id', session.user.id);
-      // Delete profile
       await window._supabase.from('profiles').delete().eq('id', session.user.id);
-      // Sign out and redirect
       await window._supabase.auth.signOut();
-      showProfileMsg('Account deleted. Redirecting...', false);
+      showProfileMsg('Account deleted. Redirecting...');
       setTimeout(() => window.location.href = 'index.html', 1500);
     }
-
-    // Close profile modal on outside click
     document.getElementById('profile-modal').addEventListener('click', function(e) {
       if (e.target === this) hideProfile();
     });

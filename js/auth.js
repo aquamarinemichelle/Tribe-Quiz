@@ -1,5 +1,5 @@
 /**
- * UBUNTU QUIZ — AUTH
+ * TRIBE QUIZ — AUTH
  * Handles Supabase sign-up, sign-in, sign-out,
  * and session-aware navbar updates on index.html.
  */
@@ -104,14 +104,11 @@ window.supabase = _supabase;
     btn.disabled    = true;
     btn.textContent = 'Creating account…';
 
-    // Sign up with display_name in metadata
     const { data, error } = await _supabase.auth.signUp({
       email,
       password,
-      options: { 
-        data: { 
-          display_name: name 
-        } 
+      options: {
+        data: { display_name: name }
       }
     });
 
@@ -120,32 +117,16 @@ window.supabase = _supabase;
       btn.disabled    = false;
       btn.textContent = 'Create Account';
     } else {
-      // If user was created successfully, the trigger will create the profile
-      // But we'll also insert directly to be safe
       if (data?.user) {
         try {
-          // Try to insert into profiles table directly
-          // This ensures the profile exists even if trigger fails
-          const { error: profileError } = await _supabase
+          await _supabase
             .from('profiles')
-            .upsert({
-              id: data.user.id,
-              display_name: name
-            }, { onConflict: 'id' });
-          
-          if (profileError) {
-            console.warn('Profile insert warning:', profileError);
-            // The trigger should handle it, so we don't show error to user
-          }
+            .upsert({ id: data.user.id, display_name: name }, { onConflict: 'id' });
         } catch (profileErr) {
           console.warn('Profile insert error:', profileErr);
         }
       }
-      
-      showMessage(
-        'Account created! Check your email to confirm, then sign in.',
-        false
-      );
+      showMessage('Account created! Check your email to confirm, then sign in.', false);
       setTimeout(() => switchTab('signin'), 2500);
       btn.disabled    = false;
       btn.textContent = 'Create Account';
@@ -158,7 +139,7 @@ window.supabase = _supabase;
     btn.addEventListener('click', async () => {
       await _supabase.auth.signInWithOAuth({
         provider: 'google',
-        options:  { 
+        options: {
           redirectTo: window.location.origin + '/index.html'
         }
       });
@@ -178,42 +159,39 @@ window.supabase = _supabase;
   const homePage = document.getElementById('screen-home');
   if (!homePage) return; // not on index.html
 
-  const navAuthArea  = document.getElementById('nav-auth-area');
-  const navUser      = document.getElementById('nav-user-area');
-  const navUserName  = document.getElementById('nav-user-name');
-  const btnSignOut   = document.getElementById('btn-signout');
+  const navAuthArea = document.getElementById('nav-auth-area');
+  const navUser     = document.getElementById('nav-user-area');
+  const navUserName = document.getElementById('nav-user-name');
+  const btnSignOut  = document.getElementById('btn-signout');
+
+  const PERSON_ICON = '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>';
 
   async function refreshNav() {
     const { data } = await _supabase.auth.getSession();
     const session  = data.session;
 
     if (session) {
-      // Try to get display name from profiles table first
-      let displayName = session.user.user_metadata?.display_name 
-                        || session.user.user_metadata?.full_name
-                        || session.user.user_metadata?.name;
-      
-      // If not in metadata, try to fetch from profiles table
+      // 1. Check user metadata (manual signup + Google)
+      let displayName = session.user.user_metadata?.display_name
+                     || session.user.user_metadata?.full_name
+                     || session.user.user_metadata?.name;
+
+      // 2. Fallback: check profiles table
       if (!displayName) {
         try {
-          const { data: profileData, error: profileError } = await _supabase
+          const { data: profileData } = await _supabase
             .from('profiles')
             .select('display_name')
             .eq('id', session.user.id)
             .single();
-          
-          if (!profileError && profileData?.display_name) {
-            displayName = profileData.display_name;
-          }
-        } catch (e) {
-          // Fallback to email or default
-        }
+          if (profileData?.display_name) displayName = profileData.display_name;
+        } catch (e) {}
       }
-      
-      // Fallback to email or default
+
+      // 3. Last fallback: email prefix
       displayName = displayName || session.user.email?.split('@')[0] || 'Player';
-      
-      navUserName.textContent = '👤 ' + displayName;
+
+      navUserName.innerHTML = PERSON_ICON + ' ' + displayName;
       navAuthArea.style.display = 'none';
       navUser.style.display     = 'flex';
     } else {
@@ -228,7 +206,6 @@ window.supabase = _supabase;
   btnSignOut && btnSignOut.addEventListener('click', async () => {
     await _supabase.auth.signOut();
     refreshNav();
-    // Rebuild culture grid after sign out
     if (typeof buildCultureGrid === 'function') {
       setTimeout(() => buildCultureGrid(), 100);
     }
@@ -237,7 +214,6 @@ window.supabase = _supabase;
   /* Listen for auth changes (tab refocus, etc.) */
   _supabase.auth.onAuthStateChange(() => {
     refreshNav();
-    // Rebuild culture grid when auth state changes
     if (typeof buildCultureGrid === 'function') {
       setTimeout(() => buildCultureGrid(), 100);
     }
