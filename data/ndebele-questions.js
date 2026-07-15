@@ -17,37 +17,23 @@ const NDEBELE_QUESTIONS = {
       q:    "What does 'Lotjhani' mean in isiNdebele?",
       opts: ["Goodbye", "Hello", "Thank you", "Yes"],
       ans:  1,
-      img:  null
+      img:  "public/ndebele-photos/lotjhani.png"
     },
     {
       cat:  "Language",
       q:    "How do you say 'Thank you' in isiNdebele?",
       opts: ["Ngiyabonga", "Ngiyathokoza", "Lotjhani", "Yebo"],
       ans:  1,
-      img:  null
-    },
-    {
-      cat:  "Language",
-      q:    "What does 'Iye' mean in isiNdebele?",
-      opts: ["No", "Yes", "Maybe", "Hello"],
-      ans:  1,
-      img:  null
+      img:  "public/ndebele-photos/thank-you.jpg"
     },
     {
       cat:  "Language",
       q:    "How do you say 'Goodbye' in isiNdebele?",
       opts: ["Salakahle", "Lotjhani", "Hamba kahle", "Nisale kuhle"],
       ans:  3,
-      img:  null
+      img:  "public/ndebele-photos/lotjhani.png"
     },
-    {
-      cat:  "Language",
-      q:    "What does 'Kunjani?' mean in isiNdebele?",
-      opts: ["Where are you?", "How are you?", "What is your name?", "Where are you going?"],
-      ans:  1,
-      img:  null
-    },
-
+  
     /* HISTORY */
     {
       cat: "History",
@@ -62,13 +48,6 @@ const NDEBELE_QUESTIONS = {
       opts: ["King Musi", "King Nyabela", "King Mabhoko", "King Magoboli"],
       ans: 0,
       img: "public/ndebele-photos/king-musi.png"
-    },
-    {
-      cat: "History",
-      q: "After King Musi's death, which two of his sons caused the Ndebele to split into two main groups?",
-      opts: ["Manala and Ndzundza", "Lobengula and Mzilikazi", "Nyabela and Mabhoko", "Dhlomu and Masombuka"],
-      ans: 0,
-      img: null
     },
     {
       cat:  "History",
@@ -210,13 +189,7 @@ const NDEBELE_QUESTIONS = {
       ans:  0,
       img:  "public/ndebele-photos/kwandebele.jpg"
     },
-    {
-      cat:  "Geography",
-      q:    "Which town is considered the heart of Ndebele culture in Mpumalanga?",
-      opts: ["Mbombela (Nelspruit)", "Middelburg", "KwaMhlanga", "Witbank"],
-      ans:  2,
-      img:  null
-    },
+   
  
     /* FOOD */
     {
