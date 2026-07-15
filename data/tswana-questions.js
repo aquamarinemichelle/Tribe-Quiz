@@ -15,28 +15,28 @@ const TSWANA_QUESTIONS = {
       q:    "What does 'Dumela' mean in Setswana?",
       opts: ["Goodbye", "Hello", "Thank you", "Please"],
       ans:  1,
-      img:  "public/tswana-photos/dumela-greeting.jpg"
+      img:  "public/tswana-photos/hello-tswana.png"
     },
     {
       cat:  "Language",
       q:    "How do you say 'Thank you' in Setswana?",
       opts: ["Ke a leboga", "Dumela", "Tsamaya sentle", "Robala sentle"],
       ans:  0,
-      img:  "public/tswana-photos/ke-a-leboga.jpg"
+      img:  "public/tswana-photos/kealeboga.png"
     },
     {
       cat:  "Language",
       q:    "What does 'Ee' mean in Setswana?",
       opts: ["No", "Yes", "Maybe", "Never"],
       ans:  1,
-      img:  null
+      img:  "public/tswana-photos/ee.png"
     },
     {
       cat:  "Language",
       q:    "How do you say 'Goodbye' in Setswana?",
       opts: ["Dumela", "Ke a leboga", "Tsamaya sentle", "Ee"],
       ans:  2,
-      img:  null
+      img:  "public/tswana-photos/goodbye-tswana.png"
     },
 
     /* HISTORY */
@@ -94,7 +94,7 @@ const TSWANA_QUESTIONS = {
       q:    "The Tswana initiation school for young men is called?",
       opts: ["Bojale", "Bogwera", "Lebollo", "Mephato"],
       ans:  1,
-      img:  "public/tswana-photos/bogwera.jpg"
+      img:  "public/tswana-photos/bogwera.png"
     },
     {
       cat:  "Tradition",
@@ -131,7 +131,7 @@ const TSWANA_QUESTIONS = {
       q:    "What is the Tswana concept of community and togetherness called?",
       opts: ["Ubuntu", "Botho", "Harambee", "Umoja"],
       ans:  1,
-      img:  "public/tswana-photos/tswana-concept.jpg"
+      img:  "public/tswana-photos/botho.jpg"
     },
 
     /* MUSIC & ARTS */
