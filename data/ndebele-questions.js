@@ -61,14 +61,14 @@ const NDEBELE_QUESTIONS = {
       q: "Who is regarded as the founder of the Southern Ndebele nation?",
       opts: ["King Musi", "King Nyabela", "King Mabhoko", "King Magoboli"],
       ans: 0,
-      img: "public/ndebele-photos/king-musi.jpg"
+      img: "public/ndebele-photos/king-musi.png"
     },
     {
-      cat:  "History",
-      q:    "",
-      opts: ["Lobengula", "Mzilikazi", "Khama", "Moshoeshoe"],
-      ans:  1,
-      img:  null
+      cat: "History",
+      q: "After King Musi's death, which two of his sons caused the Ndebele to split into two main groups?",
+      opts: ["Manala and Ndzundza", "Lobengula and Mzilikazi", "Nyabela and Mabhoko", "Dhlomu and Masombuka"],
+      ans: 0,
+      img: null
     },
     {
       cat:  "History",
@@ -78,12 +78,12 @@ const NDEBELE_QUESTIONS = {
       img:  "public/ndebele-photos/kwandebele.jpg"
     },
     {
-      cat:  "History",
-      q:    "",
-      opts: ["Matabeleland", "Mashonaland", "Mzilikazi Kingdom", "Ndebele Nation"],
-      ans:  0,
-      img:  null
-    },
+      cat: "History",
+      q: "In 1883 the Ndzundza Ndebele fought the Mapoch War against which group?",
+      opts: ["The British Army", "The ZAR (Boer Republic) forces", "The Zulu Kingdom", "The Pedi Kingdom"],
+      ans: 1,
+      img: "public/ndebele-photos/mapoch-war.png"
+   },
 
     /* TRADITION */
     {
@@ -176,7 +176,7 @@ const NDEBELE_QUESTIONS = {
          "Its wooden castles"
        ],
          ans: 0,
-         img: "public/ndebele-photos/ndebele-women"
+         img: "public/ndebele-photos/ndebele-women.png"
     },
 
     /* MUSIC & DANCE */
@@ -185,7 +185,7 @@ const NDEBELE_QUESTIONS = {
       q:    "The traditional Ndebele dance performed at ceremonies and celebrations is called?",
       opts: ["Indlamu", "Pantsula", "Ingadla", "Gumboot"],
       ans:  2,
-      img:  null
+      img:  "public/ndebele-photos/ingadla.png"
     },
     {
       cat:  "Music",
@@ -200,13 +200,6 @@ const NDEBELE_QUESTIONS = {
       opts: ["Yvonne Chaka Chaka", "Busi Mhlongo", "Brenda Fassie", "Nothembi Mkhwebane"],
       ans:  3,
       img:  "public/ndebele-photos/nothembi.jpg"
-    },
-    {
-      cat:  "Music",
-      q:    "",
-      opts: ["Indlamu", "Isicathamiya", "Kwaito", "Amapiano"],
-      ans:  0,
-      img:  null
     },
 
     /* GEOGRAPHY */
@@ -224,26 +217,7 @@ const NDEBELE_QUESTIONS = {
       ans:  2,
       img:  null
     },
-    {
-      cat:  "Geography",
-      q:    "",
-      opts: ["Bronkhorstspruit", "Pretoria", "Johannesburg", "Botshabelo"],
-      ans:  3,
-      img:  null
-    },
-    {
-      cat:  "Geography",
-      q:    "",
-      opts: [
-        "Robben Island", 
-        "Mapungubwe", 
-        "Richtersveld", 
-        "iSimangaliso Wetland Park"
-      ],
-      ans:  1,
-      img:  null
-    },
-
+ 
     /* FOOD */
     {
       cat: "Food",
@@ -252,32 +226,7 @@ const NDEBELE_QUESTIONS = {
       ans: 0,
       img: "public/ndebele-photos/amatlontjisi.jpeg"
     },
-    {
-      cat:  "Food",
-      q:    "",
-      opts: ["Maize porridge", "Traditional beer", "Meat stew", "Soured milk"],
-      ans:  1,
-      img:  null
-    },
-    {
-      cat:  "Food",
-      q:    "",
-      opts: ["Grilled chicken", "Traditional braai meat", "Dried meat", "Stewed vegetables"],
-      ans:  1,
-      img:  null
-    },
-    {
-      cat:  "Food",
-      q:    "",
-      opts: [
-        "Fermented milk", 
-        "Sorghum beer", 
-        "Maize porridge", 
-        "Pumpkin leaves"
-      ],
-      ans:  0,
-      img:  null
-    },
+
 
     /* NOTABLE PEOPLE & FASHION */
     {
@@ -325,5 +274,17 @@ const NDEBELE_QUESTIONS = {
       ans:  0,
       img:  "public/ndebele-photos/king-makhosoke-ii.png"
     },
+    {
+      cat:  "Notable People",
+      q:    "Audrey Kozwana is known for her YouTube series 'Ituthuko Yethelerina' which documents what?",
+      opts: [
+           "The evolution and growth stages of a young Ndebele maiden",
+           "Traditional Ndebele cooking recipes",
+           "The history of Ndebele house painting",
+           "Ndebele wedding ceremonies"
+  ],
+  ans:  0,
+  img:  "public/ndebele-photos/audrey-kozwana.jpg"
+},
   ]
 };
