@@ -50,18 +50,18 @@ const NDEBELE_QUESTIONS = {
 
     /* HISTORY */
     {
-      cat:  "History",
-      q:    "",
-      opts: ["Queen Manthatisi", "Queen Nzinga", "Queen Mkabayi", "Queen Modjadji"],
-      ans:  0,
-      img:  "public/ndebele-queen.png"
+      cat: "History",
+      q: "To which larger ethnic group do the Southern Ndebele belong?",
+      opts: ["Nguni","Sotho-Tswana","Venda","Tsonga"],
+      ans: 0,
+      img: "public/ndebele-photos/nguni.png"
     },
     {
-      cat:  "History",
-      q:    "",
-      opts: ["Xhosa", "Zulu", "Swati", "Tswana"],
-      ans:  1,
-      img:  null
+      cat: "History",
+      q: "Who is regarded as the founder of the Southern Ndebele nation?",
+      opts: ["King Musi", "King Nyabela", "King Mabhoko", "King Magoboli"],
+      ans: 0,
+      img: "public/ndebele-photos/king-musi.jpg"
     },
     {
       cat:  "History",
@@ -79,7 +79,7 @@ const NDEBELE_QUESTIONS = {
     },
     {
       cat:  "History",
-      q:    "The Ndebele kingdom in Zimbabwe was known as?",
+      q:    "",
       opts: ["Matabeleland", "Mashonaland", "Mzilikazi Kingdom", "Ndebele Nation"],
       ans:  0,
       img:  null
@@ -115,17 +115,17 @@ const NDEBELE_QUESTIONS = {
       img:  "public/ndebele-photos/iqude.png"
     },
     {
-      cat:  "Tradition",
-      q:    "What is the role of a 'Sangoma' in Ndebele culture?",
+      cat: "Tradition",
+      q: "What is a traditional healer called in Southern Ndebele culture?",
       opts: ["Sangoma", "Inyanga", "Isangoma", "Muthi"],
-      ans:  2,
-      img:  null
-    },
+      ans: 2,
+      img: "public/ndebele-photos/isangoma.jpg"
+},
 
     /* CULTURE & ART */
     {
       cat:  "Art",
-      q:    "Ndebele house painting originally served what purpose?",
+      q:    "What is the main purpose of traditional Ndebele beadwork?",
       opts: [
         "Decoration only", 
         "Communication of messages and status", 
@@ -133,47 +133,57 @@ const NDEBELE_QUESTIONS = {
         "Tourist attraction"
       ],
       ans:  1,
-      img: null
+      img: "public/ndebele-photos/beadwork.jpg"
     },
     {
-      cat:  "Art",
-      q:    "What colors are traditionally used in Ndebele geometric art?",
-      opts: ["Red, yellow, blue, green", "Black and white only", "Brown and gold", "Purple and orange"],
-      ans:  0,
-      img:  null
-    },
+      cat: "Art",
+      q: "What is an 'umseme' that Ndebele women traditionallymake?",
+      opts: [
+       "A traditional woven grass mat",
+       "A beaded necklace",
+       "A clay cooking pot",
+       "A traditional drum"
+       ],
+       ans: 0,
+       img: "public/ndebele-photos/umseme.jpg"
+},
     {
       cat:  "Art",
       q:    "Ndebele beadwork patterns are known for being?",
       opts: ["Floral designs", "Geometric and symmetrical", "Animal shapes", "Abstract swirls"],
       ans:  1,
-      img:  "public/ndebele-beadwork.png"
+      img:  "public/ndebele-photos/beadwork.jpg"
     },
     {
-      cat:  "Culture",
-      q:    "The Ndebele philosophy 'Umuntu ngumuntu ngabantu' means?",
+      cat: "Culture",
+      q: "What is the importance of clan names (izibongo) in Ndebele culture?",
       opts: [
-        "A person is a person through people", 
-        "Work hard for your family", 
-        "Respect your elders", 
-        "Unity is strength"
-      ],
-      ans:  0,
-      img:  null
+         "They identify family lineage and ancestry",
+         "They identify a person's occupation",
+         "They are only used during weddings",
+         "They replace surnames"
+     ],
+      ans: 0,
+      img: "public/ndebele-photos/clan-names.jpg"
     },
     {
-      cat:  "Culture",
-      q:    "Ndebele traditional blankets are called?",
-      opts: ["Nguba", "Kurta", "Shuka", "Basotho blanket"],
-      ans:  0,
-      img:  null
+      cat: "Culture",
+      q: "What makes Southern Ndebele culture easily recognizable around the world?",
+      opts: [
+         "Its colourful geometric art and beadwork",
+         "Its pyramids",
+         "Its snow festivals",
+         "Its wooden castles"
+       ],
+         ans: 0,
+         img: "public/ndebele-photos/ndebele-women"
     },
 
     /* MUSIC & DANCE */
     {
       cat:  "Music",
-      q:    "The traditional Ndebele dance performed at ceremonies is called?",
-      opts: ["Indlamu", "Pantsula", "Mbhage", "Gumboot"],
+      q:    "The traditional Ndebele dance performed at ceremonies and celebrations is called?",
+      opts: ["Indlamu", "Pantsula", "Ingadla", "Gumboot"],
       ans:  2,
       img:  null
     },
@@ -181,19 +191,19 @@ const NDEBELE_QUESTIONS = {
       cat:  "Music",
       q:    "What instrument is commonly used in Ndebele traditional music?",
       opts: ["Drum (Ingungu)", "Mbira", "Guitar", "Flute"],
-      ans:  0,
-      img:  null
-    },
-    {
-      cat:  "Music",
-      q:    "Ndebele women often sing which type of songs during beadwork sessions?",
-      opts: ["War songs", "Wedding songs", "Work songs", "Lullabies"],
       ans:  2,
-      img:  null
+      img:  "public/ndebele-photos/guitar.jpg"
     },
     {
       cat:  "Music",
-      q:    "The energetic Ndebele warrior dance is similar to which Zulu dance?",
+      q:    "Which Southern Ndebele singer is well known for performing traditional isiNdebele music from KwaNdebele?",
+      opts: ["Yvonne Chaka Chaka", "Busi Mhlongo", "Brenda Fassie", "Nothembi Mkhwebane"],
+      ans:  3,
+      img:  "public/ndebele-photos/nothembi.jpg"
+    },
+    {
+      cat:  "Music",
+      q:    "",
       opts: ["Indlamu", "Isicathamiya", "Kwaito", "Amapiano"],
       ans:  0,
       img:  null
@@ -223,7 +233,7 @@ const NDEBELE_QUESTIONS = {
     },
     {
       cat:  "Geography",
-      q:    "Which UNESCO World Heritage site contains Ndebele cultural heritage?",
+      q:    "",
       opts: [
         "Robben Island", 
         "Mapungubwe", 
@@ -236,29 +246,29 @@ const NDEBELE_QUESTIONS = {
 
     /* FOOD */
     {
-      cat:  "Food",
-      q:    "What is the staple food of the Ndebele people?",
-      opts: ["Pap (mealie-meal porridge)", "Rice", "Bread", "Potatoes"],
-      ans:  0,
-      img:  null
+      cat: "Food",
+      q: "What is the name of the traditional flour porridge enjoyed by many Ndebele families?",
+      opts: ["Amatlontjisi","Amasi","Ting","Mabele"],
+      ans: 0,
+      img: "public/ndebele-photos/amatlontjisi.jpeg"
     },
     {
       cat:  "Food",
-      q:    "What is 'Umnqombothi' in Ndebele culture?",
+      q:    "",
       opts: ["Maize porridge", "Traditional beer", "Meat stew", "Soured milk"],
       ans:  1,
       img:  null
     },
     {
       cat:  "Food",
-      q:    "What is 'Inyama yomhluzingwane'?",
+      q:    "",
       opts: ["Grilled chicken", "Traditional braai meat", "Dried meat", "Stewed vegetables"],
       ans:  1,
       img:  null
     },
     {
       cat:  "Food",
-      q:    "What is 'Amasi' in Ndebele culture?",
+      q:    "",
       opts: [
         "Fermented milk", 
         "Sorghum beer", 
@@ -275,7 +285,7 @@ const NDEBELE_QUESTIONS = {
       q:    "Which famous Ndebele artist is known worldwide for her colorful house paintings?",
       opts: ["Esther Mahlangu", "Maggie Laubser", "Irma Stern", "Mary Sibande"],
       ans:  0,
-      img:  "public/esther-mahlangu.png"
+      img:  "public/ndebele-photos/esther-mahlangu.jpg"
     },
     {
       cat:  "Fashion",

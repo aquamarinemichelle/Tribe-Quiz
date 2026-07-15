@@ -15,7 +15,7 @@ const TSONGA_QUESTIONS = {
       q:    "What does 'Avuxeni' mean in Xitsonga?",
       opts: ["Goodbye", "Hello/Good morning", "Thank you", "How are you?"],
       ans:  1,
-      img:  "public/tsonga-photos/avuxeni-greeting.jpg"
+      img:  "public/tsonga-photos/avuxeni.png"
     },
     {
       cat:  "Language",
@@ -26,17 +26,10 @@ const TSONGA_QUESTIONS = {
     },
     {
       cat:  "Language",
-      q:    "What does 'Ee' mean in Xitsonga?",
-      opts: ["No", "Yes", "Maybe", "Never"],
-      ans:  1,
-      img:  null
-    },
-    {
-      cat:  "Language",
       q:    "How do you say 'Goodbye' in Xitsonga (to someone staying)?",
       opts: ["Sala kahle", "Hamba kahle", "Avuxeni", "Rivoningo"],
       ans:  0,
-      img:  null
+      img:  "public/tsonga-photos/tsonga-goodbye.png"
     },
 
     /* HISTORY */

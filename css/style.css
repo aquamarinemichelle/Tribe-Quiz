@@ -196,10 +196,8 @@ html, body {
 /* Hide hamburger on desktop, show on mobile */
 @media (max-width: 680px) {
   .navbar-links,
-  .nav-profile-btn,
-  .nav-auth-area,
-  .nav-user-area {
-    display: none !important;
+  .nav-profile-btn {
+    display: none;
   }
   .nav-hamburger {
     display: block;
@@ -1121,9 +1119,25 @@ html, body {
   flex-shrink: 0;
 }
 .nav-user-name {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   color: var(--gold);
   font-size: 13px;
   font-weight: 700;
+  background: rgba(212, 160, 23, 0.12);
+  border: 1px solid var(--gold);
+  border-radius: 20px;
+  padding: 6px 14px;
+  cursor: pointer;
+  transition: background 0.2s;
+  text-decoration: none !important;
+}
+.nav-user-name:hover {
+  background: rgba(212, 160, 23, 0.22);
+}
+.nav-user-name svg {
+  flex-shrink: 0;
 }
 .btn-nav-signout {
   background: rgba(255,255,255,0.10);
@@ -1496,3 +1510,111 @@ html, body {
   text-align: left;
 }
 .about-text strong { color: var(--gold); }
+
+/* ══════════════════════════════════════
+   PROFILE MODAL
+══════════════════════════════════════ */
+.nav-user-clickable {
+  cursor: pointer;
+}
+.nav-user-name:hover {
+  background: rgba(212, 160, 23, 0.22);
+}
+
+.profile-modal-box {
+  max-width: 400px;
+  width: 100%;
+}
+.profile-section {
+  margin-bottom: 1.2rem;
+  text-align: left;
+}
+.profile-label {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 6px;
+}
+.profile-input-row {
+  display: flex;
+  gap: 8px;
+}
+.profile-input {
+  flex: 1;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.profile-input:focus {
+  border-color: var(--gold);
+}
+.profile-input::placeholder {
+  color: rgba(255,255,255,0.3);
+}
+.btn-profile-save {
+  background: var(--gold);
+  color: var(--dark);
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 10px 16px;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+.btn-profile-save:hover { background: var(--gold-light); }
+
+.profile-divider {
+  border: none;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  margin: 1.2rem 0;
+}
+.btn-profile-delete {
+  width: 100%;
+  background: rgba(255,107,107,0.15);
+  border: 1px solid rgba(255,107,107,0.4);
+  color: #ff6b6b;
+  border-radius: var(--radius-sm);
+  padding: 11px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.btn-profile-delete:hover { background: rgba(255,107,107,0.25); }
+
+.profile-delete-warning {
+  font-size: 11px;
+  color: rgba(255,255,255,0.35);
+  margin-top: 6px;
+  text-align: center;
+}
+.profile-message {
+  font-size: 13px;
+  padding: 9px 12px;
+  border-radius: var(--radius-sm);
+  margin-bottom: 1rem;
+  text-align: left;
+}
+.profile-msg-success {
+  background: rgba(76,175,80,0.15);
+  border: 1px solid rgba(76,175,80,0.35);
+  color: #a5d6a7;
+}
+.profile-msg-error {
+  background: rgba(231,76,60,0.15);
+  border: 1px solid rgba(231,76,60,0.35);
+  color: #ff8a80;
+}
