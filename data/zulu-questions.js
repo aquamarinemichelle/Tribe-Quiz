@@ -16,21 +16,21 @@ const ZULU_QUESTIONS = {
       q:    "What does 'Sawubona' mean in IsiZulu?",
       opts: ["Goodbye", "I see you / Hello", "Thank you", "Good night"],
       ans:  1,
-      img:  null
+      img:  "public/zulu-photos/sawubona-zulu.png"
     },
     {
       cat:  "Language",
       q:    "How do you say 'Thank you' in IsiZulu?",
       opts: ["Yebo", "Sawubona", "Ngiyabonga", "Hamba kahle"],
       ans:  2,
-      img:  null
+      img:  "public/zulu-photos/ngiyabonga.png"
     },
     {
       cat:  "Language",
       q:    "What does 'Yebo' mean in IsiZulu?",
       opts: ["No", "Yes", "Please", "Hurry"],
       ans:  1,
-      img:  null
+      img:  "public/zulu-photos/yebo.png"
     },
     {
       cat:  "Language",
