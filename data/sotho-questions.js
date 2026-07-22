@@ -16,30 +16,16 @@ const SOTHO_QUESTIONS = {
       q:    "What does 'Dumela' mean in Sesotho?",
       opts: ["Goodbye", "Hello", "Thank you", "How are you?"],
       ans:  1,
-      img:  null
+      img: "public/sotho-photos/dumela.png"
     },
     {
       cat:  "Language",
       q:    "How do you say 'Thank you' in Sesotho?",
       opts: ["Ke a leboha", "Dumela", "Sala hantle", "Tsamaya hantle"],
       ans:  0,
-      img:  null
+      img: "public/sotho-photos/thank-you.jpg"
     },
-    {
-      cat:  "Language",
-      q:    "What does 'O kae?' mean in Sesotho?",
-      opts: ["Where are you?", "How are you?", "What is your name?", "Where are you going?"],
-      ans:  1,
-      img:  null
-    },
-    {
-      cat:  "Language",
-      q:    "What does 'Lebitso la ka ke...' mean?",
-      opts: ["I am from...", "My name is...", "I live in...", "I work at..."],
-      ans:  1,
-      img:  null
-    },
-
+    
     /* HISTORY */
     {
       cat:  "History",

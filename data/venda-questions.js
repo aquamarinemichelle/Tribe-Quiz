@@ -18,7 +18,7 @@ const VENDA_QUESTIONS = {
       q:    "What is the Tshivenḓa word for 'Hello' or 'Good day'?",
       opts: ["Ndaa", "Dankie", "Sawubona", "Dumela"],
       ans:  0,
-      img:  null
+      img:  "public/venda-photos/handshake.png"
     },
     {
       cat:  "Language",
@@ -39,14 +39,7 @@ const VENDA_QUESTIONS = {
       q:    "Tshivenḓa belongs to which language family?",
       opts: ["Germanic", "Bantu", "Khoisan", "Romance"],
       ans:  1,
-      img:  null
-    },
-    {
-      cat:  "Language",
-      q:    "What does 'Ndi a ni funa' mean in Tshivenḓa?",
-      opts: ["I am hungry", "I love you", "I am going home", "Good morning"],
-      ans:  1,
-      img:  null
+      img:  "public/venda-photos/venda-people.jpg"
     },
     {
       cat:  "Language",

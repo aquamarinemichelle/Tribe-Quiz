@@ -30,14 +30,14 @@ const SEPEDI_QUESTIONS = {
       q:    "Sepedi is officially known as?",
       opts: ["Sesotho", "Sesotho sa Leboa", "SiSwati", "Setswana"],
       ans:  1,
-      img:  null
+      img:  "public/sepedi-photos/sesotho-sa-leboa.jpg"
     },
     {
       cat:  "Language",
       q:    "What does 'Ee' mean in Sepedi?",
       opts: ["No", "Yes", "Please", "Come here"],
       ans:  1,
-      img:  null
+      img:  "public/sepedi-photos/yes.png"
     },
 
     /* HISTORY */
