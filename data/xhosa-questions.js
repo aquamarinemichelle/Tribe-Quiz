@@ -15,7 +15,7 @@ const XHOSA_QUESTIONS = {
       q:    "What does 'Molo' mean in IsiXhosa?",
       opts: ["Goodbye", "Hello (to one person)", "Thank you", "Good night"],
       ans:  1,
-      img:  "public/xhosa-photos/molo.jpg"
+      img:  "public/xhosa-photos/molo.png"
     },
     {
       cat:  "Language",
@@ -29,16 +29,9 @@ const XHOSA_QUESTIONS = {
       q:    "What does 'Ewe' mean in IsiXhosa?",
       opts: ["No", "Yes", "Please", "Come here"],
       ans:  1,
-      img:  "public/xhosa-photos/ewe.jpg"
+      img:  "public/xhosa-photos/ewe.png"
     },
-    {
-      cat:  "Language",
-      q:    "IsiXhosa is famous for its distinctive click consonants. How many main click sounds does it have?",
-      opts: ["One", "Two", "Three", "Four"],
-      ans:  2,
-      img:  "public/xhosa-photos/isixhosa.jpg"
-    },
-
+    
     /* HISTORY */
     {
       cat:  "History",

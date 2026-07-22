@@ -18,6 +18,13 @@ const AFRIKAANS_QUESTIONS = {
     /* LANGUAGE */
     {
       cat:  "Language",
+      q:    "How do you say 'Hello' in Afrikaans?",
+      opts: ["Hallo", "Goeie dag", "Both Hallo and Goeie dag", "Dag se"],
+      ans:  2,
+      img:  "public/afrikaans-photos/hello-afr.png"
+    },
+    {
+      cat:  "Language",
       q:    "Afrikaans developed mainly from which European language?",
       opts: ["German", "Dutch", "French", "Portuguese"],
       ans:  1,
@@ -241,6 +248,14 @@ const AFRIKAANS_QUESTIONS = {
       ],
       ans:  0,
       img:  "public/afrikaans-photos/bobotie.jpg"
+    },
+    /* GOODBYE */
+    {
+      cat:  "Language",
+      q:    "How do you say 'Goodbye' in Afrikaans?",
+      opts: ["Totsiens", "Goeie nag", "Dag se", "All of the above"],
+      ans:  3,
+      img:  "public/afrikaans-photos/goodbye-afr.png"
     }
   ]
 };
