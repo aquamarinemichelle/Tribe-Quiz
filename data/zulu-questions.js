@@ -233,7 +233,7 @@ const ZULU_QUESTIONS = {
       q:    "Umqombothi is a traditional Zulu beverage. What is it made from?",
       opts: ["Grapes", "Sorghum and maize", "Sugarcane", "Fermented honey"],
       ans:  1,
-      img:  "public/zulu-photos/umqombothi.png"
+      img:  "public/zulu-photos/umqombothi.jpg"
     },
 
     /* PEOPLE & NOTABLE */
