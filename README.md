@@ -13,15 +13,7 @@ Live : https://african-quiz.onrender.com
 - Geography
 - Notable People
 
-## Planned Features
-- [ ] Timer per question
-- [ ] Sound effects (drum on correct answer)
-- [ ] High score leaderboard (localStorage)
-- [ ] Questions displayed in the chosen language (e.g. IsiZulu)
-- [ ] Difficulty levels (Easy / Medium / Hard)
-
-
-## Cultures Planned (Africa's Languages)
+## Cultures (Africa's Languages)
 | Culture    | Language    | Status       |
 |------------|-------------|--------------|
 | Zulu       | IsiZulu     | ✅ Live      |
