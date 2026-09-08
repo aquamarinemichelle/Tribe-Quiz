@@ -38,7 +38,7 @@ Tribe Quiz is a web-based trivia game that tests and grows players' knowledge of
 
 No frameworks, no build step. The app is pure HTML/CSS/JS on the front end, backed by Supabase for authentication, user profiles, and score storage.
 
-## Project Structure
+## `Project Structure
 
 ```
 tribe-quiz/
